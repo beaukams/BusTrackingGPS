@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Lun 25 Avril 2016 à 20:02
+-- Généré le: Mar 26 Avril 2016 à 03:22
 -- Version du serveur: 5.5.49-0ubuntu0.14.04.1
 -- Version de PHP: 5.5.9-1ubuntu4.16
 
@@ -19,6 +19,20 @@ SET time_zone = "+00:00";
 --
 -- Base de données: `BusTrackingGPS`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `arret`
+--
+
+CREATE TABLE IF NOT EXISTS `arret` (
+  `id_arret` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_arret` varchar(50) COLLATE utf8_bin NOT NULL,
+  `latitude_arret` varchar(50) COLLATE utf8_bin NOT NULL,
+  `longitude_arret` varchar(50) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id_arret`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -113,8 +127,7 @@ CREATE TABLE IF NOT EXISTS `Bus` (
   `id_bus` int(11) NOT NULL AUTO_INCREMENT,
   `matricule_bus` varchar(50) COLLATE utf8_bin NOT NULL,
   `nom_ligne` varchar(50) COLLATE utf8_bin NOT NULL,
-  `Terminus_depart` varchar(50) COLLATE utf8_bin NOT NULL,
-  `id_position` int(11) NOT NULL,
+  `position_courant` int(11) NOT NULL,
   PRIMARY KEY (`id_bus`),
   UNIQUE KEY `matricule_bus` (`matricule_bus`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
@@ -128,9 +141,23 @@ CREATE TABLE IF NOT EXISTS `Bus` (
 CREATE TABLE IF NOT EXISTS `ligneBus` (
   `id_ligne` int(11) NOT NULL AUTO_INCREMENT,
   `nom_ligne` varchar(10) COLLATE utf8_bin NOT NULL,
-  `terminus1` varchar(50) COLLATE utf8_bin NOT NULL,
-  `terminus2` varchar(50) COLLATE utf8_bin NOT NULL,
+  `trajet_allee` int(11) NOT NULL,
+  `trajet_retour` int(11) NOT NULL,
   PRIMARY KEY (`id_ligne`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `position`
+--
+
+CREATE TABLE IF NOT EXISTS `position` (
+  `id_position` int(11) NOT NULL AUTO_INCREMENT,
+  `latitude` varchar(50) COLLATE utf8_bin NOT NULL,
+  `longitude` varchar(50) COLLATE utf8_bin NOT NULL,
+  `altitude` varchar(50) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id_position`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -141,10 +168,8 @@ CREATE TABLE IF NOT EXISTS `ligneBus` (
 
 CREATE TABLE IF NOT EXISTS `positionBus` (
   `id_positionBus` int(11) NOT NULL AUTO_INCREMENT,
+  `id_position` int(11) NOT NULL,
   `id_bus` int(11) NOT NULL,
-  `latitude` varchar(50) COLLATE utf8_bin NOT NULL,
-  `longitude` varchar(50) COLLATE utf8_bin NOT NULL,
-  `altitude` varchar(50) COLLATE utf8_bin NOT NULL,
   `vitesse` double NOT NULL,
   `date` date NOT NULL,
   `heure` time NOT NULL,
@@ -161,10 +186,24 @@ CREATE TABLE IF NOT EXISTS `smsRecv` (
   `id_sms` int(11) NOT NULL AUTO_INCREMENT,
   `contenu` text COLLATE utf8_bin NOT NULL,
   `emetteur` varchar(15) COLLATE utf8_bin NOT NULL,
-  `date` date NOT NULL,
+  `ladate` date NOT NULL,
   `heure` time NOT NULL,
   PRIMARY KEY (`id_sms`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=9 ;
+
+--
+-- Contenu de la table `smsRecv`
+--
+
+INSERT INTO `smsRecv` (`id_sms`, `contenu`, `emetteur`, `ladate`, `heure`) VALUES
+(1, 'ligne 13', '773675372', '2016-04-25', '00:00:23'),
+(2, 'ligne 13', '773675372', '2016-04-25', '00:00:23'),
+(3, 'ligne 13', '773675372', '2016-04-25', '23:58:03'),
+(4, 'ligne 13', '773675372', '2016-04-26', '00:16:06'),
+(5, 'Ligne 51', '+221773675372', '2016-04-26', '00:18:57'),
+(6, 'Ligne 54', '+221773675372', '2016-04-26', '00:20:12'),
+(7, 'Ligne 56', '+221773675372', '2016-04-26', '00:26:12'),
+(8, 'Ligne 124', '+221773675372', '2016-04-26', '03:18:47');
 
 -- --------------------------------------------------------
 
