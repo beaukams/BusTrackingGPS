@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mar 26 Avril 2016 à 03:22
+-- Généré le: Mer 27 Avril 2016 à 00:15
 -- Version du serveur: 5.5.49-0ubuntu0.14.04.1
 -- Version de PHP: 5.5.9-1ubuntu4.16
 
@@ -120,6 +120,20 @@ INSERT INTO `arretBus` (`idArret`, `nomArret`, `latitudeArret`, `longitudeArret`
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `arretLigne`
+--
+
+CREATE TABLE IF NOT EXISTS `arretLigne` (
+  `id_arretligne` int(11) NOT NULL AUTO_INCREMENT,
+  `id_arret` int(11) NOT NULL,
+  `id_ligne` int(11) NOT NULL,
+  `sens` enum('allee','retour') COLLATE utf8_bin NOT NULL DEFAULT 'allee',
+  PRIMARY KEY (`id_arretligne`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `Bus`
 --
 
@@ -128,6 +142,7 @@ CREATE TABLE IF NOT EXISTS `Bus` (
   `matricule_bus` varchar(50) COLLATE utf8_bin NOT NULL,
   `nom_ligne` varchar(50) COLLATE utf8_bin NOT NULL,
   `position_courant` int(11) NOT NULL,
+  `sens_bus` enum('allee','retour') COLLATE utf8_bin NOT NULL DEFAULT 'allee',
   PRIMARY KEY (`id_bus`),
   UNIQUE KEY `matricule_bus` (`matricule_bus`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
@@ -141,8 +156,8 @@ CREATE TABLE IF NOT EXISTS `Bus` (
 CREATE TABLE IF NOT EXISTS `ligneBus` (
   `id_ligne` int(11) NOT NULL AUTO_INCREMENT,
   `nom_ligne` varchar(10) COLLATE utf8_bin NOT NULL,
-  `trajet_allee` int(11) NOT NULL,
-  `trajet_retour` int(11) NOT NULL,
+  `terminus1` int(11) NOT NULL,
+  `terminus2` int(11) NOT NULL,
   PRIMARY KEY (`id_ligne`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
@@ -189,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `smsRecv` (
   `ladate` date NOT NULL,
   `heure` time NOT NULL,
   PRIMARY KEY (`id_sms`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=19 ;
 
 --
 -- Contenu de la table `smsRecv`
@@ -203,7 +218,17 @@ INSERT INTO `smsRecv` (`id_sms`, `contenu`, `emetteur`, `ladate`, `heure`) VALUE
 (5, 'Ligne 51', '+221773675372', '2016-04-26', '00:18:57'),
 (6, 'Ligne 54', '+221773675372', '2016-04-26', '00:20:12'),
 (7, 'Ligne 56', '+221773675372', '2016-04-26', '00:26:12'),
-(8, 'Ligne 124', '+221773675372', '2016-04-26', '03:18:47');
+(8, 'Ligne 124', '+221773675372', '2016-04-26', '03:18:47'),
+(9, 'Synchronisation du bus', '+221771006614', '2016-04-26', '11:48:03'),
+(10, '10111dk ligne 10 14.681335 -17.466865 16.8000 0.537080 2 11495500 260416', '+221771006614', '2016-04-26', '11:50:03'),
+(11, '10111dk ligne 10 14.681321 -17.466815 15.6000 4.074400 2 11501000 260416', '+221771006614', '2016-04-26', '11:50:18'),
+(12, '10111dk ligne 10 14.681316 -17.466796 17.6000 1.555680 2 11501700 260416', '+221771006614', '2016-04-26', '11:50:33'),
+(13, '10111dk ligne 10 14.681330 -17.466775 16.4000 2.037200 2 11502200 260416', '+221771006614', '2016-04-26', '11:50:33'),
+(14, '10111dk ligne 10 14.681335 -17.466754 18.1000 1.666800 2 11503300 260416', '+221771006614', '2016-04-26', '11:50:48'),
+(15, '10111dk ligne 10 14.681347 -17.466741 17.1000 2.092760 2 11503700 260416', '+221771006614', '2016-04-26', '11:50:48'),
+(16, '10111dk ligne 10 14.681370 -17.466707 17.7000 1.629760 2 11504500 260416', '+221771006614', '2016-04-26', '11:51:03'),
+(17, '10111dk ligne 10 14.681384 -17.466691 16.5000 1.740880 2 11505300 260416', '+221771006614', '2016-04-26', '11:51:03'),
+(18, '10111dk ligne 10 14.681390 -17.466670 17.6000 1.685320 2 11505600 260416', '+221771006614', '2016-04-26', '11:51:03');
 
 -- --------------------------------------------------------
 
