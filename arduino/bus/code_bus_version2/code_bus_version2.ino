@@ -60,7 +60,7 @@ void loop()
    
       
 // if((unsigned long)(millis() - timer > ms)&&(gps_state==1)){
- if((unsigned long)(millis() - timer > dt)&&(gps_state==1)){
+ if((unsigned long)(millis() - timer >= dt)&&(gps_state==1)){
       tracking();
       timer = millis();
     }
@@ -96,21 +96,8 @@ void initGSM(){
 
 
 void sendGpsData(){
-  
-  if(gps.location.isUpdated()){
-      cur_lat = gps.location.lat();
-      cur_lng = gps.location.lng();
-      cur_alt = gps.altitude.meters();
-      
-      distance = TinyGPSPlus::distanceBetween(last_lat, last_lng, cur_lat, cur_lng);
-      
-      if(distance >= distance_seuille){
-
-          last_lat = cur_lat;
-          last_lng = cur_lng;
-          last_alt = cur_alt;
           
-           if(sendATcommand("AT+CMGF=1", "OK", 1000)==1){
+       if(sendATcommand("AT+CMGF=1", "OK", 1000)==1){
               wait(50);
               sendATcommand(aux_string, ">", 2000);
               wait(50);
@@ -133,10 +120,7 @@ void sendGpsData(){
               Serial.print(gps.date.value()); //Recuperation et ecriture de la date actuelle sur le SMS
               Serial.print(" ");
               Serial.write(0x1A); //la fin
-          }
-      }
-    
-   }
+       }
 }
 
    
@@ -188,6 +172,9 @@ static void wait(unsigned long ms)
   while (millis() - start < ms);
 }
 
+/**
+ * echantillonnage
+ */
 void tracking(){
   
   if(gps.location.isUpdated()){
@@ -205,8 +192,6 @@ void tracking(){
         sendGpsData();
         distance = 0;
       }
-
-      
     
    }
 }
