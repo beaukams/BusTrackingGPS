@@ -1,7 +1,7 @@
 #! /usr/bin/python
 #-*- coding:utf-8-*-
 
-from threading import Threading
+from threading import Thread
 from serial import Serial
 from time import *
 
@@ -12,10 +12,10 @@ Code du serveur
 PORT_SSMS = "/dev/ttyACM0" #port du shield
 
 
-class SMSServer(Threading):
-	def __init__(self, port="/dev/ttyACM0", baudrate=9600, timetoread=2)
-		Threading.__init__(self)
-		self.server = Serial(port=port, baudrate=baudrate
+class SerialServer(Thread):
+	def __init__(self, port="/dev/ttyACM0", baudrate=9600, timetoread=2):
+		Thread.__init__(self)
+		self.server = Serial(port=port, baudrate=baudrate)
 		self.dataInQueeud = False
 		self.running = True
 		self.timetoread = timetoread #periodicite de lecture du port
