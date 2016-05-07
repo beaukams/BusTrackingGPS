@@ -112,7 +112,7 @@ class GPSZone:
 		"""selectionner les deux arrets bus encadrant le bus"""
 		arrets = self.getAllArrets()
 		print arrets
-
+		#
 
 
 
