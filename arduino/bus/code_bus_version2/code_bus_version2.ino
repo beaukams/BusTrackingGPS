@@ -31,7 +31,7 @@ double cur_alt=0;
 double  distance=0;
 double distance_seuille = 30; //distance minimale entre deux 2 arrets ***
 char matricule_bus [] = "10111dk"; //***
-char ligne [] = "ligne 10"; //***
+char ligne [] = "10"; //***
 
 
 

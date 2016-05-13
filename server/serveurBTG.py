@@ -12,7 +12,7 @@ from math import *
 from serveurSMS import *
 from serveurBDD import *
 
-
+precision_gps = 10 # precision du GPS: 10m
 
 def distance(lat1, lng1, lat2, lng2):
 		"""la distance entre deux points gps"""
@@ -59,6 +59,41 @@ def course(lat1, lng1, lat2, lng2):
 	if a2 < 0.0:
 		a2 += 2*pi;
   	return degrees(a2);
+
+def getAreaParameters(distance_ref):
+	"""retourne la latitude et la longitude minimale à ajouter à un point pour avoir la distance donné
+	On prend un point de reference (latitude, longitude). On cherche la latitude a ajouter pour avoir un point de même longitude situé à distance distance_ref.
+	Puis on cherche, la longitude à ajouter pour avoir un point de même latitude à une distance distance_ref
+	""":
+	lat_ref = 14.432479
+	lng_ref = 17.273171
+	delta_lat = 0
+	delta_lng = 0
+	precision = 0.00001
+	temp = 0
+	while 1:
+		delta_lat += precision
+		temp = distance(lat_ref, lng_ref, lat_ref+delta_lat, lng_ref)
+		if temp >= distance_ref:
+			break
+
+	while 1:
+		delta_lng += precision
+		temp = distance(lat_ref, lng_ref, lat_ref, lng_ref+delta_lng)
+		if temp >= distance_ref:
+			break
+
+	return delta_lat, delta_lng
+
+def getArretParameters(nom_arret, bdd_handle):
+	"""parametres de localisation d'un arret"""
+	req = "SELECT * FROM arret WHERE nom_arret = %s" %(nom_arret)
+	res = bdd_handle.select(req)
+	if len(res) == 1:
+		res = res[0]
+		return res[0], res[1], res[2], res[3]
+	else:
+		return []
 
 
 
@@ -110,17 +145,107 @@ class GPSZone:
 
 	def getLastNextArrets(self):
 		"""selectionner les deux arrets bus encadrant le bus"""
+
 		arrets = self.getAllArrets()
-		print arrets
-		#
 
+class Bus:
+	"""
+	la représentation du Bus
 
+	"""
+	def __init__(self, matricule):
+		self.matricule = matricule
+		self.bdd = BDD()
+
+	def giveCurrentPosition(self):
+		""""""
+
+	def updateCurrentPosition(self):
+		""""""
+
+	def getParameters(self):
+		"""donne les parametres du bus: ligne, position courante"""
+		req = """SELECT * FROM bus WHERE matricule_bus=%s""" %(self.matricule)
+		
+		res = self.bdd.select(req)
+		if len(res) == 1: #un seul bus: bon résultat
+			param = res[0]
+			self.id = param[0]
+			self.ligne = param[2]
+			self.position_courante = param[3]
+			self.sens = param[4]
+
+	def getDynamicParameters(self):
+		"""les parametres dynamiques du bus"""
+		if self.position_courante != "":
+			req = """SELECT * FROM positionBus WHERE id_positionBus=%s""" %(self.position_courante)
+			res = self.bdd.select(req)
+			if len(res) == 1: #une seule position: bon résultat
+				param = res[0]
+				self.latitude = param[2]
+				self.longitude = param[3]
+				self.altitude = param[4]
+				self.vitesse = param[5]
+				self.date = param[6]
+				self.heure = param[7]
+
+	def getLigneParameters(self):
+		"""les parametres de la ligne du bus"""
+		if self.ligne != "":
+			req = """SELECT * FROM ligneBus WHERE nom_ligne=%s""" %(self.ligne)
+			res = self.bdd.select(req)
+			if len(res) == 1: 
+				param = res[0]
+				self.ligne_terminus1 = param[2]
+				self.ligne_terminus2 = param[3]
+
+	def isInTerminus(self):
+		"""verifier si le bus est dans un terminus: retourne sens"""
+		lat_terminus1, lng_terminus1 = getArretParameters(self.ligne_terminus1)
+		lat_terminus2, lng_terminus2 = getArretParameters(self.ligne_terminus2)
+
+		if distance(self.latitude, self.longitude, lat_terminus1, lng_terminus1) <= precision_gps:
+			return True, self.ligne_terminus1
+		elif distance(self.latitude, self.longitude, lat_terminus2, lng_terminus2) <= precision_gps:
+			return True, self.ligne_terminus2
+		else:
+			return False, ""
+
+	def getSens(self):
+		"""donner le sens du bus"""
+		est_term, term = self.isInTerminus() 
+		if est_term == True: #le bus est dans un terminus
+			self.sens = term if term != self.sens else self.sens = self.sens
+
+	def getAllArrets(self):
+		"""Selectionne l'ensemble ds arrets sur la ligne du bus dans la zone définie.
+		L'objectif est de définir une zone à autour de la position du bus et sur la ligne (trajet normal) du bus. Ensuite on selectionne l'ensemble des arrets dans la zone définie. S'il 
+		*Si on obtient 3 zones ou plus, alors on diminue la zone, alors on dimine la zone puis on recalcule la zone.
+		*si on obtient deux zones, alors l'algorithme se finit.
+		*si on trouve 1 zone ou pas de zone, alors on augmente la zone de recherche puis on se retrouve dans le premier cas.
+		"""
+
+		req = """SELECT * FROM arret WHERE latitude_arret<=%s AND latitude_arret>=%s AND longitude_arret<=%s AND longitude_arret>=%s""" %(self.centre.getLatitude()+self.longueur, \
+			self.centre.getLatitude()-self.longueur, self.centre.getLongitude()+self.largeur, self.centre.getLongitude()-self.largeur)
+		bdd = BDD()
+		return bdd.select(req)
+
+	def defineZone(self):
+		req = """SELECT * FROM arret WHERE"""
+
+class Ligne:
+	def __init__(self):
+		"""La classe ligne"""
+
+class Position:
+	def __init__(self):
+		"""la classe position"""
 
 
 		
 
 class ServeurBTG(Thread):
-	def __init__(self, ):
+	def __init__(self):
 		#self.serialServer = SerialServer()
 		self.bdd = BDD() #la base de donnees
 		self.running = True
@@ -128,7 +253,10 @@ class ServeurBTG(Thread):
 	def run(self):
 		while self.running == True:
 			""""""
-			
+	
+
+
+
 #def tostart(self):
 
 
