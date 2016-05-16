@@ -218,7 +218,8 @@ class Bus:
 			self.sens = term if term != self.sens else self.sens = self.sens
 
 	def getAllArrets(self):
-		"""Selectionne l'ensemble ds arrets sur la ligne du bus dans la zone définie.
+		"""
+		Selectionne l'ensemble ds arrets sur la ligne du bus dans la zone définie.
 		L'objectif est de définir une zone à autour de la position du bus et sur la ligne (trajet normal) du bus. Ensuite on selectionne l'ensemble des arrets dans la zone définie. S'il 
 		*Si on obtient 3 zones ou plus, alors on diminue la zone, alors on dimine la zone puis on recalcule la zone.
 		*si on obtient deux zones, alors l'algorithme se finit.
@@ -239,7 +240,10 @@ class Ligne:
 
 class Position:
 	def __init__(self):
-		"""la classe position"""
+		"""
+			la classe position
+		"""
+
 
 
 		

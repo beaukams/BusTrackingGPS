@@ -10,7 +10,7 @@ int onModulePin=4;
 int8_t answer; 
 char aux_string[30];
 
-//
+//parametres de configuration
 char phone_number[]="+221773921334"; // le numero vers lequel on envoie les coordonnees GPS *****
 unsigned short timer=millis();
 unsigned short ms = 60000; //période d'envoie des coordonnnées au serveur *****
@@ -32,6 +32,7 @@ double  distance=0;
 double distance_seuille = 30; //distance minimale entre deux 2 arrets ***
 char matricule_bus [] = "10111dk"; //***
 char ligne [] = "10"; //***
+char sens [] = "arret16";
 
 
 

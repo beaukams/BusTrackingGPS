@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 27 Avril 2016 à 00:15
+-- Généré le: Lun 16 Mai 2016 à 14:13
 -- Version du serveur: 5.5.49-0ubuntu0.14.04.1
 -- Version de PHP: 5.5.9-1ubuntu4.16
 
@@ -29,10 +29,22 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `arret` (
   `id_arret` int(11) NOT NULL AUTO_INCREMENT,
   `nom_arret` varchar(50) COLLATE utf8_bin NOT NULL,
-  `latitude_arret` varchar(50) COLLATE utf8_bin NOT NULL,
-  `longitude_arret` varchar(50) COLLATE utf8_bin NOT NULL,
+  `latitude_arret` double NOT NULL,
+  `longitude_arret` double NOT NULL,
   PRIMARY KEY (`id_arret`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=7 ;
+
+--
+-- Contenu de la table `arret`
+--
+
+INSERT INTO `arret` (`id_arret`, `nom_arret`, `latitude_arret`, `longitude_arret`) VALUES
+(1, 'arret15', 14.432651, -17.271058),
+(2, 'arret14', 14.433664, -17.270904),
+(3, 'arret13', 14.434182, -17.272018),
+(4, 'arret11', 14.432555, -17.272571),
+(5, 'arret12', 14.433487, -17.272442),
+(6, 'arret16', 14.431101, -17.271283);
 
 -- --------------------------------------------------------
 
@@ -127,25 +139,33 @@ CREATE TABLE IF NOT EXISTS `arretLigne` (
   `id_arretligne` int(11) NOT NULL AUTO_INCREMENT,
   `id_arret` int(11) NOT NULL,
   `id_ligne` int(11) NOT NULL,
-  `sens` enum('allee','retour') COLLATE utf8_bin NOT NULL DEFAULT 'allee',
+  `sens` enum('A','R') COLLATE utf8_bin NOT NULL DEFAULT 'A',
+  `num_arretDansLigne` int(11) NOT NULL,
   PRIMARY KEY (`id_arretligne`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `Bus`
+-- Structure de la table `bus`
 --
 
-CREATE TABLE IF NOT EXISTS `Bus` (
+CREATE TABLE IF NOT EXISTS `bus` (
   `id_bus` int(11) NOT NULL AUTO_INCREMENT,
   `matricule_bus` varchar(50) COLLATE utf8_bin NOT NULL,
   `nom_ligne` varchar(50) COLLATE utf8_bin NOT NULL,
   `position_courant` int(11) NOT NULL,
-  `sens_bus` enum('allee','retour') COLLATE utf8_bin NOT NULL DEFAULT 'allee',
+  `sens_bus` enum('A','R') COLLATE utf8_bin NOT NULL DEFAULT 'A',
   PRIMARY KEY (`id_bus`),
   UNIQUE KEY `matricule_bus` (`matricule_bus`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `bus`
+--
+
+INSERT INTO `bus` (`id_bus`, `matricule_bus`, `nom_ligne`, `position_courant`, `sens_bus`) VALUES
+(2, '11011f', '10', 1, 'A');
 
 -- --------------------------------------------------------
 
@@ -156,10 +176,17 @@ CREATE TABLE IF NOT EXISTS `Bus` (
 CREATE TABLE IF NOT EXISTS `ligneBus` (
   `id_ligne` int(11) NOT NULL AUTO_INCREMENT,
   `nom_ligne` varchar(10) COLLATE utf8_bin NOT NULL,
-  `terminus1` int(11) NOT NULL,
-  `terminus2` int(11) NOT NULL,
+  `terminus1` varchar(11) COLLATE utf8_bin NOT NULL,
+  `terminus2` varchar(11) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id_ligne`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `ligneBus`
+--
+
+INSERT INTO `ligneBus` (`id_ligne`, `nom_ligne`, `terminus1`, `terminus2`) VALUES
+(1, '10', 'arret11', 'arret16');
 
 -- --------------------------------------------------------
 
@@ -183,10 +210,12 @@ CREATE TABLE IF NOT EXISTS `position` (
 
 CREATE TABLE IF NOT EXISTS `positionBus` (
   `id_positionBus` int(11) NOT NULL AUTO_INCREMENT,
-  `id_position` int(11) NOT NULL,
   `id_bus` int(11) NOT NULL,
+  `latitude` double NOT NULL,
+  `longitude` double NOT NULL,
+  `altitude` double NOT NULL,
   `vitesse` double NOT NULL,
-  `date` date NOT NULL,
+  `ladate` date NOT NULL,
   `heure` time NOT NULL,
   PRIMARY KEY (`id_positionBus`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
