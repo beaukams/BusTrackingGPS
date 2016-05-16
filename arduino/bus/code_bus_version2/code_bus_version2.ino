@@ -33,7 +33,7 @@ double distance_seuille = 30; //distance minimale entre deux 2 arrets ***
 char matricule_bus [] = "10111dk"; //***
 char ligne [] = "10"; //***
 char sens [] = "arret16";
-
+unsigned short depart = 1; //precise le depart du bus. deux valeurs possibles 1(depart) , 0 (sinon). Le depart est preciser en appuyant sur un bouton poussoir etc..
 
 
 void setup() 
@@ -54,20 +54,16 @@ void setup()
 void loop() 
 { 
   if(SoftSerial.available() > 0)
-   if(gps.encode(SoftSerial.read())){
-      //  distance=TinyGPSPlus::distanceBetween(last_lat,last_lng,gps.location.lat(),ps.location.lng());
+      if(gps.encode(SoftSerial.read())){
         gps_state=1; 
-   }
-   
+      }
       
-// if((unsigned long)(millis() - timer > ms)&&(gps_state==1)){
- if((unsigned long)(millis() - timer >= dt)&&(gps_state==1)){
+  if(((unsigned long)(millis() - timer >= dt) || depart==1)&&(gps_state==1)){
       tracking();
       timer = millis();
     }
 }
 
-void getGPsData(){};
 
 //------------------------------------
 void initGSM(){
@@ -102,6 +98,10 @@ void sendGpsData(){
               wait(50);
               sendATcommand(aux_string, ">", 2000);
               wait(50);
+              Serial.print("bus"); //matricule
+              Serial.print(" ");
+              Serial.print(depart); //precise si le bus est entrain de prendre départ ou non
+              Serial.print(" ");
               Serial.print(matricule_bus); //matricule
               Serial.print(" ");
               Serial.print(ligne); //ligne
@@ -193,7 +193,20 @@ void tracking(){
         sendGpsData();
         distance = 0;
       }
+
+      if(depart == 1){ //on envoie si c'est le départ
+        sendGpsData();
+        depart = 0; 
+      }
     
    }
+}
+
+
+/*
+ * Recuperer le statut du bouton poussoir
+ */
+byte setDepart(){
+  
 }
 

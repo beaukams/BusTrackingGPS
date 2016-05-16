@@ -64,5 +64,45 @@ class BDD(Thread):
 		"""executer une requete"""
 		if self.running == True:
 			self.cursor.execute(req)
-		
-		
+
+	def getIdArret(self, nom_arret):
+		"""retourne l'arret correspondant au nom de l'arret"""
+		res = self.select("""SELECT id_arret FROM arret WHERE nom_arret=%s""" %(nom_arret))
+		if len(res) == 1:
+			return res[0]
+		else:
+			return -1
+	def getIdLigne(self, nom_ligne):
+		"""retourne l'identifiant correspondant au nom de la ligne"""
+		res = self.select("""SELECT id_ligne FROM ligne WHERE nom_ligne=%s""" %(nom_ligne))
+		if len(res) == 1:
+			return res[0]
+		else:
+			return -1
+
+	def getIdBus(self, matricule):
+		"""retourne l'arret correspondant au nom de l'arret"""
+		res = self.select("""SELECT id_bus FROM bus WHERE matricule_bus=%s""" %(matricule))
+		if len(res) == 1:
+			return res[0]
+		else:
+			return -1
+	def getArretParameters(self, nom_arret = "", id_arret = ""):
+		"""parametres de localisation d'un arret"""
+		if nom_arret != "":
+			req = "SELECT * FROM arret WHERE nom_arret = %s" %(nom_arret)
+		else:
+			req = "SELECT * FROM arret WHERE id_arret = %s" %(id_arret)
+		res = self.select(req)
+		if len(res) == 1:
+			res = res[0]
+			return res[0], res[1], res[2], res[3]
+		else:
+			return -1,-1,-1,-1
+
+	def getArretsLigne(self, nom_ligne, sens='A'):
+		id_ligne = self.getIdLigne(nom_ligne)
+		res = self.select("""SELECT * FROM arretLigne WHERE id_ligne=%s AND sens=%s""" %(id_ligne, sens))
+		return res
+
+
