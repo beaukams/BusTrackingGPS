@@ -55,7 +55,7 @@ function refreshBusLigne(delai,lat, lng, mat, map, zoom){
 		           catch(e3) {  
 		           	xhr = false;
 		           }
-		         }
+		        }
 		    }
 		  
 		    xhr.onreadystatechange  = function() { 
@@ -64,8 +64,9 @@ function refreshBusLigne(delai,lat, lng, mat, map, zoom){
 			       	
 			        if(xhr.status  == 200) {
 			        	var valeur = xhr.responseText;
-			           label.innerHTML += valeur; 
+			           label.innerHTML = valeur; 
 			           //console.log(ligne.value);
+
 			           addBus(lat, lng, 18, map, zoom)
 			       	}
 			        else{
@@ -76,12 +77,12 @@ function refreshBusLigne(delai,lat, lng, mat, map, zoom){
 		 
 		   
 		   if(ligne.value == "")  {
-		   	xhr.open("POST", "position_bus.php",  true); 
-		   	xhr.send(null);
+			   	xhr.open("POST", "position_bus.php",  true); 
+			   	xhr.send(null);
 		   	} 
 		   else{
-		   	xhr.open("POST", "position_bus.php",  true); 
-		    xhr.send(ligne.value); 
+			   	xhr.open("POST", "position_bus.php",  true); 
+			    xhr.send(ligne.value); 
 			}
 
     	},
