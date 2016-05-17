@@ -6,7 +6,7 @@
 		<script type="text/javascript" src="OpenLayers/lib/OpenLayers.js"></script>
 		<script type="text/javascript" src="carte.js"></script> 
 		<link rel="stylesheet" href="style.css" type="text/css">
-		<link rel="stylesheet" href="menu.css" type="text/css">
+		<link rel="stylesheet" href="testmenu.css" type="text/css">
 	</head>
 		<body bgcolor="white"  onload="init()">
 
