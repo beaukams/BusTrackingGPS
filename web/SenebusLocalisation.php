@@ -3,15 +3,17 @@
 		<title>Localisation en ligne</title>
 		<meta charset=utf-8>
 		
-		<script type="text/javascript" src="OpenLayers/lib/OpenLayers.js"></script>
+		
+		<script type="text/javascript" src="ol3151/build/ol.js"></script> 
 		<script type="text/javascript" src="carte.js"></script> 
+
 		<link rel="stylesheet" href="style.css" type="text/css">
 		<link rel="stylesheet" href="menu.css" type="text/css">
 	</head>
 
 		<body bgcolor="white">
 	<?php
-
+//<script type="text/javascript" src="OpenLayers/lib/OpenLayers.js"></script>
 echo'<table align="center" width="80%">	
 		<tr><td width="30%"> <img src ="senegal.jpg" alt ="" width="100" style="position:absolute:20px;"> </td>
 		

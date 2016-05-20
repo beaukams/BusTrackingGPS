@@ -1,28 +1,29 @@
-window.onload = function(){
-	var map = new OpenLayers.Map('map');
+window.onload = mapping;
+
+function mapping(){
 
 	// Position de départ sur la carte
 	var lat = 14.6937000;
 	var lng = -17.4440600;
 	var zoom = 10;
 
-	//-var osmLayer = new OpenLayers.Layer.OSM();
-	//-map.addLayer(osmLayer);
-	//map.zoomToMaxExtent();
-	
-	//addBus(lat, lng, 18, map, zoom)
-
-	/*var popup = new OpenLayers.Popup.FramedCloud("Popup", coord.getBounds().getCenterLonLat(), null,null, null, true);  // <-- true if we want a close (X) button, false otherwise
-	
-	map.addPopup(popup);*/
-
-	//-calqueMarkers = new OpenLayers.Layer.Markers("Repères");
-	//-map.addLayer(calqueMarkers);
-
+	var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        target: 'map',
+        view: new ol.View({
+          projection: 'EPSG:4326',
+          center: [lng, lat],
+          zoom: zoom
+        })
+      });
 
 	refreshBusLigne(6, map, zoom); //raffraichissement toutes les 6 secondes
 
-} 
+}
 
 function addCenter(lat, lng, mat, map, zoom, calqueMarkers){
 	coord = new OpenLayers.LonLat(lng, lat);
@@ -39,25 +40,28 @@ function addCenter(lat, lng, mat, map, zoom, calqueMarkers){
 	calqueMarkers.addMarker(dakar);
 }
 
-function addBus(lat, lng, mat, map, zoom, calqueMarkers){
-	coord = new OpenLayers.LonLat(lng, lat);
+function addBus(lat, lng, mat, map, zoom){
+	
+	map.innerText = "";
 
-	var bus = new OpenLayers.Marker(coord);
-	calqueMarkers.addMarker(bus);
+	map = new ol.Map({
+    	layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+    	],
+    	target: 'map',
+        view: new ol.View({
+          projection: 'EPSG:4326',
+          center: [lng, lat],
+          zoom: zoom
+        })
+    });
+
 }
 
 function refreshBusLigne(delai, map, zoom){ 
-
-	var osmLayer = new OpenLayers.Layer.OSM();
-	map.addLayer(osmLayer);
-	calqueMarkers = new OpenLayers.Layer.Markers("Repères");
-	map.addLayer(calqueMarkers);
-	console.log(map);
-	//map.updateSize();
-	/*var source = osmLayer.getSource();
-	var params = source.getParams();
-	params.t = new Date().getMilliseconds();
-	source.updateParams(params);*/
+	map = document.getElementById("map");
 
 	var ligne = document.getElementById("search");
     setInterval(function(){
@@ -94,23 +98,29 @@ function refreshBusLigne(delai, map, zoom){
 
 			           //recuperer l'ensemble des données et l'afficher sur la carte
 			           res = valeur.split("*");
-			          // console.log(res);
+			          
 			           for(var i=0; i<res.length; i++){
 			           		bus = res[i];
 			           		bus = bus.split("_");
-			           		//console.log(bus);
-			           		if(i==0)
-			           			addCenter(bus[3],bus[4], bus[1], map, zoom, calqueMarkers)
-			           		else
-			           			addCenter(bus[3],bus[4], bus[1], map, zoom, calqueMarkers);
+			           		if(i==0){
+
+			           			addBus(bus[3],bus[4], bus[1], map, zoom)
+			           		}
+			           		else{
+			           			//addBus(bus[3],bus[4], bus[1], map, zoom);
+			           		}
+
+			           		
 
 			           }
-			           map.updateSize();
-			           //
+
+			           map.getLayers()['a'][0].getSource().refresh();
 			           
 			       	}
 			        else{
+
 			            label.innerText ="Error code " + xhr.status;
+
 			        }
 		        }
 		    }; 

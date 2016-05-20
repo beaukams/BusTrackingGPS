@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OpenStreetMap Reprojection</title>
+    <link rel="stylesheet" href="ol3151/css/ol.css" type="text/css">
+    <script src="ol3151/build/ol.js"></script>
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+    <script>
+    var i=0;
+      var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        target: 'map',
+        view: new ol.View({
+          projection: 'EPSG:4326',
+          center: [-17.1452, 14.1425],
+          zoom: 10
+        })
+      });
+
+      setInterval(function(){
+        map = document.getElementById("map");
+        map.innerText = "";
+        map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        target: 'map',
+        view: new ol.View({
+          projection: 'EPSG:4326',
+          center: [-17.4452+i*0.111, 14.5425],
+          zoom: 11
+        })
+      });
+    //   map.getView().setCenter([[-17.1452+i*0.001, 14.1425]]);
+       map.getLayers()['a'][0].getSource().refresh();
+        i++;
+
+      },
+      5000);
+     
+    </script>
+  </body>
+</html>
