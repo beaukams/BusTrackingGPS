@@ -21,22 +21,21 @@
 			$req = $base->prepare($req);
 			$req->execute();
 			$bus = $req->fetchall();
-			echo "<div>";
-			echo "<ol id=a_" . $i . ">";
+		//	echo "<div>";
+		//	print_r($bus);
+			$resultats = "";
 			for($i=0; $i<count($bus); $i++){
-				
-				echo "<li id=id_" . $i . ">" . $bus[$i][0] . "</li>";
-				echo "<li id=mat_" . $i . ">" . $bus[$i][1] . "</li>";
-				echo "<li id=ligne_" . $i . ">" . $bus[$i][2] . "</li>";
-				echo "<li id=lat_" . $i . ">" . $bus[$i][3] . "</li>";
-				echo "<li id=lng_" . $i . ">" . $bus[$i][4] . "</li>";
-				echo "<li id=alt_" . $i . ">" . $bus[$i][5] . "</li>";
-				echo "<li id=v_" . $i . ">" . $bus[$i][6] . "</li>";
-				echo "<li id=dat__" . $i . ">" . $bus[$i][7] . "</li>";
-				echo "<li id=heure_" . $i . ">" . $bus[$i][8] . "</li>";
+				if($i!=0)
+					$resultats .= "*";
+				$resultats .= $bus[$i][0] . "_" . $bus[$i][1] . "_" . $bus[$i][2] . "_" . $bus[$i][3] . "_" . $bus[$i][4] . "_" . $bus[$i][5] . "_" . $bus[$i][6] . "_" . $bus[$i][7] . "_" . $bus[$i][8];
 			}
-			echo "</ol>";
-			echo "</div>";
+
+			
+			
+			
+			echo $resultats;
+
+			//echo "</div>";
 		}
 	}
 ?>
