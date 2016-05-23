@@ -105,4 +105,12 @@ class BDD(Thread):
 		res = self.select("""SELECT * FROM arretLigne WHERE id_ligne=%s AND sens=%s""" %(id_ligne, sens))
 		return res
 
+	def getSMSRecu(self):
+		"""recuperer un sms recu non traité"""
+		res = self.select("""SELECT * FROM smsRecv  WHERE archive="N" """)
+		if len(res) >= 1:
+			return res[0]
+		else:
+			return []
+
 

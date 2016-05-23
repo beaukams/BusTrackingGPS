@@ -109,18 +109,11 @@ function refreshBusLigne(delai, map, zoom){
 			           		else{
 			           			//addBus(bus[3],bus[4], bus[1], map, zoom);
 			           		}
-
-			           		
-
 			           }
-
 			           map.getLayers()['a'][0].getSource().refresh();
-			           
 			       	}
 			        else{
-
 			            label.innerText ="Error code " + xhr.status;
-
 			        }
 		        }
 		    }; 

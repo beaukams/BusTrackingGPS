@@ -148,9 +148,10 @@ class Bus:
 		Bus
 
 	"""
-	def __init__(self, matricule):
+	def __init__(self, matricule, bdd):
 		self.matricule = matricule
-		self.bdd = BDD()
+		self.bdd = bdd
+		self.getParameters()
 
 	def giveCurrentPosition(self):
 		""""""
@@ -213,7 +214,9 @@ class Bus:
 		"""
 		est_term, term = self.isInTerminus() 
 		if est_term == True: #le bus est dans un terminus
-			self.sens = term if term != self.sens else self.sens = self.sens
+			#self.sens = term if term != self.sens else self.sens = self.sens
+			if self.sens != term:
+				self.sens = term
 
 	def get2Arrets(self, arrets, distance_ref, all_arrets):
 		"""
@@ -223,19 +226,19 @@ class Bus:
 			*si on obtient deux zones, alors l'algorithme se finit.
 			*si on trouve 1 zone ou pas de zone, alors on augmente la zone de recherche puis on se retrouve dans le premier cas.
 		"""
-			if len(arrets) > 2: #on a plus de 2 arrets, on reduit la distance de recherche
-				res_arrets = []
-				#on definit la zone centrée à la position du bus
-				for arret in arrets:
-					zone = GPSZone(GPSCoords(self.point_gps, self.point_gps.getAreaParameters(distance_ref=distance_ref)))
-					if zone.contains(GPSCoords(arret[2], arret[3])) == True:
-						res_arrets.append(arret)
-					return self.get2Arrets(res_arrets, distance_ref*0.75, arrets)
-			elif len(arrets) == 2: #verifier que les deux arrets sont successifs
+		if len(arrets) > 2: #on a plus de 2 arrets, on reduit la distance de recherche
+			res_arrets = []
+			#on definit la zone centrée à la position du bus
+			for arret in arrets:
+				zone = GPSZone(GPSCoords(self.point_gps, self.point_gps.getAreaParameters(distance_ref=distance_ref)))
+				if zone.contains(GPSCoords(arret[2], arret[3])) == True:
+					res_arrets.append(arret)
+				return self.get2Arrets(res_arrets, distance_ref*0.75, arrets)
+		elif len(arrets) == 2: #verifier que les deux arrets sont successifs
 				#if arrets[0].
-				return arrets
-			else
-				return self.get2Arrets(all_arrets, distance_ref*1.5, all_arrets)
+			return arrets
+		else:
+			return self.get2Arrets(all_arrets, distance_ref*1.5, all_arrets)
 
 
 	def getNearsArrets(self):
@@ -276,6 +279,9 @@ class Position:
 		
 
 class Serveur(Thread):
+	"""
+		Serveur SMS du projet
+	"""
 	def __init__(self):
 		#self.serialServer = SerialServer()
 		self.bdd = BDD() #la base de donnees
@@ -285,10 +291,35 @@ class Serveur(Thread):
 		while self.running == True:
 			""""""
 	
+	def traitement(self):
+		"""
+			permet le traitement du serveur. 
+			Consulter la base de données des sms.Si un sms recu n'est pas encore traité, alors le traité. Sinon, 
+		"""
+		tab = self.bdd.getSMSRecu()
+		if  len(tab) == 1:
+			sms = tab[1].split(" ")
+			id_sms = tab[0]
+			dest = tab[2]
+			ladate = tab[3]
+			heure = tab[4]
+
+			#traitement
+			if sms[0] == "bus": #localisation du bus: on crée le bus et remplit les autres tables de la base de donnees
+				bus = Bus(sms[1], self.bdd)
+
+			elif sms[0] == "sup": #message de controle du bus
+
+			else: #client
+		else:
+			
+
+
 		
 	
 
 if __name__ == "__main__":
-	#a = Serveur()
+	a = Serveur()
+	print "resultat\n",a.traitement()
 
 	
