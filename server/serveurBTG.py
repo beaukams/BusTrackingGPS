@@ -152,17 +152,30 @@ class Bus:
 		self.matricule = matricule
 		self.bdd = bdd
 		self.getParameters()
+		self.getDynamicParameters()
 
 	def giveCurrentPosition(self):
-		""""""
+		"""
+			
+		"""
 
-	def updateCurrentPosition(self):
-		""""""
+	def updateCurrentPosition(self, lat, lng, alt, vitesse, lheure, ladate):
+		"""
+			ajouter une position 
+		"""
+		ladate = "20"+ladate[4]+ladate[5]+"-"+ladate[2]+ladate[3]+"-"+ladate[0]+ladate[1]
+		lheure = lheure[0]+lheure[1]+":"+lheure[2]+lheure[3]+":"+lheure[4]+lheure[5]
+		id_bus = self.bdd.getIdBus(self.matricule)
+		req = """INSERT INTO positionBus(id_bus, latitude, longitude, altitude, vitesse, ladate, heure) VALUES(%d,%s,%s,%s,%s,'%s','%s')""" %(id_bus, lat, lng, alt, vitesse, ladate, lheure)
+		
+		self.bdd.insert(req)
+		id_pos = self.bdd.cursor.lastrowid
+		self.bdd.update("""UPDATE bus SET position_courant=%d WHERE matricule_bus='%s'""" %(id_pos, self.matricule))
+		
 
 	def getParameters(self):
 		"""donne les parametres du bus: ligne, position courante"""
-		req = """SELECT * FROM bus WHERE matricule_bus=%s""" %(self.matricule)
-		
+		req = """SELECT * FROM bus WHERE matricule_bus='%s'""" %(self.matricule)
 		res = self.bdd.select(req)
 		if len(res) == 1: #un seul bus: bon résultat
 			param = res[0]
@@ -288,16 +301,21 @@ class Serveur(Thread):
 		self.running = True
 
 	def run(self):
+		"""
+			méthode de running
+		"""
 		while self.running == True:
 			""""""
 	
 	def traitement(self):
 		"""
 			permet le traitement du serveur. 
-			Consulter la base de données des sms.Si un sms recu n'est pas encore traité, alors le traité. Sinon, 
+			Consulter la base de données des sms.Si un sms recu n'est pas encore traité, alors le traité. 
+			Sinon, 
 		"""
 		tab = self.bdd.getSMSRecu()
-		if  len(tab) == 1:
+
+		if  tab != []:
 			sms = tab[1].split(" ")
 			id_sms = tab[0]
 			dest = tab[2]
@@ -307,11 +325,12 @@ class Serveur(Thread):
 			#traitement
 			if sms[0] == "bus": #localisation du bus: on crée le bus et remplit les autres tables de la base de donnees
 				bus = Bus(sms[1], self.bdd)
+				bus.updateCurrentPosition(sms[4], sms[5], sms[6], sms[7], sms[9], sms[10])
 
 			elif sms[0] == "sup": #message de controle du bus
-
+				a=9
 			else: #client
-		else:
+				a=9
 			
 
 
@@ -320,6 +339,6 @@ class Serveur(Thread):
 
 if __name__ == "__main__":
 	a = Serveur()
-	print "resultat\n",a.traitement()
+	print a.traitement()
 
 	

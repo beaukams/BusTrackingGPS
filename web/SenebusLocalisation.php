@@ -1,11 +1,15 @@
+
 <html>
 	<head>
 		<title>Localisation en ligne</title>
 		<meta charset=utf-8>
 		
 		
-		<script type="text/javascript" src="ol3151/build/ol.js"></script> 
-		<script type="text/javascript" src="carte.js"></script> 
+		<!--script type="text/javascript" src="ol3151/build/ol.js"></script> 
+		<script type="text/javascript" src="carte.js"></script--> 
+
+		<link rel="stylesheet" href="leaflet/leaflet.css" />
+        
 
 		<link rel="stylesheet" href="style.css" type="text/css">
 		<link rel="stylesheet" href="menu.css" type="text/css">
@@ -13,9 +17,10 @@
 
 		<body bgcolor="white">
 	<?php
+
 //<script type="text/javascript" src="OpenLayers/lib/OpenLayers.js"></script>
 echo'<table align="center" width="80%">	
-		<tr><td width="30%"> <img src ="senegal.jpg" alt ="" width="100" style="position:absolute:20px;"> </td>
+		<tr><td width="30%"> <img src ="senegal.jpg" alt ="" width="100" style="position:absolute,20px;"> </td>
 		
 		<td align="center"  width="30%" ><p ><font size="5" color="green" face="Book antiqua"><b>SENEBUSLOCALISATION</b></font></p></td>
 		
@@ -55,7 +60,7 @@ echo'<table id="i" align="center" width="80%">
 			<div class="menu4sub"> </div>
 				</td>
 				<td  align="right" bgcolor="">Saisissez une ligne de bus</td>
-				<td  align="center" width="5"><input type="number" name="search" id="search" width="100%"/></td>
+				<td  align="center" width="5"><input type="number" name="search" id="bussearch" width="100%"/></td>
 				<td align="center" width="5"><input type="submit"   name="rechercher" value="Localiser"/></td>
 
 				</tr>
@@ -71,7 +76,7 @@ echo'<table id="i" align="center" width="80%">
 				
 				<tr>
 					<td><img src="Bussn.jpg" alt="Bus" width="320" height="300" hspace="10" vspace="15" align="left"></td>
-					<td width="280" height="280"><div id="map"></div></td>
+					<td width="280" height="280"><div id="map" style="height:100%;"></div></td>
 				</tr>
 				
 			</table>
@@ -87,5 +92,8 @@ echo'<table id="i" align="center" width="80%">
 			</table>
 		</table>';
 	?>		
+	<script type="text/javascript" src="leaflet/leaflet-src.js"></script>
+        <script type="text/javascript" src="leaflet/leaflet-realtime.js"></script>
+        <script type="text/javascript" src="mapping.js"></script>
 	</body>
 </html>

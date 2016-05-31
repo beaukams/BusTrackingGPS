@@ -61,12 +61,11 @@ function addBus(lat, lng, mat, map, zoom){
 }
 
 function refreshBusLigne(delai, map, zoom){ 
-	map = document.getElementById("map");
 
-	var ligne = document.getElementById("search");
     setInterval(function(){
 		   	var xhr; 
-
+		   	var ligne = document.getElementById("bussearch");
+		   	map = document.getElementById("map");
 		    try {  
 		    	xhr = new ActiveXObject('Msxml2.XMLHTTP');   
 		  
@@ -86,16 +85,15 @@ function refreshBusLigne(delai, map, zoom){
 		  
 		    xhr.onreadystatechange  = function() { 
 		       if(xhr.readyState  == 4){
-			       	var label = document.getElementById("label");
+			      // 	var label = document.getElementById("label");
 			       	var bus, id_bus, lat, lng, alt, mat, nom_ligne, ladate, heure, vitesse;
 			       	
 			       	
 			        if(xhr.status  == 200) {
 			        	var valeur = xhr.responseText;
 			           
-			           //console.log(ligne.value);
-			           label.innerText = valeur;
-
+			           //label.innerText = valeur;
+			           console.log(valeur)
 			           //recuperer l'ensemble des données et l'afficher sur la carte
 			           res = valeur.split("*");
 			          
@@ -113,19 +111,23 @@ function refreshBusLigne(delai, map, zoom){
 			           map.getLayers()['a'][0].getSource().refresh();
 			       	}
 			        else{
-			            label.innerText ="Error code " + xhr.status;
+			           // label.innerText ="Error code " + xhr.status;
 			        }
 		        }
 		    }; 
 		 
-		   
+		 	xhr.open("POST", "position_bus.php",  true); 
+		   xhr.setRequestHeader("Access-Control-Allow-Methods", "REQUEST,GET,HEAD,OPTIONS,POST,PUT");
+		   xhr.setRequestHeader("Access-Control-Allow-Headers","Content-Type, Access-Control-Allow-Headers,Access-Control-Allow-Origin, Authorization, X-Requested-With, Access-Control-Allow-Methods");
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 		   if(ligne.value == "")  {
-			   	xhr.open("POST", "position_bus.php",  true); 
-			   	xhr.send(null);
+			   	
+			   	xhr.send("ligne=10");
+			   	console.log("jnj");
 		   	} 
 		   else{
-			   	xhr.open("POST", "position_bus.php",  true); 
-			    xhr.send(ligne.value); 
+			    xhr.send("ligne="+ligne.value); 
+			    console.log(ligne.value);
 			}
 
     	},

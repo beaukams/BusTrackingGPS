@@ -53,17 +53,18 @@ class BDD(Thread):
 	def insert(self, req=""""""):
 		"""executer une requete"""
 		if self.running == True:
-			self.cursor.execute(req)
+			self.cursor.execute((req))
+			self.conn.commit()
 
 	def update(self, req=""""""):
 		"""executer une requete"""
 		if self.running == True:
 			self.cursor.execute(req)
+			self.conn.commit()
 
 	def execute(self, req=""""""):
 		"""executer une requete"""
-		if self.running == True:
-			self.cursor.execute(req)
+		self.cursor.execute(req)
 
 	def getIdArret(self, nom_arret):
 		"""retourne l'arret correspondant au nom de l'arret"""
@@ -82,9 +83,11 @@ class BDD(Thread):
 
 	def getIdBus(self, matricule):
 		"""retourne l'arret correspondant au nom de l'arret"""
-		res = self.select("""SELECT id_bus FROM bus WHERE matricule_bus=%s""" %(matricule))
+		res = """SELECT id_bus FROM bus WHERE matricule_bus='%s'""" %matricule
+		res = self.select(res)
+
 		if len(res) == 1:
-			return res[0]
+			return res[0][0]
 		else:
 			return -1
 	def getArretParameters(self, nom_arret = "", id_arret = ""):
