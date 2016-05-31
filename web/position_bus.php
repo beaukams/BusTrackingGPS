@@ -3,7 +3,7 @@
 		header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
 		header('Access-Control-Allow-Credentials: true');
 		header('Access-Control-Allow-Methods:REQUEST, GET, POST');
-$_POST['ligne']="10";
+//$_POST['ligne']="10";
 	if(isset($_POST['ligne'])){
 		
 		

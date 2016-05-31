@@ -42,7 +42,7 @@
 			<table>
 				<tr>
 						<td  align="right" bgcolor=""><h4>Saisissez une ligne de bus</h4></td>
-						<td  align="center" width="5"><input type="text" id="bussearch" name="search" width="500"/></td>
+						<td  align="center" width="5"><input type="number" id="bussearch" name="search" width="500"/></td>
 						<td align="center" width="5"><input type="submit"   name="rechercher" value="Localiser" id="search-btn2"/></td>
 						</tr>
 				</table>

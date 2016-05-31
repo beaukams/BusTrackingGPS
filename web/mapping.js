@@ -1,6 +1,9 @@
 /* Creation d'un tableau qui va contenir nos donnes */
-var map = L.map('map'),
-            trail = {
+window.onload=function(){
+	var delai = 10, delaimax;
+	var ligne = document.getElementById("bussearch");
+	var map = L.map('map'),
+    trail = {
 			        type: 'Feature',
 			        properties: {
 			            id: 1
@@ -11,16 +14,35 @@ var map = L.map('map'),
 			        }
 			    },
 			    realtime = L.realtime(function(success, error) {
-			        L.Realtime.reqwest({
-			            url: 'http://localhost/gpstracking/web/position_bus.php',
-			            crossOrigin: true,
-			            type: 'json'
-			        })
-			        .then(function(data) {
+			    	var data;
+			    	console.log(ligne.value);
+			    	if(!ligne.value){
+			    		data = "10";
+			    		
+			    	}
+			    	else{
+			    		data = ligne.value;
+
+	}
+
+
+
+	L.Realtime.reqwest({
+		url: 'http://localhost/gpstracking/web/position_bus.php',
+		method: "post",
+		crossOrigin: true,
+		type: 'json',
+		data: {'ligne': data}
+	}).then(function(data) {
 			        	
 			            var trailCoords = trail.geometry.coordinates;
 			            trailCoords.push([data.position.lng, data.position.lat]);
 			            trailCoords.splice(0, Math.max(0, trailCoords.length - 5));
+
+			            var marker = L.marker([data.position.lat, data.position.lng]).addTo(map);
+                        marker.bindPopup("Dakar")
+                              .on('mouseover', function(e){ marker.openPopup(); })
+                              .on('mouseout', function(e){ marker.closePopup(); });
 			            success({
 			                type: 'FeatureCollection',
 			                features: [data, trail]
@@ -28,13 +50,17 @@ var map = L.map('map'),
 			        })
 			        .catch(error);
 			    }, {
-			        interval: 20 * 1000
+			        interval: 10 * 1000
 			    }).addTo(map);
-
-			L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			    //http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
+			  
+			L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 			    attribution: 'DIC2TRS-ESP'
 			}).addTo(map);
 
 			realtime.on('update', function() {
-			    map.fitBounds(realtime.getBounds(), {maxZoom: 10});
-			});
+			    map.fitBounds(realtime.getBounds(), {maxZoom: 15});
+	});
+}
+
+
