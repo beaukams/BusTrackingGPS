@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)http://www.coursinformatique.net/php/recuperer-les-valeurs-des-checkbox-avec-php.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+<title>Récupérer les valeurs des checkbox d'un formulaire avec PHP</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<meta name="description" content="Exemple php complet pour récupérer les valeurs des checkbox qui sont cochées dans un formulaire html">
+
+<meta name="robots" content="follow,index">
+
+<!--<base href="http://www.coursinformatique.net/">--><base href=".">
+
+
+<link href="./Récupérer les valeurs des checkbox d&#39;un formulaire avec PHP_files/css" rel="stylesheet" type="text/css">
+
+
+<link href="./Récupérer les valeurs des checkbox d&#39;un formulaire avec PHP_files/global.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+
+<div class="page">
+
+	<div class="header">
+	<a href="http://www.coursinformatique.net/">Cours Informatique</a>
+	</div>
+	
+	<div class="content">
+	
+		
+
+
+<div class="content-left">
+
+	<h1>Récupérer les valeurs des checkbox avec PHP</h1>
+	
+	<p class="article-subtitle">récupération des valeurs des checkbox cochées dans un formulaire</p>
+	
+	
+	<p>Dans ce tutoriel PHP, nous allons voir comment faire pour récupérer les valeurs des checkbox qui sont cochées dans un formulaire html. Pour ce faire, nous allons utiliser deux notions de PHP: les tableaux et la structure foreach.</p>
+
+
+<h2>Première étape: créer un formulaire html avec des checkbox</h2>
+<p>Pour pouvoir récupérer les valeurs des checkbox cochées par vos visiteurs, vous devez nommer les checkbox du formulaire avec des crochets [], c'est grâce à cette notation que PHP peut comprendre que plusieurs valeurs peuvent potentiellement être envoyées dans un groupe de checkbox.</p>
+
+<pre class="prettyprint"><code>&lt;form action="index.php" method="post"&gt;
+   &lt;input type="checkbox" name="prenom[]" value="adriana" /&gt;Adriana&lt;br&gt;
+   &lt;input type="checkbox" name="prenom[]" value="alessandra" /&gt;Alessandra&lt;br&gt;
+   &lt;input type="checkbox" name="prenom[]" value="candice" /&gt;Candice&lt;br&gt;
+   &lt;input type="checkbox" name="prenom[]" value="lili" /&gt;Lili&lt;br&gt;
+   &lt;input type="submit" value="Envoyer" /&gt;
+&lt;/form&gt;
+</code></pre>
+
+<p>Dans l'exemple ci-dessous, vous pouvez voir que la valeur donnée à l'attribut "name" des checkbox est "prenom[]" et pas "prenom".</p>
+
+<h2>Deuxième étape: récupérer la valeur des checkbox</h2>
+<p>La notation par crochets placée dans l'attribut "name" des checkbox va nous permettre de récupérer leur valeur très facilement en utilisant la structure foreach(). En effet, foreach() va lire une par une les lignes du tableau dans lequel ont été insérées les valeurs cochées par l'utilisateur une fois qu'il a cliqué sur le bouton "envoyer" du formulaire.</p>
+
+
+<pre class="prettyprint"><code>// Le tableau $_POST['prenom'] contient les valeurs des checkbox cochées
+foreach($_POST['prenom'] as $valeur)
+{
+   echo "La checkbox $valeur a été cochée&lt;br&gt;";
+}
+
+/*
+Si l'utilisateur coche Adriana et Candice, 
+cet exemple va afficher:
+La checkbox Adriana a été cochée
+La checkbox Candice a été cochée
+*/
+</code></pre>
+
+<p>Dans cet exemple, toutes les valeurs cochées se trouvent dans le tableau $_POST['prenom'] , "prenom" étant le nom que nous avons donné aux checkbox dans le formulaire. Ensuite, la structure foreach() lit une par une les lignes du tableau et la valeur de chaque ligne est renvoyée dans la variable $valeur.</p>
+
+<p>La traduction en français de cet exemple est la suivante: pour chaque ligne présente dans le tableau prenom, afficher sa valeur.</p>
+
+<p>Si aucune checkbox n'a été cochée, le tableau PHP sera vide et aucune valeur ne sera retournée dans la boucle foreach().</p>
+
+<pre class="prettyprint"><code>if(!$_POST['prenom']){
+   echo "Aucune checkbox n'a été cochée";
+}
+</code></pre>	
+</div>
+
+<div class="content-right">
+</div>
+
+<div class="clear"></div>
+
+
+	
+	<hr>
+	<h3>Vous avez besoin d'aide sur votre projet informatique?</h3>
+
+	<p>Vous avez des difficultés pour finaliser votre projet?</p>
+	<p>Vous avez besoin de l'aide de professionnels? <a href="http://www.coursinformatique.net/contact.php">Contactez-nous, nous pouvons vous aider</a></p>
+	<hr>
+
+<div>
+</div>		
+	</div><!-- content -->
+	
+</div><!-- page -->
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=9217118; 
+var sc_invisible=1; 
+var sc_security="640786e5"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script><script type="text/javascript" src="./Récupérer les valeurs des checkbox d&#39;un formulaire avec PHP_files/counter.js"></script>
+<noscript>&lt;div class="statcounter"&gt;&lt;a title="free hit
+counters" href="http://statcounter.com/free-hit-counter/"
+target="_blank"&gt;&lt;img class="statcounter"
+src="http://c.statcounter.com/9217118/0/640786e5/1/"
+alt="free hit counters"&gt;&lt;/a&gt;&lt;/div&gt;</noscript>
+<!-- End of StatCounter Code for Default Guide --><!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=9209093; 
+var sc_invisible=0; 
+var sc_security="a2e79947"; 
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script><script type="text/javascript" src="./Récupérer les valeurs des checkbox d&#39;un formulaire avec PHP_files/counter.js"></script><span class="statcounter"><a class="statcounter" href="http://www.statcounter.com/" target="_blank"><img src="./Récupérer les valeurs des checkbox d&#39;un formulaire avec PHP_files/t.php" alt="StatCounter - Free Web Tracker and Counter" border="0"></a></span>
+
+<noscript>&lt;div class="statcounter"&gt;&lt;a title="create counter"
+href="http://statcounter.com/free-hit-counter/"
+target="_blank"&gt;&lt;img class="statcounter"
+src="http://c.statcounter.com/9209093/0/a2e79947/0/"
+alt="create counter"&gt;&lt;/a&gt;&lt;/div&gt;</noscript>
+<!-- End of StatCounter Code for Default Guide --><script src="./Récupérer les valeurs des checkbox d&#39;un formulaire avec PHP_files/run_prettify.js"></script>
+
+</body></html>

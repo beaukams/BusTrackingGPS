@@ -11,6 +11,7 @@ from threading import *
 from math import *
 from serveurSMS import *
 from serveurBDD import *
+import time
 
 precision_gps = 10 # precision du GPS: 10m
 distance_arrets = 100 # distance maximale à vol d'oiseau entre 2 arrets successifs
@@ -297,16 +298,23 @@ class Serveur(Thread):
 	"""
 	def __init__(self):
 		#self.serialServer = SerialServer()
-		self.bdd = BDD() #la base de donnees
+		Thread.__init__(self)
+		
 		self.running = True
+		self.start()
 
 	def run(self):
 		"""
 			méthode de running
 		"""
 		while self.running == True:
-			""""""
+			self.bdd = BDD() #la base de donnees
+			self.traitement()
+			self.bdd.tostop()
 	
+	def stop(self):
+		self.running = False
+
 	def traitement(self):
 		"""
 			permet le traitement du serveur. 
@@ -316,21 +324,32 @@ class Serveur(Thread):
 		tab = self.bdd.getSMSRecu()
 
 		if  tab != []:
+			print "nouveau SMS: "
 			sms = tab[1].split(" ")
-			id_sms = tab[0]
+			id_sms = int(tab[0])
 			dest = tab[2]
 			ladate = tab[3]
 			heure = tab[4]
 
 			#traitement
 			if sms[0] == "bus": #localisation du bus: on crée le bus et remplit les autres tables de la base de donnees
+				print "bus\n"
 				bus = Bus(sms[1], self.bdd)
 				bus.updateCurrentPosition(sms[4], sms[5], sms[6], sms[7], sms[9], sms[10])
+				print "suppression reussie %s" %id_sms
+				self.bdd.delSMSRecu(id_sms)
 
 			elif sms[0] == "sup": #message de controle du bus
 				a=9
+				self.bdd.delSMSRecu(id_sms)
+				print "configuration bus\n"
 			else: #client
 				a=9
+				print "client\n"
+		else:
+			print "pas de sms"
+
+		time.sleep(2)
 			
 
 
@@ -339,6 +358,6 @@ class Serveur(Thread):
 
 if __name__ == "__main__":
 	a = Serveur()
-	print a.traitement()
+	
 
 	

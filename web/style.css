@@ -1,171 +1,504 @@
+/*
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Big Business 2.0
+Description: A two-column, fixed-width design with a bright color scheme.
+Version    : 1.0
+Released   : 20120624
+*/
+
+#avant-map 
+{
+width:100%;
+height: 145px;
+font-family: 'Raleway', sans-serif;
+text-align:center;
+color :#444;
+margin-top : 40px;
+padding-left : 25%;
+}
+
+#cover-map 
+{
+	position: relative;
+	margin: 45px 45px 0px 45px;
+	width: 890px;
+	height:600px;
+}
+
 #map {
- width: 600px;
- height: 300px;
- border: 1px solid #000;
+	width: 890px;
+	height: 550px;
+	border: solid 1px #D4D4D4;
+	border-radius: 3px;
 }
-body
+
+#search-btn2 {
+  color: white;
+  background: url(images/blue-btn.png);
+  padding: 2px 30px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: underline;
+	color: #0F8C8C;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+body {
+	font-size: 11.5pt;
+	color: #5C5B5B;
+	line-height: 1.75em;
+	background: #E0DCDC url(images/img01.gif) repeat-x top left;
+}
+
+body,input {
+	font-family: Georgia, serif;
+}
+
+strong {
+	color: #2C2B2B;
+}
+
+br.clearfix {
+	clear: both;
+}
+
+h1,h2,h3,h4 {
+	font-weight: normal;
+	letter-spacing: -1px;
+}
+
+h2 {
+	font-size: 2.25em;
+	color:#00acef; font-weight: 700;
+	margin-bottom: 1em;
+}
+p
+
 {
-background-image: url("");
-background-color: ;
-background-repeat: no-repeat; 
-background-attachment: fixed; 
-background-size: cover; 
+	font-size: 15px;
+	color:#000; font-weight: 400;
+	margin-bottom: 1em;
 }
 
-a
-{
-color: blue;
-}
-o
-{
-font-family:Comic Sans MS;
-font-style : italic;
+h3,h4 {
+	color: #2C2B2B;
+	margin-bottom: 1em;
 }
 
+h3 {
+	font-size: 1.75em;
+}
 
+h4 {
+	font-size: 1.5em;
+}
 
-/*----------------------------
-	CSS3 Animated Navigation
------------------------------*/
+img.alignleft {
+	margin: 5px 20px 20px 0;
+	float: left;
+}
 
+img.aligntop {
+	margin: 5px 0 20px 0;
+}
 
-.fancyNav{
-	/* Affects the UL element */
+img.pic {
+	padding: 5px;
+	border: solid 1px #D4D4D4;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+ul {
+	margin-bottom: 1.5em;
+}
+
+ul h4 {
+	margin-bottom: 0.35em;
+}
+
+.box {
 	overflow: hidden;
+	margin-bottom: 6em;
+}
+
+.date {
+	background: #6E6E6E;
+	padding: 5px 6px 5px 6px;
+	margin: 0 6px 0 0;
+	color: #FFFFFF;
+	font-size: 0.8em;
+	border-radius: 2px;
+}
+
+#content {
+	width: 665px;
+	float: left;
+	padding: 0;
+}
+
+#content-box1 {
+	width: 320px;
+	float: left;
+	
+}
+
+#content-box2 {
+	margin: 0 0 0 545px;
+	width: 320px;
+	
+}
+
+#footer {
+	margin: 40px 0 120px 0;
+	text-align: center;
+	color: #8C8B8B;
+	text-shadow: 0 1px 0 #FFFFFF;
+}
+
+#footer a {
+	color: #8C8B8B;
+}
+
+#header {
+	height: 75px;
+	position: relative;
+	background: #6E6E6E url(images/img03.jpg) top left no-repeat;
+	padding: 45px;
+	color: #FFFFFF;
+	width: 888px;
+	border: solid 1px #7E7E7E;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	overflow: hidden;
+}
+
+#logo {
+	line-height: 160px;
+	height: 160px;
+	padding: 5px 0 0 0;
+	position: absolute;
+	top: 0;
+	left: 45px;
+}
+
+#logo a {
+	text-decoration: none;
+	color: #FFFFFF;
+	text-shadow: 0 1px 1px #3E3E3E;
+}
+
+#logo h1 {
+	font-size: 3.25em;
+}
+
+#slogan {
+	line-height: 160px;
+	height: 160px;
+	padding: 5px 0 0 0;
+	position: absolute;
+	right: 45px;
+	top: 0;
+}
+
+#slogan h2 {
+	color: #BEBEBE;
+	font-size: 1.25em;
+	text-shadow: 0 1px 1px #3E3E3E;
+}
+#name {
+	line-height: 160px;
+	height: 160px;
+	padding: 5px 0 0 0;
+	position: absolute;
+	left: 310px;
+	top: 0;
+	
+}
+
+#name h2 {
+	color: #BEBEBE;
+	text-shadow: 0 1px 1px #3E3E3E;
+	font-weight: 700;
+}
+
+#menu {
+	padding: 0 45px 0 45px;
+	position: relative;
+	background: #209D9D url(images/img02.gif) repeat-x top left;
+	margin: 0;
+	height: 60px;
+	width: 890px;
+	border-top: solid 1px #5AD7D7;
+	border-bottom: solid 1px #1C7575;
+	text-shadow: 0 1px 1px #007D7D;
+}
+
+#menu ul {
+	list-style: none;
+	padding-top: 12px;
+	position: relative;
+	left: -15px;
+}
+
+#menu ul li {
+	padding: 5px 15px 5px 15px;
+	margin-right: 10px;
 	display: inline-block;
 }
 
-.fancyNav li{
-	/* Specifying a fallback color and we define CSS3 gradients for the major browsers: */
-	
-	background-color: #f0f0f0;
-	background-image: -webkit-gradient(linear,left top, left bottom,from(#fefefe), color-stop(0.5,#f0f0f0), color-stop(0.51, #e6e6e6));
-	background-image: -moz-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
-	background-image: -o-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
-	background-image: -ms-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
-	background-image: linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
-	
-	border-right: 1px solid rgba(9, 9, 9, 0.125);
-	
-	/* Adding a 1px inset highlight for a more polished efect: */
-	
-	box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
-	-moz-box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
-	-webkit-box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
-	
-	position:relative;
-	
-	float: left;
+#menu ul li a, #menu ul li span {
+	text-decoration: none;
+	color: #FFFFFF;
+	letter-spacing: -1px;
+	font-size: 1.25em;
+}
+
+#menu ul li span b {
+	display: inline-block;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 7px solid #1C7575;
+	margin-left: 8px;
+	position: relative;
+	top: -1px;
+}
+
+#menu ul li.active {
+	background: #1C7575;
+	border-top: solid 1px #1A6B6B;
+	border-bottom: solid 1px #5AD7D7;
+	border-radius: 3px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+#menu ul li.active span b {
+	border-top-color: #165E5E;
+}
+
+.dropotron {
+	background: rgba(32,157,157,0.9);
+	border-top: solid 1px #5AD7D7;
+	border-bottom: solid 1px #1C7575;
+	text-shadow: 0 1px 1px #007D7D;
+	list-style: none;
+	margin: 0;
+	padding: 15px 10px 15px 10px;
+	min-width: 200px;
+	border-radius: 6px;
+	box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.2);
+}
+
+.dropotron a, .dropotron span {
+	color: #FFFFFF;
+	text-decoration: none;
+	letter-spacing: -1px;
+	display: block;
+	width: 100%;
+	position: relative;
+}
+
+.dropotron span b {
+	display: inline-block;
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	border-left: 7px solid #1C7575;
+	position: absolute;
+	right: 0px;
+	top: 7px;
+}
+
+.dropotron li:hover span b {
+	border-left-color: #165E5E;
+}
+
+.dropotron li {
+	padding: 3px 10px 3px 10px;
+	margin: 2px 0 2px 0;
+	border-radius: 3px;
+}
+
+.dropotron li:hover, .dropotron li.active {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background: rgba(28,117,117,0.9);
+	border-top: solid 1px #1A6B6B;
+	border-bottom: solid 1px #5AD7D7;
+}
+
+.dropotron-level-1 {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+#page {
+	padding: 45px 45px 15px 45px;
+	position: relative;
+	width: 890px;
+	margin: 0;
+}
+
+#page .section-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+#page .section-list li {
+	clear: both;
+	padding: 30px 0 30px 0;
+}
+
+#page ul {
 	list-style: none;
 }
 
-.fancyNav li:after{
-
-	/* This creates a pseudo element inslide each LI */	
-	
-	content:'.';
-	text-indent:-9999px;
-	overflow:hidden;
-	position:absolute;
-	width:100%;
-	height:100%;
-	top:0;
-	left:0;
-	z-index:1;
-	opacity:0;
-	
-	/* Gradients! */
-	
-	background-image:-webkit-gradient(linear, left top, right top, from(rgba(168,168,168,0.5)),color-stop(0.5,rgba(168,168,168,0)), to(rgba(168,168,168,0.5)));
-	background-image:-moz-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
-	background-image:-o-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
-	background-image:-ms-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
-	background-image:linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
-	
-	/* Creating borders with box-shadow. Useful, as they don't affect the size of the element. */
-	
-	box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff,1px 0 0 #a3a3a3,2px 0 0 #fff;
-	-moz-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff,1px 0 0 #a3a3a3,2px 0 0 #fff;
-	-webkit-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff,1px 0 0 #a3a3a3,2px 0 0 #fff;
-	
-	/* This will create a smooth transition for the opacity property */
-	
-	-moz-transition:0.25s all;
-	-webkit-transition:0.25s all;
-	-o-transition:0.25s all;
-	transition:0.25s all;
+#page ul li {
+	border-top: dotted 1px #C4C4C4;
+	padding: 15px 0 15px 0;
 }
 
-/* Treating the first LI and li:after elements separately */
-
-.fancyNav li:first-child{
-	border-radius: 4px 0 0 4px;
+#page ul li.first {
+	padding-top: 0;
+	border-top: 0;
 }
 
-.fancyNav li:first-child:after,
-.fancyNav li.selected:first-child:after{
-	box-shadow:1px 0 0 #a3a3a3,2px 0 0 #fff;
-	-moz-box-shadow:1px 0 0 #a3a3a3,2px 0 0 #fff;
-	-webkit-box-shadow:1px 0 0 #a3a3a3,2px 0 0 #fff;
-	
-	border-radius:4px 0 0 4px;
-}
-
-.fancyNav li:last-child{
-	border-radius: 0 4px 4px 0;
-}
-
-/* Treating the last LI and li:after elements separately */
-
-.fancyNav li:last-child:after,
-.fancyNav li.selected:last-child:after{
-	box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff;
-	-moz-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff;
-	-webkit-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff;
-	
-	border-radius:0 4px 4px 0;
-}
-
-.fancyNav li:hover:after,
-.fancyNav li.selected:after,
-.fancyNav li:target:after{
-	/* This property triggers the CSS3 transition */
-	opacity:1;
-}
-
-.fancyNav:hover li.selected:after,
-.fancyNav:hover li:target:after{
-	/* Hides the targeted li when we are hovering on the UL */
-	opacity:0;
-}
-
-.fancyNav li.selected:hover:after,
-.fancyNav li:target:hover:after{
-	opacity:1 !important;
-}
-
-/* Styling the anchor elements */
-
-.fancyNav li a{
-	color: #5d5d5d;
-	display: inline-block;
-	font: 20px/1 Lobster,Arial,sans-serif;
-	padding: 12px 35px 14px;
+#page-bottom {
 	position: relative;
-	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
-	z-index:2;
-	text-decoration:none !important;
-	white-space:nowrap;
+	margin: 0;
+	background: #6E6E6E url(images/img03.jpg) top left no-repeat;
+	border: solid 1px #7E7E7E;
+	width: 888px;
+	padding: 45px 45px 0 45px;
+	color: #DCDCDC;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	text-shadow: 0 1px 1px #444444;
 }
 
-.fancyNav a.homeIcon{
-	background:url('../img/home.png') no-repeat center center;
-	display: block;
-	overflow: hidden;
-	padding-left: 12px;
-	padding-right: 12px;
-	text-indent: -9999px;
-	width: 16px;
+#page-bottom a {
+	color: #F5F5F5;
 }
 
+#page-bottom h2, #page-bottom h3, #page-bottom h4 {
+	color: #FFFFFF;
+}
 
+#page-bottom ul {
+	list-style: none;
+}
+
+#page-bottom ul li {
+	border-top: dotted 1px #8F8F8F;
+	padding: 15px 0 15px 0;
+}
+
+#page-bottom ul li.first {
+	padding-top: 0;
+	border-top: 0;
+}
+
+#page-bottom-content {
+	width: 665px;
+	float: left;
+}
+
+#page-bottom-sidebar {
+	width: 200px;
+	margin: 0 0 0 690px;
+}
+
+#search input.form-submit {
+	margin-left: 1em;
+	color: #FFFFFF;
+	padding: 10px;
+	background: #2FACAC;
+	border: 0;
+}
+
+#search input.form-text {
+	border: solid 1px #8F8F8F;
+	padding: 10px;
+}
+
+#sidebar {
+	width: 200px;
+	padding: 0;
+	margin: 0 0 0 690px;
+}
+
+#slider {
+	position: relative;
+	margin: 45px 45px 0px 45px;
+	width: 890px;
+
+}
+
+#slider .viewer {
+	width: 890px;
+	height: 270px;
+	border: solid 1px #D4D4D4;
+	border-radius: 3px;
+}
+
+#slider .slide {
+	width: 890px;
+	height: 250px;
+	padding: 10px;
+}
+
+#slider .indicator {
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	margin: 20px 0 0 0;
+}
+
+#slider .indicator span {
+	display: inline-block;
+	text-indent: -9999em;
+	width: 12px;
+	height: 12px;
+	background: #E3DFDF;
+	border-radius: 6px;
+	margin: 0 2px 0 2px;
+}
+
+#slider .indicator span.active {
+	background: #6E6E6E;
+}
+
+#wrapper {
+	position: relative;
+	width: 980px;
+	margin: 15px auto 0 auto;
+	background: #FFFFFF;
+	border-radius: 6px;
+	box-shadow: 0px 5px 20px 2px rgba(0,0,0,0.1);
+}
+
+h5 { font-family: 'Raleway', sans-serif; font-size: 13px; color:#4a4a4a; font-weight:700; }
+h5 strong { color:#00acef; font-weight: 600; }
+
+#content a.blue-btn { background: url(images/blue-btn.png) repeat 0 0; width: 150px; height: 39px; text-shadow: rgba(0,0,0,0.5) 0px 1px 0px;  position: absolute; top: 26%; margin-top: 0px;  right: 509px; display: block; font-size: 16px; font-weight: 500; color:#fff; text-align: center; line-height: 39px; border: 2px solid #0a7fb5; border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; -o-border-radius: 6px; text-decoration: none; font-weight: 500; font-family: 'Raleway', sans-serif; text-shadow: rgba(0,0,0,0.5) 0px 1px 1px;}
+#content a.blue-btn:hover { background-position:0 bottom; }
+#presentation2{background: url(../images/bus3.jpg); background-size: cover;text-align:center;color:black; width:100%;height:600px;font-family: 'Raleway', sans-serif;  line-height: 43px; font-size: 16px; font-weight:700; margin-top:280px}
+#photo_presentation{float:bottom;}
+#presentation3 { text-align:center;color:#4a4a4a; width:100;height:500px; background: #f1f1f1;border: 5px solid #e5e5e5; padding: 0px 0px 0px 2px; margin-left: 150px; margin-right: 200px;margin-top:20px;position: absolute; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px;  }

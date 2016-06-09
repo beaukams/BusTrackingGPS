@@ -1,0 +1,2979 @@
+<!DOCTYPE html>
+<!-- saved from url=(0102)http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/ -->
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="fr" id="vbulletin_html"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<!--<base href="http://www.developpez.net/forums/">--><base href="."><!--[if IE]></base><![endif]-->
+	
+<meta id="e_vb_meta_bburl" name="vb_meta_bburl" content="http://www.developpez.net/forums">
+
+<meta name="generator" content="vBulletin 4.2.2">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+
+	<link rel="Shortcut Icon" href="http://www.developpez.net/forums/favicon.ico" type="image/x-icon">
+
+
+
+
+
+
+
+
+	
+		<script type="text/javascript" async="" src="./récupérer et traiter les valeur de plusieur checkbox_files/ga.js"></script><script type="text/javascript" src="./récupérer et traiter les valeur de plusieur checkbox_files/yuiloader-dom-event.js"></script>
+	
+
+<script type="text/javascript">
+<!--
+	if (typeof YAHOO === 'undefined') // Load ALL YUI Local
+	{
+		document.write('<script type="text/javascript" src="http://www.developpez.net/forums/clientscript/yui/yuiloader-dom-event/yuiloader-dom-event.js?v=422"><\/script>');
+		document.write('<script type="text/javascript" src="http://www.developpez.net/forums/clientscript/yui/connection/connection-min.js?v=422"><\/script>');
+		var yuipath = 'clientscript/yui';
+		var yuicombopath = '';
+		var remoteyui = false;
+	}
+	else	// Load Rest of YUI remotely (where possible)
+	{
+		var yuipath = 'http://ajax.googleapis.com/ajax/libs/yui/2.9.0/build';
+		var yuicombopath = '';
+		var remoteyui = true;
+		if (!yuicombopath)
+		{
+			document.write('<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/yui/2.9.0/build/connection/connection-min.js?v=422"><\/script>');
+		}
+	}
+	var SESSIONURL = "";
+	var SECURITYTOKEN = "guest";
+	var IMGDIR_MISC = "images/misc";
+	var IMGDIR_BUTTON = "images/buttons";
+	var vb_disable_ajax = parseInt("0", 10);
+	var SIMPLEVERSION = "422";
+	var BBURL = "http://www.developpez.net/forums";
+	var LOGGEDIN = 0 > 0 ? true : false;
+	var THIS_SCRIPT = "showthread";
+	var RELPATH = "showthread.php?t=1166653";
+	var PATHS = {
+		forum : "",
+		cms   : "",
+		blog  : ""
+	};
+	var AJAXBASEURL = "http://www.developpez.net/forums/";
+// -->
+</script><script type="text/javascript" src="./récupérer et traiter les valeur de plusieur checkbox_files/connection-min.js"></script>
+<script type="text/javascript" src="./récupérer et traiter les valeur de plusieur checkbox_files/vbulletin-core.js"></script>
+<script type="text/javascript" src="./récupérer et traiter les valeur de plusieur checkbox_files/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="./récupérer et traiter les valeur de plusieur checkbox_files/anokha_showthread.js"></script>
+<script type="text/javascript" src="./récupérer et traiter les valeur de plusieur checkbox_files/ano_votes.js"></script>
+
+
+
+	<link rel="alternate" type="application/rss+xml" title="Forum du club des développeurs et IT Pro Flux RSS" href="http://feeds.feedburner.com/VBSEO_FEEDBURNER">
+	
+		<link rel="alternate" type="application/rss+xml" title="Forum du club des développeurs et IT Pro - Formulaires - Flux RSS" href="http://www.developpez.net/forums/external.php?type=RSS2&amp;forumids=617">
+	
+
+
+
+	<link rel="stylesheet" type="text/css" href="./récupérer et traiter les valeur de plusieur checkbox_files/css.php">
+
+	<!--[if lt IE 8]>
+	<link rel="stylesheet" type="text/css" href="http://www.developpez.net/forums/css.php?styleid=7&amp;langid=2&amp;d=1464188161&amp;td=ltr&amp;sheet=popupmenu-ie.css,vbulletin-ie.css,vbulletin-chrome-ie.css,vbulletin-formcontrols-ie.css,editor-ie.css" />
+	<![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="./récupérer et traiter les valeur de plusieur checkbox_files/gabarit.css">
+	<link rel="stylesheet" type="text/css" href="./récupérer et traiter les valeur de plusieur checkbox_files/kha_blogs.css">
+
+	<!--[if lt IE 7]>
+	<script src="/template/ie7/IE7.js" type="text/javascript"></script>
+	<![endif]-->
+
+	<!--[if IE 6]>
+	<link rel="stylesheet" type="text/css" href="/template/gabarit-ie6.css" />
+	<![endif]-->
+
+	<!--[if IE 7]>
+	<link rel="stylesheet" type="text/css" href="/template/gabarit-ie7.css" />
+	<![endif]-->
+
+	<!--[if IE 8]>
+	<link rel="stylesheet" type="text/css" href="/template/gabarit-ie8.css" />
+	<![endif]-->
+
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="/template/kit/html5_ie.js"></script>
+	<![endif]--><style type="text/css">
+.doc_header { height: 85px; }
+.above_body { margin-right: 338px !important; }
+.navbar { top: -80px !important; }
+.pagination_top { margin-right: 320px; }
+#social_bookmarks_list li { display: inline; float: none; }
+#breadcrumb ul.floatcontainer { clear: both; position: relative; top: -40px; padding-right: 338px; }
+#thread_controls { float: none; width: auto; margin-right: 320px; height: 30px; }
+</style>
+
+	<meta name="keywords" content="récupérer,traiter,plusieur,checkbox,récupérer, traitement-formulaire.php, traiter, checkbox, valeurs, surement, recupérer, faire, sais, array, boucle, merci, formulaire.php, grace, puis, ensuite, apres, avoir, valider, voila, bonjour, valeur, plusieur, formulaire, suivant, chacune, champ, publier, modifier, pouvoir, voudrais, chaque, cochées">
+	<meta name="description" content="bonjour, voila, apres avoir valider le formulaire suivant je voudrais dans &quot;traitement-formulaire.php&quot; récupérer les valeurs de chaque">
+
+	<title> récupérer et traiter les valeur de plusieur checkbox</title>
+	<link rel="canonical" href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/">
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+		<link rel="stylesheet" type="text/css" href="./récupérer et traiter les valeur de plusieur checkbox_files/css(1).php">
+	
+	<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="http://www.developpez.net/forums/css.php?styleid=7&amp;langid=2&amp;d=1464188161&amp;td=ltr&amp;sheet=toolsmenu-ie.css,postlist-ie.css,showthread-ie.css,postbit-ie.css,poll-ie.css" /><![endif]-->
+<link rel="stylesheet" type="text/css" href="./récupérer et traiter les valeur de plusieur checkbox_files/css(2).php">
+
+	<link rel="stylesheet" type="text/css" href="./récupérer et traiter les valeur de plusieur checkbox_files/css(3).php">
+
+
+<!--[if lt IE 8]>
+<link rel="stylesheet" type="text/css" href="http://www.developpez.net/forums/css.php?styleid=7&amp;langid=2&amp;d=1464188161&amp;td=ltr&amp;sheet=projecttools-ie.css" />
+<![endif]-->
+</head>
+
+<body>
+
+<header>
+
+<div id="gabarit_recherche">
+<form action="http://www.google.fr/" target="_blank">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-8110924381468607:6449306375">
+    <input type="hidden" name="ie" value="UTF-8">
+    <input type="text" name="q" size="12">
+    <input type="submit" name="sa" value="Rechercher">
+  </div>
+</form>
+</div>
+
+<div id="gabarit_superieur">
+	<nav>
+	<ul>
+		<li><a href="http://www.developpez.net/forums/" title="">Forums</a></li>
+		<li><a href="http://general.developpez.com/cours/" title="">Tutoriels</a></li>
+		<li><a href="http://magazine.developpez.com/" title="">Magazine</a></li>
+		<li><a href="http://general.developpez.com/faq/" title="">FAQs</a></li>
+		<li><a href="http://www.developpez.net/forums/blogs/" title="">Blogs</a></li>
+		<li><a href="http://chat.developpez.com/" title="">Chat</a></li>
+		<li><a href="http://www.developpez.com/newsletter/">Newsletter</a></li>
+		<li><a href="http://etudes.developpez.com/">Études</a></li>
+		<li><a href="http://emploi.developpez.com/" title="">Emploi</a></li>
+		<li><a href="http://club.developpez.com/">Club</a></li>
+		<li><a href="http://club.developpez.com/contacts/" title="">Contacts</a></li>
+	</ul>
+	</nav>
+</div>
+<div style="position: relative; clear: both; float: right; top: -2px; width: 745px; margin-top: 10px; margin-right: 5px; background-color: #E1E1E2">
+<div id="gabarit_pub0"></div><div id="oj9uv0i" style="display: inline-block; width: 728px; height: 90px"><style type="text/css">html, body { margin: 0; padding: 0; }</style><iframe src="./récupérer et traiter les valeur de plusieur checkbox_files/show_i.html" width="728" height="90" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe></div>
+</div>
+
+<div id="gabarit_logo">
+	<a href="http://www.developpez.com/" title="Accueil Developpez.com"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/logo.png" alt=""></a>
+</div>
+
+<nav>
+
+<div id="gabarit_mobile">
+	<img src="./récupérer et traiter les valeur de plusieur checkbox_files/logo-mobile.png" alt="">
+	<div>Developpez.com - <strong>PHP</strong></div>
+	<ul>
+		<li><a href="http://www.developpez.net/forums/f443/php/">Forums</a></li>
+		<li><span>Autre rubrique</span></li>
+	</ul>
+</div>
+
+<div id="gabarit_menu_mobile">
+	<div>X</div>
+	<p>Choisissez <span>d'abord la catégorie</span><span>ensuite la rubrique</span> :</p>
+	<ul><li></li></ul>
+</div>
+
+<ul id="gabarit_menu">
+	<li><a href="http://www.developpez.com/" data-idrub="1" data-niv="1">Accueil<span class="gabarit_tooltip">Actualités IT Pro</span></a>
+			</li>
+	<li><a href="http://alm.developpez.com/" data-idrub="42" data-niv="1">ALM<span class="gabarit_tooltip">Cycle de vie du logiciel</span></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="http://alm.developpez.com/" data-idrub="42" data-niv="2">ALM</a></li>
+				<li><a href="http://merise.developpez.com/" data-idrub="43" data-niv="2">Merise</a></li>
+				<li><a href="http://uml.developpez.com/" data-idrub="12" data-niv="2">UML</a></li>
+			</ul></li>
+	<li><a href="http://java.developpez.com/" data-idrub="4" data-niv="1">Java<span class="gabarit_tooltip">Plateforme et langage Java</span></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="http://java.developpez.com/" data-idrub="4" data-niv="2">Java</a></li>
+				<li><a href="http://javaweb.developpez.com/" data-idrub="97" data-niv="2">Java Web</a></li>
+				<li><a href="http://spring.developpez.com/" data-idrub="87" data-niv="2">Spring</a></li>
+				<li><a href="http://android.developpez.com/" data-idrub="95" data-niv="2">Android</a></li>
+				<li><a href="http://eclipse.developpez.com/" data-idrub="55" data-niv="2">Eclipse</a></li>
+				<li><a href="http://netbeans.developpez.com/" data-idrub="66" data-niv="2">NetBeans</a></li>
+			</ul></li>
+	<li><a href="http://dotnet.developpez.com/" data-idrub="20" data-niv="1">.NET<span class="gabarit_tooltip">Microsoft Framework .NET</span></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="http://dotnet.developpez.com/" data-idrub="20" data-niv="2">Microsoft DotNET</a></li>
+				<li><a href="http://dotnet.developpez.com/visual-studio/" data-idrub="84" data-niv="2">Visual Studio</a></li>
+				<li><a href="http://dotnet.developpez.com/aspnet/" data-idrub="83" data-niv="2">ASP.NET</a></li>
+				<li><a href="http://dotnet.developpez.com/csharp/" data-idrub="81" data-niv="2">C#</a></li>
+				<li><a href="http://dotnet.developpez.com/vbnet/" data-idrub="82" data-niv="2">VB.NET</a></li>
+				<li><a href="http://windowsphone.developpez.com/" data-idrub="105" data-niv="2">Windows Phone</a></li>
+				<li><a href="http://windows-azure.developpez.com/" data-idrub="107" data-niv="2">Microsoft Azure</a></li>
+			</ul></li>
+	<li><a href="http://web.developpez.com/" data-idrub="8" data-niv="1" class="gabarit_selection">Dév. Web<span class="gabarit_tooltip">Développement Web et Webmarketing</span></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="http://web.developpez.com/" data-idrub="8" data-niv="2">Développement Web</a></li>
+				<li><a href="http://ajax.developpez.com/" data-idrub="85" data-niv="2">AJAX</a></li>
+				<li><a href="http://apache.developpez.com/" data-idrub="71" data-niv="2">Apache</a></li>
+				<li><a href="http://asp.developpez.com/" data-idrub="10" data-niv="2">ASP</a></li>
+				<li><a href="http://css.developpez.com/" data-idrub="51" data-niv="2">CSS</a></li>
+				<li><a href="http://dart.developpez.com/" data-idrub="125" data-niv="2">Dart</a></li>
+				<li><a href="http://flash.developpez.com/" data-idrub="41" data-niv="2">Flash / Flex</a></li>
+				<li><a href="http://javascript.developpez.com/" data-idrub="45" data-niv="2">JavaScript</a></li>
+				<li><a href="http://php.developpez.com/" data-idrub="9" data-niv="2">PHP</a></li>
+				<li><a href="http://ruby.developpez.com/" data-idrub="53" data-niv="2">Ruby &amp; Rails</a></li>
+				<li><a href="http://typescript.developpez.com/" data-idrub="127" data-niv="2">TypeScript</a></li>
+				<li><a href="http://web-semantique.developpez.com/" data-idrub="111" data-niv="2">Web sémantique</a></li>
+				<li><a href="http://webmarketing.developpez.com/" data-idrub="80" data-niv="2">Webmarketing</a></li>
+				<li><a href="http://xhtml.developpez.com/" data-idrub="50" data-niv="2">(X)HTML</a></li>
+			</ul></li>
+	<li><a href="http://edi.developpez.com/" data-idrub="90" data-niv="1">EDI<span class="gabarit_tooltip">Environnements de Développement Intégré</span></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="http://edi.developpez.com/" data-idrub="90" data-niv="2">EDI</a></li>
+				<li><a href="http://4d.developpez.com/" data-idrub="39" data-niv="2">4D</a></li>
+				<li><a href="http://delphi.developpez.com/" data-idrub="2" data-niv="2">Delphi</a></li>
+				<li><a href="http://eclipse.developpez.com/" data-idrub="55" data-niv="2">Eclipse</a></li>
+				<li><a href="http://labview.developpez.com/" data-idrub="72" data-niv="2">LabVIEW</a></li>
+				<li><a href="http://netbeans.developpez.com/" data-idrub="66" data-niv="2">NetBeans</a></li>
+				<li><a href="http://matlab.developpez.com/" data-idrub="58" data-niv="2">MATLAB</a></li>
+				<li><a href="http://scilab.developpez.com/" data-idrub="120" data-niv="2">Scilab</a></li>
+				<li><a href="http://dotnet.developpez.com/visual-studio/" data-idrub="84" data-niv="2">Visual Studio</a></li>
+				<li><a href="http://wind.developpez.com/" data-idrub="74" data-niv="2">WinDev</a></li>
+				<li><a href="http://vb.developpez.com/" data-idrub="5" data-niv="2">Visual Basic 6</a></li>
+				<li><a href="http://lazarus.developpez.com/" data-idrub="96" data-niv="2">Lazarus</a></li>
+				<li><a href="http://qt-creator.developpez.com/" data-idrub="109" data-niv="2">Qt Creator</a></li>
+			</ul></li>
+	<li><a href="http://programmation.developpez.com/" data-idrub="119" data-niv="1">Programmation<span class="gabarit_tooltip">Programmation et langages de programmation applicatifs</span></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="http://programmation.developpez.com/" data-idrub="119" data-niv="2">Programmation</a></li>
+				<li><a href="http://algo.developpez.com/" data-idrub="47" data-niv="2">Débuter - Algorithmique</a></li>
+				<li><a href="http://jeux.developpez.com/" data-idrub="38" data-niv="2">2D - 3D - Jeux</a></li>
+				<li><a href="http://asm.developpez.com/" data-idrub="16" data-niv="2">Assembleur</a></li>
+				<li><a href="http://c.developpez.com/" data-idrub="3" data-niv="2">C</a></li>
+				<li><a href="http://cpp.developpez.com/" data-idrub="59" data-niv="2">C++</a></li>
+				<li><a href="http://go.developpez.com/" data-idrub="124" data-niv="2">Go</a></li>
+				<li><a href="http://objective-c.developpez.com/" data-idrub="117" data-niv="2">Objective C</a></li>
+				<li><a href="http://pascal.developpez.com/" data-idrub="7" data-niv="2">Pascal</a></li>
+				<li><a href="http://perl.developpez.com/" data-idrub="29" data-niv="2">Perl</a></li>
+				<li><a href="http://python.developpez.com/" data-idrub="27" data-niv="2">Python</a></li>
+				<li><a href="http://swift.developpez.com/" data-idrub="128" data-niv="2">Swift</a></li>
+				<li><a href="http://qt.developpez.com/" data-idrub="65" data-niv="2">Qt</a></li>
+				<li><a href="http://xml.developpez.com/" data-idrub="11" data-niv="2">XML</a></li>
+				<li><a href="http://general.developpez.com/cours/" data-idrub="21" data-niv="2">Autres</a></li>
+			</ul></li>
+	<li><a href="http://sgbd.developpez.com/" data-idrub="13" data-niv="1">SGBD<span class="gabarit_tooltip">Systèmes de Gestion de Bases de Données</span></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="http://sgbd.developpez.com/" data-idrub="13" data-niv="2">SGBD &amp; SQL</a></li>
+				<li><a href="http://4d.developpez.com/" data-idrub="39" data-niv="2">4D</a></li>
+				<li><a href="http://access.developpez.com/" data-idrub="19" data-niv="2">Access</a></li>
+				<li><a href="http://big-data.developpez.com/" data-idrub="126" data-niv="2">Big Data</a></li>
+				<li><a href="http://db2.developpez.com/" data-idrub="36" data-niv="2">DB2</a></li>
+				<li><a href="http://firebird.developpez.com/" data-idrub="73" data-niv="2">Firebird</a></li>
+				<li><a href="http://interbase.developpez.com/" data-idrub="32" data-niv="2">InterBase</a></li>
+				<li><a href="http://mysql.developpez.com/" data-idrub="31" data-niv="2">MySQL</a></li>
+				<li><a href="http://nosql.developpez.com/" data-idrub="114" data-niv="2">NoSQL</a></li>
+				<li><a href="http://postgresql.developpez.com/" data-idrub="33" data-niv="2">PostgreSQL</a></li>
+				<li><a href="http://oracle.developpez.com/" data-idrub="25" data-niv="2">Oracle</a></li>
+				<li><a href="http://sybase.developpez.com/" data-idrub="37" data-niv="2">Sybase</a></li>
+				<li><a href="http://sqlserver.developpez.com/" data-idrub="34" data-niv="2">SQL-Server</a></li>
+			</ul></li>
+	<li><a href="http://office.developpez.com/" data-idrub="54" data-niv="1">Office<span class="gabarit_tooltip">Bureautique pour l'entreprise</span></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="http://office.developpez.com/" data-idrub="54" data-niv="2">Microsoft Office</a></li>
+				<li><a href="http://access.developpez.com/" data-idrub="19" data-niv="2">Access</a></li>
+				<li><a href="http://excel.developpez.com/" data-idrub="75" data-niv="2">Excel</a></li>
+				<li><a href="http://word.developpez.com/" data-idrub="76" data-niv="2">Word</a></li>
+				<li><a href="http://outlook.developpez.com/" data-idrub="77" data-niv="2">Outlook</a></li>
+				<li><a href="http://powerpoint.developpez.com/" data-idrub="78" data-niv="2">PowerPoint</a></li>
+				<li><a href="http://sharepoint.developpez.com/" data-idrub="79" data-niv="2">SharePoint</a></li>
+				<li><a href="http://project.developpez.com/" data-idrub="99" data-niv="2">Microsoft Project</a></li>
+				<li><a href="http://openoffice-libreoffice.developpez.com/" data-idrub="116" data-niv="2">OpenOffice &amp; LibreOffice</a></li>
+			</ul></li>
+	<li><a href="http://solutions-entreprise.developpez.com/" data-idrub="86" data-niv="1">Solutions d'entreprise<span class="gabarit_tooltip">Autres logiciels pour l'entreprise</span></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="http://solutions-entreprise.developpez.com/" data-idrub="86" data-niv="2">Solutions d'entreprise</a></li>
+				<li><a href="http://big-data.developpez.com/" data-idrub="126" data-niv="2">Big Data</a></li>
+				<li><a href="http://bpm.developpez.com/" data-idrub="134" data-niv="2">BPM</a></li>
+				<li><a href="http://business-intelligence.developpez.com/" data-idrub="61" data-niv="2">Business Intelligence</a></li>
+				<li><a href="http://solutions-entreprise.developpez.com/erp-pgi/presentation-erp-pgi/" data-idrub="91" data-niv="2">ERP / PGI</a></li>
+				<li><a href="http://crm.developpez.com/" data-idrub="92" data-niv="2">CRM</a></li>
+				<li><a href="http://sas.developpez.com/" data-idrub="93" data-niv="2">SAS</a></li>
+				<li><a href="http://cloud-computing.developpez.com/" data-idrub="103" data-niv="2">Cloud Computing</a></li>
+				<li><a href="http://sap.developpez.com/" data-idrub="106" data-niv="2">SAP</a></li>
+				<li><a href="http://www.developpez.net/forums/f1664/systemes/windows/windows-serveur/biztalk-server/" data-idrub="115" data-niv="2">Microsoft BizTalk Server</a></li>
+				<li><a href="http://talend.developpez.com/" data-idrub="118" data-niv="2">Talend</a></li>
+				<li><a href="http://bluemix.developpez.com/" data-idrub="135" data-niv="2">IBM Bluemix</a></li>
+			</ul></li>
+	<li><a href="http://applications.developpez.com/" data-idrub="88" data-niv="1">Applications<span class="gabarit_tooltip">Applications logicielles</span></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="http://applications.developpez.com/" data-idrub="88" data-niv="2">Applications</a></li>
+				<li><a href="http://open-source.developpez.com/" data-idrub="121" data-niv="2">Libres &amp; Open Source</a></li>
+				<li><a href="http://openoffice-libreoffice.developpez.com/" data-idrub="116" data-niv="2">OpenOffice &amp; LibreOffice</a></li>
+				<li><a href="http://portail-projets.developpez.com/" data-idrub="98" data-niv="2">Projets</a></li>
+			</ul></li>
+	<li><a href="http://mobiles.developpez.com/" data-idrub="94" data-niv="1">Mobiles<span class="gabarit_tooltip">Logiciels et matériels mobiles</span></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="http://mobiles.developpez.com/" data-idrub="94" data-niv="2">Mobiles</a></li>
+				<li><a href="http://android.developpez.com/" data-idrub="95" data-niv="2">Android</a></li>
+				<li><a href="http://ios.developpez.com/" data-idrub="101" data-niv="2">iOS</a></li>
+				<li><a href="http://windowsphone.developpez.com/" data-idrub="105" data-niv="2">Windows Phone</a></li>
+			</ul></li>
+	<li><a href="http://systeme.developpez.com/" data-idrub="30" data-niv="1">Systèmes<span class="gabarit_tooltip">Logiciels et matériels systèmes</span></a>
+			<ul class="gabarit_sousmenu">
+				<li><a href="http://systeme.developpez.com/" data-idrub="30" data-niv="2">Systèmes</a></li>
+				<li><a href="http://windows.developpez.com/" data-idrub="17" data-niv="2">Windows</a></li>
+				<li><a href="http://linux.developpez.com/" data-idrub="18" data-niv="2">Linux</a></li>
+				<li><a href="http://securite.developpez.com/" data-idrub="40" data-niv="2">Sécurité</a></li>
+				<li><a href="http://hardware.developpez.com/" data-idrub="64" data-niv="2">Hardware</a></li>
+				<li><a href="http://mac.developpez.com/" data-idrub="57" data-niv="2">Mac</a></li>
+				<li><a href="http://raspberry-pi.developpez.com/" data-idrub="131" data-niv="2">Raspberry Pi</a></li>
+				<li><a href="http://reseau.developpez.com/" data-idrub="70" data-niv="2">Réseau</a></li>
+				<li><a href="http://green-it.developpez.com/" data-idrub="104" data-niv="2">Green IT</a></li>
+				<li><a href="http://embarque.developpez.com/" data-idrub="110" data-niv="2">Systèmes Embarqués</a></li>
+				<li><a href="http://virtualisation.developpez.com/" data-idrub="108" data-niv="2">Virtualisation</a></li>
+			</ul></li>
+</ul>
+
+<ul id="gabarit_barre1">
+	<li><a href="http://web.developpez.com/">Dév. Web</a></li>
+	<li><a href="http://ajax.developpez.com/">AJAX</a></li>
+	<li><a href="http://apache.developpez.com/">Apache</a></li>
+	<li><a href="http://asp.developpez.com/">ASP</a></li>
+	<li><a href="http://css.developpez.com/">CSS</a></li>
+	<li><a href="http://dart.developpez.com/">Dart</a></li>
+	<li><a href="http://flash.developpez.com/">Flash / Flex</a></li>
+	<li><a href="http://javascript.developpez.com/">JavaScript</a></li>
+	<li class="gabarit_selection"><a href="http://php.developpez.com/">PHP</a></li>
+	<li><a href="http://ruby.developpez.com/">Ruby</a></li>
+	<li><a href="http://typescript.developpez.com/">TypeScript</a></li>
+	<li><a href="http://web-semantique.developpez.com/">Web sémantique</a></li>
+	<li><a href="http://webmarketing.developpez.com/">Webmarketing</a></li>
+	<li><a href="http://xhtml.developpez.com/">(X)HTML</a></li>
+</ul>
+
+<div id="gabarit_barre2">
+	<div class="gabarit_social"><a rel="nofollow" href="http://www.facebook.com/pages/PHP/109797105707485" target="_blank"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/facebook.png" alt="Facebook" title="Retrouver Developpez sur Facebook"></a></div>
+	<div class="gabarit_social"><a rel="nofollow" href="http://twitter.com/php_DVP" target="_blank"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/twitter.png" alt="Twitter" title="Retrouver Developpez sur Twitter"></a></div>
+	<div class="gabarit_social"><a href="http://php.developpez.com/index/rss" target="_blank"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/rss.png" alt="RSS" title="Flux RSS"></a></div>
+	<ul>
+		<li><a href="http://www.developpez.net/forums/f443/php/">Forum PHP</a></li>
+		<li><a href="http://php.developpez.com/faq/">FAQ PHP</a></li>
+		<li><a href="http://php.developpez.com/cours/">Cours PHP</a></li>
+		<li><a href="http://php.developpez.com/telecharger/index/categorie/18/Sources-PHP">Sources PHP</a></li>
+		<li><a href="http://php.developpez.com/livres/">Livres PHP</a></li>
+		<li><a href="http://php.developpez.com/scripts/">Scripts PHP</a></li>
+		<li><a href="http://php.developpez.com/telecharger/index/categorie/210/Outils-pour-PHP">Outils PHP</a></li>
+		<li><a href="http://symfony.developpez.com/">Symfony</a></li>
+		<li><a href="http://zend-framework.developpez.com/">Zend Framework</a></li>
+	</ul>
+</div>
+
+</nav>
+</header>
+<section>
+
+<div class="contenuPage">
+
+<div style="float: right; width: 300px; height: 125px; margin-right: 18px; position: relative; top: 15px; overflow: visible"><div id="adl_300x250">
+<div id="hc9nr1c" style="display: inline-block; width: 300px; height: 250px"><iframe width="300" height="250" style="border: 0" scrolling="no" src="./récupérer et traiter les valeur de plusieur checkbox_files/offres.html"></iframe><style type="text/css"> #gabarit_pub1 { display: block; background-position: 0 7px; }</style></div><div id="gabarit_pub1"></div>
+</div></div>
+<div class="above_body"> <!-- closing tag is in template navbar -->
+<div id="header" class="floatcontainer doc_header">
+	<div id="toplinks" class="toplinks">
+		
+			<ul class="nouser">
+			
+				<li><a href="http://www.developpez.net/forums/inscription/" rel="nofollow">S'inscrire</a></li>
+			
+				<li><a rel="help" href="http://www.developpez.net/forums/faq.php">Aide</a></li>
+				<li>
+			<script type="text/javascript" src="./récupérer et traiter les valeur de plusieur checkbox_files/vbulletin_md5.js"></script>
+			<form id="navbar_loginform" action="http://www.developpez.net/forums/login.php?do=login" method="post" onsubmit="md5hash(vb_login_password, vb_login_md5password, vb_login_md5password_utf, 0)">
+				<fieldset id="logindetails" class="logindetails">
+					<div>
+						<div>
+					<input type="text" class="textbox default-value" name="vb_login_username" id="navbar_username" size="10" accesskey="u" tabindex="101" value="Identifiant">
+					<input type="password" class="textbox" tabindex="102" name="vb_login_password" id="navbar_password" size="10" style="display: none;">
+					<input type="text" class="textbox default-value" tabindex="102" name="vb_login_password_hint" id="navbar_password_hint" size="10" value="Mot de passe" style="display: inline;">
+					<input type="hidden" name="cookieuser" value="1">
+					<input type="submit" class="loginbutton" tabindex="104" value="S&#39;identifier" title="Insérez votre identifiant et mot de passe dans les cases correspondantes pour vous connecter, ou cliquez sur le bouton « S&#39;inscrire » pour créer un profil personnel." accesskey="s">
+						</div>
+					</div>
+				</fieldset>
+
+				<input type="hidden" name="s" value="">
+				<input type="hidden" name="securitytoken" value="guest">
+				<input type="hidden" name="do" value="login">
+				<input type="hidden" name="vb_login_md5password">
+				<input type="hidden" name="vb_login_md5password_utf">
+			</form>
+			<script type="text/javascript">
+			YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+			YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+			vB_XHTML_Ready.subscribe(function()
+			{
+			//
+				YAHOO.util.Event.on('navbar_username', "focus", navbar_username_focus);
+				YAHOO.util.Event.on('navbar_username', "blur", navbar_username_blur);
+				YAHOO.util.Event.on('navbar_password_hint', "focus", navbar_password_hint);
+				YAHOO.util.Event.on('navbar_password', "blur", navbar_password);
+			});
+			
+			function navbar_username_focus(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				if (textbox.value == 'Identifiant')
+				{
+				//
+					textbox.value='';
+					textbox.style.color='#000000';
+				}
+			}
+
+			function navbar_username_blur(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				if (textbox.value == '')
+				{
+				//
+					textbox.value='Identifiant';
+					textbox.style.color='#777777';
+				}
+			}
+			
+			function navbar_password_hint(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				
+				YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "none");
+				YAHOO.util.Dom.setStyle('navbar_password', "display", "inline");
+				YAHOO.util.Dom.get('navbar_password').focus();
+			}
+
+			function navbar_password(e)
+			{
+			//
+				var textbox = YAHOO.util.Event.getTarget(e);
+				
+				if (textbox.value == '')
+				{
+					YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+					YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+				}
+			}
+			</script>
+				</li>
+				
+			</ul>
+		
+	</div>
+	<div class="ad_global_header">
+		
+		
+	</div>
+	<hr>
+</div>
+<div id="navbar" class="navbar">
+	<ul id="navtabs" class="navtabs floatcontainer">
+		
+		
+	
+		<li id="vbtab_whatsnew">
+			<a class="navtab" href="http://www.developpez.net/forums/activity.php">Quoi de neuf ?</a>
+		</li>
+		
+		
+
+	
+		<li class="selected" id="vbtab_forum">
+			<a class="navtab" href="http://www.developpez.net/forums/">Forum</a>
+		</li>
+		
+		
+			<ul class="floatcontainer">
+				
+					
+						<li class="popupmenu" id="vbmenu_actions">
+							<a href="javascript://" class="popupctrl" id="yui-gen1">Actions</a>
+							<ul class="popupbody" id="yui-gen0">
+								
+									<li id="vbalink_mfr"><a rel="nofollow" href="http://www.developpez.net/forums/forumdisplay.php?do=markread&amp;markreadhash=guest">Marquer les forums comme lus</a></li>
+								
+									<li id="link_mtg4_835"><a href="http://www.developpez.net/forums/project.php">Bugs &amp; Suggestions</a></li>
+								
+							</ul>
+						</li>
+					
+				
+					
+						<li class="popupmenu" id="vbmenu_community">
+							<a href="javascript://" class="popupctrl" id="yui-gen3">Réseau social</a>
+							<ul class="popupbody" id="yui-gen2">
+								
+									<li id="vbclink_groups"><a href="http://www.developpez.net/forums/group.php">Groupes</a></li>
+								
+									<li id="vbclink_members"><a href="http://www.developpez.net/forums/memberlist.php">Liste des utilisateurs</a></li>
+								
+									<li id="vbflink_faq"><a href="http://www.developpez.net/forums/faq.php">FAQ forum</a></li>
+								
+									<li id="vbqlink_leaders"><a href="http://www.developpez.net/forums/showgroups.php">Voir l'équipe du site</a></li>
+								
+							</ul>
+						</li>
+					
+				
+					
+						
+							<li id="link_nde2_515"><a href="http://www.developpez.net/forums/blogs/">Blogs</a></li>
+						
+					
+				
+					
+						
+							<li id="vbflink_calendar"><a href="http://www.developpez.net/forums/agenda/">Agenda</a></li>
+						
+					
+				
+					
+						
+							<li id="link_nta3_958"><a target="_blank" href="http://club.developpez.com/regles/">Règles</a></li>
+						
+					
+				
+			</ul>
+		
+
+	
+		<li id="vbtab_blog">
+			<a class="navtab" href="http://www.developpez.net/forums/blogs/">Blogs</a>
+		</li>
+		
+		
+
+	
+		<li id="vbtab_project">
+			<a class="navtab" href="http://www.developpez.net/forums/project.php">Projets</a>
+		</li>
+		
+		
+
+		
+	</ul>
+	
+		<div id="globalsearch" class="globalsearch">
+			<form action="http://www.developpez.net/forums/search.php?do=process" method="post" id="navbar_search" class="navbar_search">
+				
+				<input type="hidden" name="securitytoken" value="guest">
+				<input type="hidden" name="do" value="process">
+				<span class="textboxcontainer"><span><input type="text" value="" name="query" class="textbox" tabindex="99"></span></span>
+				<span class="buttoncontainer"><span><input type="image" class="searchbutton" src="./récupérer et traiter les valeur de plusieur checkbox_files/search.png" name="submit" onclick="document.getElementById(&#39;navbar_search&#39;).submit;" tabindex="100"></span></span>
+			</form>
+			<ul class="navbar_advanced_search">
+				<li><a href="http://www.developpez.net/forums/search.php" accesskey="4">Recherche avancée</a></li>
+				
+			</ul>
+		</div>
+	
+</div>
+</div><!-- closing div for above_body -->
+
+<div class="body_wrapper">
+<div id="breadcrumb" class="breadcrumb">
+	<ul class="floatcontainer">
+		<li class="navbithome"><a href="http://www.developpez.net/forums/" accesskey="1"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/navbit-home.png" alt="Accueil" title="Accueil"></a></li>
+		
+	<li class="navbit"><a href="http://www.developpez.net/forums/">Index du forum</a></li>
+
+	<li class="navbit"><a href="http://www.developpez.net/forums/f443/php/">PHP</a></li>
+
+	<li class="navbit"><a href="http://www.developpez.net/forums/f25/php/langage/">Langage</a></li>
+
+	<li class="navbit"><a href="http://www.developpez.net/forums/f617/php/langage/formulaires/">Formulaires</a></li>
+
+		
+	<li class="navbit lastnavbit"><span> récupérer et traiter les valeur de plusieur checkbox</span></li>
+
+	</ul>
+	<hr>
+</div>
+
+
+
+
+
+
+
+
+
+	<div id="above_postlist" class="above_postlist">
+		
+			<a rel="nofollow" href="http://www.developpez.net/forums/newreply.php?p=6418437&amp;noquote=1" class="newcontent_textcontrol" id="newreplylink_top"><span>+</span> Répondre à la discussion</a>
+			<img style="display:none" id="progress_newreplylink_top" src="./récupérer et traiter les valeur de plusieur checkbox_files/progress.gif" alt="">
+
+		
+		<div id="pagination_top" class="pagination_top">
+		
+
+		</div>
+	</div>
+	<div id="pagetitle" class="pagetitle">
+		<h1>
+			Discussion: <span class="threadtitle"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/" title="Recharger cette page">récupérer et traiter les valeur de plusieur checkbox</a> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/icone-resolu.jpg" title="Question résolue" alt=""> </span>
+		</h1>
+		
+	</div>
+	<div id="thread_controls" class="thread_controls toolsmenu">
+		<div>
+		<ul id="postlist_popups" class="postlist_popups popupgroup">
+			
+			
+			<li class="popupmenu" id="threadtools">
+				<h6><a class="popupctrl" href="javascript://" id="yui-gen5">Outils de la discussion</a></h6>
+				<ul class="popupbody" id="yui-gen4">
+					<li><a href="http://www.developpez.net/forums/i1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/" accesskey="3" rel="nofollow">Afficher une version imprimable</a></li>
+					
+					<li>
+						
+							<a href="http://www.developpez.net/forums/subscription.php?do=addsubscription&amp;t=1166653" rel="nofollow">S'abonner à cette discussion…</a>
+						
+					</li>
+					
+				</ul>
+			</li>
+
+			
+
+			
+
+			
+
+			
+				<li class="popupmenu" id="displaymodes">
+					<h6><a class="popupctrl" href="javascript://" id="yui-gen7">Affichage</a></h6>
+					<ul class="popupbody" id="yui-gen6">
+						<li><label>Mode linéaire</label></li>
+						<li><a rel="nofollow" href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/?mode=hybrid"> Choisir le mode hybride</a></li>
+						<li><a rel="nofollow" href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/?mode=threaded#post6412042"> Choisir le mode arborescent</a></li>
+					</ul>
+				</li>
+			
+
+			
+			</ul>
+		</div>
+	</div>
+
+<div id="postlist" class="postlist restrain">
+	
+
+	
+		<ol id="posts" class="posts" start="1">
+			
+<li class="postbitlegacy postbitim postcontainer old" id="post_6412042">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead" style="">
+			<span class="postdate old">
+				
+					<span class="date">21/12/2011,&nbsp;<span class="time">17h11</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post6412042" href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#post6412042" class="postcounter">#1</a><a id="postcount6412042" name="1"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails" style="">
+		<div class="userinfo" style="">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen8">
+	<a rel="nofollow" class="username offline " href="http://www.developpez.net/forums/u365539/artichaudd/" title="artichaudd est déconnecté"><strong>artichaudd</strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./récupérer et traiter les valeur de plusieur checkbox_files/user-offline.png" alt="artichaudd est déconnecté" border="0" title="artichaudd est déconnecté">
+
+			
+			</div>
+			<span class="usertitle">
+				Membre du Club
+			</span>
+			
+				<span class="rank"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/nv-carres-2.png" alt="" border=""></span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<div style="float: left; width: 154px"><div><img src="./récupérer et traiter les valeur de plusieur checkbox_files/france.gif" title="France">   <a href="http://www.developpez.com/user/profil/365539/artichaudd"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/pro.png" alt="Profil pro" title="Profil pro"></a> </div><dt>Inscrit en</dt><dd>avril 2010</dd><dt>Messages</dt><dd>170</dd></div><div style="float: right; margin-top: 5px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/profil-etendu.gif" title="Plus de détails..." role="profiletendu" userid="365539" style="cursor: pointer;"></div><div style="clear: both"></div><div style="display: none" role="profiletendu" userid="365539"><div class="kha_titleBar">Détails du profil<img style="float: right; cursor: pointer" src="./récupérer et traiter les valeur de plusieur checkbox_files/cross.gif"></div><div class="kha_content"><div><b>Informations personnelles :</b></div><div>Localisation : France</div><div><br><b>Informations forums :</b></div><div>Inscription : avril 2010</div><div>Messages : 170</div><div>Points : 48</div></div></div><dt>Points</dt><dd><span role="points" userid="365539" style="cursor: pointer;">48</span></dd>
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+				<h2 class="title icon">
+					<img src="./récupérer et traiter les valeur de plusieur checkbox_files/icon1.png" alt="Par défaut" title="Par défaut"> récupérer et traiter les valeur de plusieur checkbox
+				</h2>
+				
+
+
+						
+							
+							
+						
+						
+				<div class="content">
+					<div id="post_message_6412042">
+						<blockquote class="postcontent restore ">
+							bonjour, <br>
+<br>
+voila, apres avoir valider le formulaire suivant je voudrais dans "traitement-formulaire.php" récupérer les valeurs de chaque checkbox cochées <br>
+pour ensuite pouvoir les modifier pour chacune le champ publier dans ma bdd<br>
+<br>
+là je ne sais quoi faire,<br>
+surement recupérer ces valeurs dans un array<br>
+puis les traiter une par une grace a une boucle<br>
+<br>
+merci<br>
+<br>
+formulaire.php<br>
+<div class="bbcode_container">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+	<td style="border: 0; padding: 0; text-align: left">Code  :</td>
+	<td style="border: 0; padding: 0; text-align: right"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_selectionnerCode(this);">Sélectionner tout</a> -
+	<a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_etendreCode(this);">Visualiser dans une fenêtre à part</a></td></tr></tbody></table>
+	<pre class="bbcode_code" style="height:204px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td valign="top" width="33"><div style="border: 1px dashed gray; padding-left: 5px; padding-right: 5px; margin-right: 5px; text-align: right; font-family: monospace">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br></div></td><td valign="top"><pre style="margin: 0">&nbsp;
+<span style="color: #0080ff;">&lt;?php</span>
+<span style="color: #808080;">//----------------------- CONNEXION A LA BDD ------------------------</span>
+	<span style="color: #0000ff">include</span><span class="br0">(</span><span style="color: #ff0000;">"../includes/sql_connect.php"</span><span class="br0">)</span>;	
+&nbsp;
+	<span style="color: #339933;">$reponse</span> = <span style="color: #339933;">$bdd</span>-<span style="">&gt;</span><span style="">query</span><span class="br0">(</span><span style="color: #ff0000;">"SELECT *
+						FROM clients
+						ORDER BY idClient
+						"</span><span class="br0">)</span> or die<span class="br0">(</span>print_r<span class="br0">(</span><span style="color: #339933;">$bdd</span>-<span style="">&gt;</span><span style="">errorInfo</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span>; <span style="color: #808080;">//requete</span>
+&nbsp;
+		echo<span style="color: #ff0000;">'
+		&lt;form id="adminForm" method="post" action="traitement-formulaire.php"&gt;
+			'</span>;
+&nbsp;
+			<span style="color: #0000ff">while</span> <span class="br0">(</span><span style="color: #339933;">$donnees</span> = <span style="color: #339933;">$reponse</span>-<span style="">&gt;</span><span style="">fetch</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+			<span class="br0">{</span>
+				echo<span style="color: #ff0000;">'&lt;input type="checkbox" name="checkbox" value="'</span>.<span style="color: #339933;">$donnees</span><span class="br0">[</span><span style="color: #ff0000;">'idClient'</span><span class="br0">]</span>.<span style="color: #ff0000;">'" /&gt;'</span>.<span style="color: #339933;">$donnees</span><span class="br0">[</span><span style="color: #ff0000;">'idClient'</span><span class="br0">]</span>.<span style="color: #ff0000;">'
+				&lt;br /&gt;'</span>;
+			<span class="br0">}</span>
+&nbsp;
+			echo<span style="color: #ff0000;">'&lt;input type="submit" class="valider" name="nom" value="valider" /&gt;
+		&lt;/form&gt;'</span>;
+<span style="color: #0080ff;">?&gt;</span></pre></td></tr></tbody></table></pre>
+</div>traitement-formulaire.php<br>
+<div class="bbcode_container">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+	<td style="border: 0; padding: 0; text-align: left">Code  :</td>
+	<td style="border: 0; padding: 0; text-align: right"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_selectionnerCode(this);">Sélectionner tout</a> -
+	<a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_etendreCode(this);">Visualiser dans une fenêtre à part</a></td></tr></tbody></table>
+	<pre class="bbcode_code" style="height:204px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td valign="top" width="33"><div style="border: 1px dashed gray; padding-left: 5px; padding-right: 5px; margin-right: 5px; text-align: right; font-family: monospace">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br></div></td><td valign="top"><pre style="margin: 0">&nbsp;
+<span style="color: #0080ff;">&lt;?php</span>
+	<span style="color: #808080;">//----------------------- CONNEXION A LA BDD ------------------------</span>
+	<span style="color: #0000ff">include</span><span class="br0">(</span><span style="color: #ff0000;">"../includes/sql_connect.php"</span><span class="br0">)</span>;
+&nbsp;
+	<span style="color: #808080;">//----------------------- RECUPERATION ET INITIALISATION DE TOUTES LES VARIABLES qui peuvent etre transmissent dans l'url ------------------------</span>
+	<span style="color: #0000ff">if</span> <span class="br0">(</span>isset<span class="br0">(</span><span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'checkbox'</span><span class="br0">]</span><span class="br0">)</span><span class="br0">)</span>
+	<span class="br0">{</span>	
+&nbsp;
+		<span style="color: #808080;">//--------------------------</span>
+		<span style="color: #808080;">//là je ne sais quoi faire,</span>
+		<span style="color: #808080;">//surement recupérer ces valeurs dans un array</span>
+		<span style="color: #808080;">//puis les traiter une par une grace a une boucle</span>
+		<span style="color: #808080;">//---------------------------</span>
+&nbsp;
+		<span style="color: #339933;">$idClient</span> = addslashes<span class="br0">(</span><span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'checkbox'</span><span class="br0">]</span><span class="br0">)</span>;
+		<span style="color: #339933;">$req</span> = <span style="color: #339933;">$bdd</span>-<span style="">&gt;</span><span style="">prepare</span><span class="br0">(</span><span style="color: #ff0000;">'UPDATE clients SET
+					publier = :publier
+					WHERE idClient = :idClient'</span><span class="br0">)</span>;
+&nbsp;
+		<span style="color: #339933;">$req</span>-<span style="">&gt;</span><span style="">execute</span><span class="br0">(</span>array<span class="br0">(</span>
+		<span style="color: #ff0000;">'publier'</span> =<span style="">&gt;</span> <span style="color: #cc66cc;">1</span>,
+		<span style="color: #ff0000;">'idClient'</span> =<span style="">&gt;</span> <span style="color: #339933;">$idClient</span>
+		<span class="br0">)</span><span class="br0">)</span>;
+	<span class="br0">}</span>
+	<span style="color: #0000ff">else</span>
+	<span class="br0">{</span>	
+		echo <span style="color: #ff0000;">'pas de modifs'</span>;
+	<span class="br0">}</span>
+<span style="color: #0080ff;">?&gt;</span></pre></td></tr></tbody></table></pre>
+</div>
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_6412042" src="./récupérer et traiter les valeur de plusieur checkbox_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_6412042" class="newreply" href="http://www.developpez.net/forums/newreply.php?do=newreply&amp;p=6412042" rel="nofollow" title="Répondre avec citation"><img id="quoteimg_6412042" src="./récupérer et traiter les valeur de plusieur checkbox_files/clear.gif" alt="Répondre avec citation" title="Répondre avec citation">  Répondre avec citation</a> 
+					
+					
+					
+<span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucehautgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6412042"> 0</a><span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucebasgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6412042"> 0</a>
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_6412105">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead" style="">
+			<span class="postdate old">
+				
+					<span class="date">21/12/2011,&nbsp;<span class="time">17h38</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post6412105" href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#post6412105" class="postcounter">#2</a><a id="postcount6412105" name="2"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails" style="">
+		<div class="userinfo" style="">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen9">
+	<a rel="nofollow" class="username offline " href="http://www.developpez.net/forums/u156897/celira/" title="Celira est déconnecté"><strong><span style="text-decoration: underline; color: #008D00">Celira</span></strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./récupérer et traiter les valeur de plusieur checkbox_files/user-offline.png" alt="Celira est déconnecté" border="0" title="Celira est déconnecté">
+
+			
+			</div>
+			<span class="usertitle">
+				<div style="text-align: center; font-weight: bold">Modératrice</div>
+			</span>
+			
+				<span class="rank"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/nv-equipe-6.png" alt="" border=""></span>
+			
+			<div style="text-align: center; margin-bottom: 4px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-moderateur.png" title="Modératrice"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-chroniqueur.png" title="4 actualités publiées" user="156897" role="news" style="cursor: pointer;"></div>
+			
+			
+			<a rel="nofollow" class="postuseravatar" href="http://www.developpez.net/forums/u156897/celira/" title="Celira est déconnecté">
+				<img src="./récupérer et traiter les valeur de plusieur checkbox_files/156897-celira.gif" alt="Avatar de Celira" title="Avatar de Celira">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<div style="float: left; width: 154px"><div><img src="./récupérer et traiter les valeur de plusieur checkbox_files/france.gif" title="France">  <img src="./récupérer et traiter les valeur de plusieur checkbox_files/female.png" alt="Femme" title="Femme"> <a href="http://www.developpez.com/user/profil/156897/Celira"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/pro.png" alt="Profil pro" title="Profil pro"></a> </div><div>Développeuse PHP/Java</div><dt>Inscrit en</dt><dd>avril 2007</dd><dt>Messages</dt><dd>6&nbsp;340</dd></div><div style="float: right; margin-top: 5px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/profil-etendu.gif" title="Plus de détails..." role="profiletendu" userid="156897" style="cursor: pointer;"></div><div style="clear: both"></div><div style="display: none" role="profiletendu" userid="156897"><div class="kha_titleBar">Détails du profil<img style="float: right; cursor: pointer" src="./récupérer et traiter les valeur de plusieur checkbox_files/cross.gif"></div><div class="kha_content"><div><b>Informations personnelles :</b></div><div>Sexe : <img src="./récupérer et traiter les valeur de plusieur checkbox_files/female.png" alt="Femme" title="Femme"></div><div>Âge : 31</div><div>Localisation : France</div><div><br><b>Informations professionnelles :</b></div><div>Activité : Développeuse PHP/Java</div><div>Secteur : Industrie</div><div><br><b>Informations forums :</b></div><div>Inscription : avril 2007</div><div>Messages : 6&nbsp;340</div><div>Points : 12 415</div></div></div><dt>Points</dt><dd><span role="points" userid="156897" style="cursor: pointer;">12 415</span></dd>
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow has_after_content">
+				
+				
+				<h2 class="title icon">
+					<img src="./récupérer et traiter les valeur de plusieur checkbox_files/icon1.png" alt="Par défaut" title="Par défaut"> 
+				</h2>
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_6412105">
+						<blockquote class="postcontent restore ">
+							Si tu veux utiliser plusieurs checkboxes avec le même nom, il faut utiliser un tableau :<br>
+<div class="bbcode_container">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+	<td style="border: 0; padding: 0; text-align: left">Code html :</td>
+	<td style="border: 0; padding: 0; text-align: right"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_selectionnerCode(this);">Sélectionner tout</a> -
+	<a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_etendreCode(this);">Visualiser dans une fenêtre à part</a></td></tr></tbody></table>
+	<pre class="bbcode_code" style="height:36px;"><span style="color: #0000ff">&lt;</span><span style="color: #0000ff">input</span> <span style="color: #0080ff;">type</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"checkbox"</span> <span style="color: #0080ff;">name</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"checkbox[]"</span> <span style="color: #0080ff;">value</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"truc"</span> <span style="color: #0000ff">/&gt;</span></pre>
+</div>ce qui te permet d'avoir un array côté php :<br>
+<div class="bbcode_container">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+	<td style="border: 0; padding: 0; text-align: left">Code  :</td>
+	<td style="border: 0; padding: 0; text-align: right"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_selectionnerCode(this);">Sélectionner tout</a> -
+	<a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_etendreCode(this);">Visualiser dans une fenêtre à part</a></td></tr></tbody></table>
+	<pre class="bbcode_code" style="height:204px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td valign="top" width="33"><div style="border: 1px dashed gray; padding-left: 5px; padding-right: 5px; margin-right: 5px; text-align: right; font-family: monospace">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br></div></td><td valign="top"><pre style="margin: 0"><span style="color: #0000ff">if</span> <span class="br0">(</span>isset<span class="br0">(</span><span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'checkbox'</span><span class="br0">]</span><span class="br0">)</span><span class="br0">)</span>
+<span class="br0">{</span>    
+    <span style="color: #808080;">//recupérer ces valeurs dans un array</span>
+    <span style="color: #339933;">$tabCheckbox</span> = <span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'checkbox'</span><span class="br0">]</span><span class="br0">)</span>;
+    <span style="color: #0000ff">foreach</span> <span class="br0">(</span><span style="color: #339933;">$tabCheckbox</span> <span style="color: #0000ff">as</span> <span style="color: #339933;">$checkbox</span><span class="br0">)</span> <span class="br0">{</span>
+        <span style="color: #339933;">$idClient</span> = addslashes<span class="br0">(</span><span style="color: #339933;">$checkbox</span><span class="br0">)</span>;
+        <span style="color: #339933;">$req</span> = <span style="color: #339933;">$bdd</span>-<span style="">&gt;</span><span style="">prepare</span><span class="br0">(</span><span style="color: #ff0000;">'UPDATE clients SET
+                    publier = :publier
+                    WHERE idClient = :idClient'</span><span class="br0">)</span>;
+&nbsp;
+        <span style="color: #339933;">$req</span>-<span style="">&gt;</span><span style="">execute</span><span class="br0">(</span>array<span class="br0">(</span>
+        <span style="color: #ff0000;">'publier'</span> =<span style="">&gt;</span> <span style="color: #cc66cc;">1</span>,
+        <span style="color: #ff0000;">'idClient'</span> =<span style="">&gt;</span> <span style="color: #339933;">$idClient</span>
+        <span class="br0">)</span><span class="br0">)</span>;
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></td></tr></tbody></table></pre>
+</div>
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="after_content">
+				
+				
+				
+				
+					<blockquote class="signature restore"><div class="signaturecontainer"><font size="1"><font color="#990000"><b>Modératrice PHP</b><br>
+Aucun navigateur ne propose d'extension boule-de-cristal : <b>postez votre code et vos messages d'erreurs</b>. (Rappel : "<i>ça ne marche pas</i>" n'est <u>pas</u> un message d'erreur)<br>
+Cherchez un peu avant poser votre question : <a href="http://php.developpez.com/cours/" target="_blank"><font color="#990000"><u>Cours et Tutoriels PHP</u></font></a> - <a href="http://php.developpez.com/faq/" target="_blank"><font color="#990000"><u>FAQ PHP</u></font></a>.<br>
+<br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/nosms.gif" border="0" alt="" title=":nosms:" class="inlineimg"> Affichez votre code en couleurs : [CODE=php][/CODE] (bouton # de l'éditeur) et [C=php][/C]<br>
+</font></font></div></blockquote>
+				
+				
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_6412105" src="./récupérer et traiter les valeur de plusieur checkbox_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_6412105" class="newreply" href="http://www.developpez.net/forums/newreply.php?do=newreply&amp;p=6412105" rel="nofollow" title="Répondre avec citation"><img id="quoteimg_6412105" src="./récupérer et traiter les valeur de plusieur checkbox_files/clear.gif" alt="Répondre avec citation" title="Répondre avec citation">  Répondre avec citation</a> 
+					
+					
+					
+<span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucehautgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6412105"> 1</a><span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucebasgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6412105"> 0</a>
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_6412183">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead" style="">
+			<span class="postdate old">
+				
+					<span class="date">21/12/2011,&nbsp;<span class="time">18h15</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post6412183" href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#post6412183" class="postcounter">#3</a><a id="postcount6412183" name="3"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails" style="">
+		<div class="userinfo" style="">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen10">
+	<a rel="nofollow" class="username offline " href="http://www.developpez.net/forums/u365539/artichaudd/" title="artichaudd est déconnecté"><strong>artichaudd</strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./récupérer et traiter les valeur de plusieur checkbox_files/user-offline.png" alt="artichaudd est déconnecté" border="0" title="artichaudd est déconnecté">
+
+			
+			</div>
+			<span class="usertitle">
+				Membre du Club
+			</span>
+			
+				<span class="rank"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/nv-carres-2.png" alt="" border=""></span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<div style="float: left; width: 154px"><div><img src="./récupérer et traiter les valeur de plusieur checkbox_files/france.gif" title="France">   <a href="http://www.developpez.com/user/profil/365539/artichaudd"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/pro.png" alt="Profil pro" title="Profil pro"></a> </div><dt>Inscrit en</dt><dd>avril 2010</dd><dt>Messages</dt><dd>170</dd></div><div style="float: right; margin-top: 5px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/profil-etendu.gif" title="Plus de détails..." role="profiletendu" userid="365539" style="cursor: pointer;"></div><div style="clear: both"></div><div style="display: none" role="profiletendu" userid="365539"><div class="kha_titleBar">Détails du profil<img style="float: right; cursor: pointer" src="./récupérer et traiter les valeur de plusieur checkbox_files/cross.gif"></div><div class="kha_content"><div><b>Informations personnelles :</b></div><div>Localisation : France</div><div><br><b>Informations forums :</b></div><div>Inscription : avril 2010</div><div>Messages : 170</div><div>Points : 48</div></div></div><dt>Points</dt><dd><span role="points" userid="365539" style="cursor: pointer;">48</span></dd>
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+				<h2 class="title icon">
+					<img src="./récupérer et traiter les valeur de plusieur checkbox_files/icon1.png" alt="Par défaut" title="Par défaut"> 
+				</h2>
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_6412183">
+						<blockquote class="postcontent restore ">
+							ca m'a l'air bien ca <br>
+merci<br>
+décidément je n'ai toujours rien compris aux array<br>
+je ne savais pas que l'on pouvait crée un array des valeurs de cette manière<br>
+name="checkbox[]"<br>
+<br>
+comment ca se fait pourrais'tu m'en expliquer le principe<br>
+<br>
+ca le stock ou , comment ????<br>
+<br>
+merci encore
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_6412183" src="./récupérer et traiter les valeur de plusieur checkbox_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_6412183" class="newreply" href="http://www.developpez.net/forums/newreply.php?do=newreply&amp;p=6412183" rel="nofollow" title="Répondre avec citation"><img id="quoteimg_6412183" src="./récupérer et traiter les valeur de plusieur checkbox_files/clear.gif" alt="Répondre avec citation" title="Répondre avec citation">  Répondre avec citation</a> 
+					
+					
+					
+<span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucehautgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6412183"> 0</a><span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucebasgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6412183"> 0</a>
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_6412748">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead" style="">
+			<span class="postdate old">
+				
+					<span class="date">22/12/2011,&nbsp;<span class="time">07h58</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post6412748" href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#post6412748" class="postcounter">#4</a><a id="postcount6412748" name="4"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails" style="">
+		<div class="userinfo" style="">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen11">
+	<a rel="nofollow" class="username offline " href="http://www.developpez.net/forums/u243304/bovino/" title="Bovino est déconnecté"><strong>Bovino</strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./récupérer et traiter les valeur de plusieur checkbox_files/user-offline.png" alt="Bovino est déconnecté" border="0" title="Bovino est déconnecté">
+
+			
+			</div>
+			<span class="usertitle">
+				<div style="text-align: center; font-weight: bold">Rédacteur</div>
+			</span>
+			
+				<span class="rank"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/nv-equipe-6.png" alt="" border=""></span>
+			
+			<div style="text-align: center; margin-bottom: 4px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-redacteur.png" title="Rédacteur - 9 articles publiés" user="243304" role="publications" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-chroniqueur.png" title="65 actualités publiées" user="243304" role="news" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-faq.png" title="3 Q/R de FAQ rédigées" user="243304" role="faq" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-correcteur.png" title="Correcteur - 5 corrections effectuées" user="243304" role="relectures" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-traducteur.png" title="Traducteur - 9 traductions effectuées" user="243304" role="traductions" style="cursor: pointer;"><br><img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-gabarisateur.png" title="Gabarisateur - 11 articles gabarisés" user="243304" role="gabarisations" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-uploadeur.png" title="Posteur de sources - 14 sources postées" user="243304" role="uploads" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-critiqueur.png" title="Critique de livres - 13 critiques effectuées" user="243304" role="livres" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-blogueur.png" title="31 billets blog publiés sur Developpez"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-trophee3.png" role="trophees" userid="243304" title="27 trophées reçus" style="cursor: pointer;"></div>
+			
+			
+			<a rel="nofollow" class="postuseravatar" href="http://www.developpez.net/forums/u243304/bovino/" title="Bovino est déconnecté">
+				<img src="./récupérer et traiter les valeur de plusieur checkbox_files/243304-bovino.gif" alt="Avatar de Bovino" title="Avatar de Bovino">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<div style="float: left; width: 154px"><div><img src="./récupérer et traiter les valeur de plusieur checkbox_files/france.gif" title="France">  <img src="./récupérer et traiter les valeur de plusieur checkbox_files/male.png" alt="Homme" title="Homme"> <a href="http://www.developpez.com/user/profil/243304/Bovino"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/pro.png" alt="Profil pro" title="Profil pro"></a> </div><div>Développeur Web</div><dt>Inscrit en</dt><dd>juin 2008</dd><dt>Messages</dt><dd>23&nbsp;767</dd></div><div style="float: right; margin-top: 5px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/profil-etendu.gif" title="Plus de détails..." role="profiletendu" userid="243304" style="cursor: pointer;"></div><div style="clear: both"></div><div style="display: none" role="profiletendu" userid="243304"><div class="kha_titleBar">Détails du profil<img style="float: right; cursor: pointer" src="./récupérer et traiter les valeur de plusieur checkbox_files/cross.gif"></div><div class="kha_content"><div><b>Informations personnelles :</b></div><div>Sexe : <img src="./récupérer et traiter les valeur de plusieur checkbox_files/male.png" alt="Homme" title="Homme"></div><div>Âge : 45</div><div>Localisation : France, Gironde (Aquitaine)</div><div><br><b>Informations professionnelles :</b></div><div>Activité : Développeur Web</div><div>Secteur : High Tech - Éditeur de logiciels</div><div><br><b>Informations forums :</b></div><div>Inscription : juin 2008</div><div>Messages : 23&nbsp;767</div><div>Points : 69 246</div></div></div><dt>Points</dt><dd><span role="points" userid="243304" style="cursor: pointer;">69 246</span></dd><dt>Billets dans le blog</dt><dd><a href="http://www.developpez.net/forums/blogs/243304-bovino/">20</a></dd>
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow has_after_content">
+				
+				
+				<h2 class="title icon">
+					<img src="./récupérer et traiter les valeur de plusieur checkbox_files/icon1.png" alt="Par défaut" title="Par défaut"> 
+				</h2>
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_6412748">
+						<blockquote class="postcontent restore ">
+							Lorsque le script PHP reçoit des données, il les stocke dans les tableaux $_GET ou $_POST un peu comme si tu faisait<br>
+<div class="bbcode_container">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+	<td style="border: 0; padding: 0; text-align: left">Code  :</td>
+	<td style="border: 0; padding: 0; text-align: right"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_selectionnerCode(this);">Sélectionner tout</a> -
+	<a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_etendreCode(this);">Visualiser dans une fenêtre à part</a></td></tr></tbody></table>
+	<pre class="bbcode_code" style="height:36px;"><span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'param'</span><span class="br0">]</span> = valeur;</pre>
+</div>Le problème, c'est que si plusieurs paramètres ont le même nom, ben tu n'auras accès qu'à la dernière valeur.<br>
+D'où la notation proposée par Celira qui permet d'obtenir pour <span style="font-family: monospace; padding: 2px; background: #eee"><span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'param'</span><span class="br0">]</span></span> des valeurs sous forme de tableau, partant du principe qu'une notation<br>
+<div class="bbcode_container">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+	<td style="border: 0; padding: 0; text-align: left">Code  :</td>
+	<td style="border: 0; padding: 0; text-align: right"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_selectionnerCode(this);">Sélectionner tout</a> -
+	<a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_etendreCode(this);">Visualiser dans une fenêtre à part</a></td></tr></tbody></table>
+	<pre class="bbcode_code" style="height:36px;"><span style="color: #339933;">$variable</span><span class="br0">[</span><span class="br0">]</span> = valeur;</pre>
+</div>correspond à un push dans le tableau.
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="after_content">
+				
+				
+				
+				
+					<blockquote class="signature restore"><div class="signaturecontainer"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> Pas de question technique par MP !<br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> Tout le monde peut participer à developpez.com, vous avez une idée, <a rel="nofollow" href="http://www.developpez.net/forums/private.php?do=newpm&amp;u=243304" target="_blank">contactez-moi</a> !<br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> Mes formations <b>video2brain</b> : <a rel="nofollow" href="http://www.video2brain.com/fr/products-261.htm" target="_blank">La formation complète sur JavaScript</a> • <a rel="nofollow" href="http://www.video2brain.com/fr/products-319.htm" target="_blank">JavaScript et le DOM par la pratique</a> • <a rel="nofollow" href="http://www.video2brain.com/fr/products-284.htm" target="_blank">PHP 5 et MySQL : les fondamentaux</a><br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> <a href="http://dmouronval.developpez.com/tutoriels/jquery/livre/" target="_blank">Mon livre sur jQuery</a><br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> <b><a href="http://www.developpez.net/forums/d1428742/club-professionnels-informatique/evolutions-club/add-on-firefox-chrome-module-d-integration-jsfiddle-codepen-forum/" target="_blank">Module Firefox / Chrome d'intégration de JSFiddle et CodePen sur le forum</a></b></div></blockquote>
+				
+				
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_6412748" src="./récupérer et traiter les valeur de plusieur checkbox_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_6412748" class="newreply" href="http://www.developpez.net/forums/newreply.php?do=newreply&amp;p=6412748" rel="nofollow" title="Répondre avec citation"><img id="quoteimg_6412748" src="./récupérer et traiter les valeur de plusieur checkbox_files/clear.gif" alt="Répondre avec citation" title="Répondre avec citation">  Répondre avec citation</a> 
+					
+					
+					
+<span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucehautgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6412748"> 1</a><span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucebasgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6412748"> 0</a>
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_6413250">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead" style="">
+			<span class="postdate old">
+				
+					<span class="date">22/12/2011,&nbsp;<span class="time">11h42</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post6413250" href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#post6413250" class="postcounter">#5</a><a id="postcount6413250" name="5"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails" style="">
+		<div class="userinfo" style="">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen12">
+	<a rel="nofollow" class="username offline " href="http://www.developpez.net/forums/u365539/artichaudd/" title="artichaudd est déconnecté"><strong>artichaudd</strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./récupérer et traiter les valeur de plusieur checkbox_files/user-offline.png" alt="artichaudd est déconnecté" border="0" title="artichaudd est déconnecté">
+
+			
+			</div>
+			<span class="usertitle">
+				Membre du Club
+			</span>
+			
+				<span class="rank"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/nv-carres-2.png" alt="" border=""></span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<div style="float: left; width: 154px"><div><img src="./récupérer et traiter les valeur de plusieur checkbox_files/france.gif" title="France">   <a href="http://www.developpez.com/user/profil/365539/artichaudd"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/pro.png" alt="Profil pro" title="Profil pro"></a> </div><dt>Inscrit en</dt><dd>avril 2010</dd><dt>Messages</dt><dd>170</dd></div><div style="float: right; margin-top: 5px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/profil-etendu.gif" title="Plus de détails..." role="profiletendu" userid="365539" style="cursor: pointer;"></div><div style="clear: both"></div><div style="display: none" role="profiletendu" userid="365539"><div class="kha_titleBar">Détails du profil<img style="float: right; cursor: pointer" src="./récupérer et traiter les valeur de plusieur checkbox_files/cross.gif"></div><div class="kha_content"><div><b>Informations personnelles :</b></div><div>Localisation : France</div><div><br><b>Informations forums :</b></div><div>Inscription : avril 2010</div><div>Messages : 170</div><div>Points : 48</div></div></div><dt>Points</dt><dd><span role="points" userid="365539" style="cursor: pointer;">48</span></dd>
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+				<h2 class="title icon">
+					<img src="./récupérer et traiter les valeur de plusieur checkbox_files/icon1.png" alt="Par défaut" title="Par défaut"> 
+				</h2>
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_6413250">
+						<blockquote class="postcontent restore ">
+							ah petit pb<br>
+il me met <br>
+<div class="bbcode_container">
+	<div class="bbcode_quote">
+		<div class="quote_container">
+			<div class="bbcode_quote_container"></div>
+			
+				Warning: Invalid argument supplied for foreach() in C:\wamp\www\publier-traitement.php on line 14
+			
+		</div>
+	</div>
+</div>c'est a dire a la ligne : $tabCheckbox = $_POST['checkbox'];<br>
+De plus quand je fait un print_r($tabCheckbox); apres cette ligne, il m'affiche que la valeur de la derniere checkbox cochée sachant que j'ai cochée 3<br>
+$tabCheckbox n'est pas censée etre un array?<br>
+<br>
+traitement-formulaire.php :<br>
+<div class="bbcode_container">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+	<td style="border: 0; padding: 0; text-align: left">Code  :</td>
+	<td style="border: 0; padding: 0; text-align: right"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_selectionnerCode(this);">Sélectionner tout</a> -
+	<a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_etendreCode(this);">Visualiser dans une fenêtre à part</a></td></tr></tbody></table>
+	<pre class="bbcode_code" style="height:204px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td valign="top" width="33"><div style="border: 1px dashed gray; padding-left: 5px; padding-right: 5px; margin-right: 5px; text-align: right; font-family: monospace">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br></div></td><td valign="top"><pre style="margin: 0">&nbsp;
+<span style="color: #0080ff;">&lt;?php</span>
+	<span style="color: #0000ff">if</span> <span class="br0">(</span>isset<span class="br0">(</span><span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'checkbox'</span><span class="br0">]</span><span class="br0">)</span><span class="br0">)</span>
+	<span class="br0">{</span>    
+		<span style="color: #808080;">//recupérer ces valeurs dans un array</span>
+		<span style="color: #339933;">$tabCheckbox</span> = <span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'checkbox'</span><span class="br0">]</span>;
+		<span style="color: #808080;">/*
+		echo '&lt;pre&gt;';
+		print_r($tabCheckbox);
+		echo '&lt;/pre&gt;';
+		*/</span>
+		<span style="color: #0000ff">foreach</span> <span class="br0">(</span><span style="color: #339933;">$tabCheckbox</span> <span style="color: #0000ff">as</span> <span style="color: #339933;">$checkbox</span><span class="br0">)</span> 
+		<span class="br0">{</span>
+			<span style="color: #339933;">$idClient</span> = addslashes<span class="br0">(</span><span style="color: #339933;">$checkbox</span><span class="br0">)</span>;
+			<span style="color: #339933;">$req</span> = <span style="color: #339933;">$bdd</span>-<span style="">&gt;</span><span style="">prepare</span><span class="br0">(</span><span style="color: #ff0000;">'UPDATE clients SET
+						publier = :publier
+						WHERE idClient = :idClient'</span><span class="br0">)</span>;
+&nbsp;
+			<span style="color: #339933;">$req</span>-<span style="">&gt;</span><span style="">execute</span><span class="br0">(</span>array<span class="br0">(</span>
+			<span style="color: #ff0000;">'publier'</span> =<span style="">&gt;</span> <span style="color: #cc66cc;">1</span>,
+			<span style="color: #ff0000;">'idClient'</span> =<span style="">&gt;</span> <span style="color: #339933;">$idClient</span>
+			<span class="br0">)</span><span class="br0">)</span>;
+		<span class="br0">}</span>
+	<span class="br0">}</span>	
+	<span style="color: #0000ff">else</span>
+	<span class="br0">{</span>	
+		echo <span style="color: #ff0000;">'pas de modifs'</span>;
+	<span class="br0">}</span>
+<span style="color: #0080ff;">?&gt;</span></pre></td></tr></tbody></table></pre>
+</div>
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_6413250" src="./récupérer et traiter les valeur de plusieur checkbox_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_6413250" class="newreply" href="http://www.developpez.net/forums/newreply.php?do=newreply&amp;p=6413250" rel="nofollow" title="Répondre avec citation"><img id="quoteimg_6413250" src="./récupérer et traiter les valeur de plusieur checkbox_files/clear.gif" alt="Répondre avec citation" title="Répondre avec citation">  Répondre avec citation</a> 
+					
+					
+					
+<span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucehautgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6413250"> 0</a><span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucebasgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6413250"> 0</a>
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_6413282">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead" style="">
+			<span class="postdate old">
+				
+					<span class="date">22/12/2011,&nbsp;<span class="time">11h52</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post6413282" href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#post6413282" class="postcounter">#6</a><a id="postcount6413282" name="6"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails" style="">
+		<div class="userinfo" style="">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen13">
+	<a rel="nofollow" class="username offline " href="http://www.developpez.net/forums/u243304/bovino/" title="Bovino est déconnecté"><strong>Bovino</strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./récupérer et traiter les valeur de plusieur checkbox_files/user-offline.png" alt="Bovino est déconnecté" border="0" title="Bovino est déconnecté">
+
+			
+			</div>
+			<span class="usertitle">
+				<div style="text-align: center; font-weight: bold">Rédacteur</div>
+			</span>
+			
+				<span class="rank"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/nv-equipe-6.png" alt="" border=""></span>
+			
+			<div style="text-align: center; margin-bottom: 4px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-redacteur.png" title="Rédacteur - 9 articles publiés" user="243304" role="publications" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-chroniqueur.png" title="65 actualités publiées" user="243304" role="news" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-faq.png" title="3 Q/R de FAQ rédigées" user="243304" role="faq" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-correcteur.png" title="Correcteur - 5 corrections effectuées" user="243304" role="relectures" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-traducteur.png" title="Traducteur - 9 traductions effectuées" user="243304" role="traductions" style="cursor: pointer;"><br><img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-gabarisateur.png" title="Gabarisateur - 11 articles gabarisés" user="243304" role="gabarisations" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-uploadeur.png" title="Posteur de sources - 14 sources postées" user="243304" role="uploads" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-critiqueur.png" title="Critique de livres - 13 critiques effectuées" user="243304" role="livres" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-blogueur.png" title="31 billets blog publiés sur Developpez"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-trophee3.png" role="trophees" userid="243304" title="27 trophées reçus" style="cursor: pointer;"></div>
+			
+			
+			<a rel="nofollow" class="postuseravatar" href="http://www.developpez.net/forums/u243304/bovino/" title="Bovino est déconnecté">
+				<img src="./récupérer et traiter les valeur de plusieur checkbox_files/243304-bovino.gif" alt="Avatar de Bovino" title="Avatar de Bovino">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<div style="float: left; width: 154px"><div><img src="./récupérer et traiter les valeur de plusieur checkbox_files/france.gif" title="France">  <img src="./récupérer et traiter les valeur de plusieur checkbox_files/male.png" alt="Homme" title="Homme"> <a href="http://www.developpez.com/user/profil/243304/Bovino"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/pro.png" alt="Profil pro" title="Profil pro"></a> </div><div>Développeur Web</div><dt>Inscrit en</dt><dd>juin 2008</dd><dt>Messages</dt><dd>23&nbsp;767</dd></div><div style="float: right; margin-top: 5px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/profil-etendu.gif" title="Plus de détails..." role="profiletendu" userid="243304" style="cursor: pointer;"></div><div style="clear: both"></div><div style="display: none" role="profiletendu" userid="243304"><div class="kha_titleBar">Détails du profil<img style="float: right; cursor: pointer" src="./récupérer et traiter les valeur de plusieur checkbox_files/cross.gif"></div><div class="kha_content"><div><b>Informations personnelles :</b></div><div>Sexe : <img src="./récupérer et traiter les valeur de plusieur checkbox_files/male.png" alt="Homme" title="Homme"></div><div>Âge : 45</div><div>Localisation : France, Gironde (Aquitaine)</div><div><br><b>Informations professionnelles :</b></div><div>Activité : Développeur Web</div><div>Secteur : High Tech - Éditeur de logiciels</div><div><br><b>Informations forums :</b></div><div>Inscription : juin 2008</div><div>Messages : 23&nbsp;767</div><div>Points : 69 246</div></div></div><dt>Points</dt><dd><span role="points" userid="243304" style="cursor: pointer;">69 246</span></dd><dt>Billets dans le blog</dt><dd><a href="http://www.developpez.net/forums/blogs/243304-bovino/">20</a></dd>
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow has_after_content">
+				
+				
+				<h2 class="title icon">
+					<img src="./récupérer et traiter les valeur de plusieur checkbox_files/icon1.png" alt="Par défaut" title="Par défaut"> 
+				</h2>
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_6413282">
+						<blockquote class="postcontent restore ">
+							A priori, tu n'as pas rajouté<br>
+<div class="bbcode_container">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+	<td style="border: 0; padding: 0; text-align: left">Code  :</td>
+	<td style="border: 0; padding: 0; text-align: right"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_selectionnerCode(this);">Sélectionner tout</a> -
+	<a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_etendreCode(this);">Visualiser dans une fenêtre à part</a></td></tr></tbody></table>
+	<pre class="bbcode_code" style="height:36px;">name=<span style="color: #ff0000;">"checkbox[]"</span></pre>
+</div>sur tous tes champs dont le nom était <span style="font-family: monospace; padding: 2px; background: #eee">checkbox</span>...<br>
+<br>
+Au passage, c'est pas particulièrement judicieux comme nom...
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="after_content">
+				
+				
+				
+				
+					<blockquote class="signature restore"><div class="signaturecontainer"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> Pas de question technique par MP !<br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> Tout le monde peut participer à developpez.com, vous avez une idée, <a rel="nofollow" href="http://www.developpez.net/forums/private.php?do=newpm&amp;u=243304" target="_blank">contactez-moi</a> !<br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> Mes formations <b>video2brain</b> : <a rel="nofollow" href="http://www.video2brain.com/fr/products-261.htm" target="_blank">La formation complète sur JavaScript</a> • <a rel="nofollow" href="http://www.video2brain.com/fr/products-319.htm" target="_blank">JavaScript et le DOM par la pratique</a> • <a rel="nofollow" href="http://www.video2brain.com/fr/products-284.htm" target="_blank">PHP 5 et MySQL : les fondamentaux</a><br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> <a href="http://dmouronval.developpez.com/tutoriels/jquery/livre/" target="_blank">Mon livre sur jQuery</a><br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> <b><a href="http://www.developpez.net/forums/d1428742/club-professionnels-informatique/evolutions-club/add-on-firefox-chrome-module-d-integration-jsfiddle-codepen-forum/" target="_blank">Module Firefox / Chrome d'intégration de JSFiddle et CodePen sur le forum</a></b></div></blockquote>
+				
+				
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_6413282" src="./récupérer et traiter les valeur de plusieur checkbox_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_6413282" class="newreply" href="http://www.developpez.net/forums/newreply.php?do=newreply&amp;p=6413282" rel="nofollow" title="Répondre avec citation"><img id="quoteimg_6413282" src="./récupérer et traiter les valeur de plusieur checkbox_files/clear.gif" alt="Répondre avec citation" title="Répondre avec citation">  Répondre avec citation</a> 
+					
+					
+					
+<span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucehautgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6413282"> 1</a><span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucebasgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6413282"> 0</a>
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_6413309">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead" style="">
+			<span class="postdate old">
+				
+					<span class="date">22/12/2011,&nbsp;<span class="time">12h01</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post6413309" href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#post6413309" class="postcounter">#7</a><a id="postcount6413309" name="7"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails" style="">
+		<div class="userinfo" style="">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen14">
+	<a rel="nofollow" class="username offline " href="http://www.developpez.net/forums/u365539/artichaudd/" title="artichaudd est déconnecté"><strong>artichaudd</strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./récupérer et traiter les valeur de plusieur checkbox_files/user-offline.png" alt="artichaudd est déconnecté" border="0" title="artichaudd est déconnecté">
+
+			
+			</div>
+			<span class="usertitle">
+				Membre du Club
+			</span>
+			
+				<span class="rank"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/nv-carres-2.png" alt="" border=""></span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<div style="float: left; width: 154px"><div><img src="./récupérer et traiter les valeur de plusieur checkbox_files/france.gif" title="France">   <a href="http://www.developpez.com/user/profil/365539/artichaudd"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/pro.png" alt="Profil pro" title="Profil pro"></a> </div><dt>Inscrit en</dt><dd>avril 2010</dd><dt>Messages</dt><dd>170</dd></div><div style="float: right; margin-top: 5px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/profil-etendu.gif" title="Plus de détails..." role="profiletendu" userid="365539" style="cursor: pointer;"></div><div style="clear: both"></div><div style="display: none" role="profiletendu" userid="365539"><div class="kha_titleBar">Détails du profil<img style="float: right; cursor: pointer" src="./récupérer et traiter les valeur de plusieur checkbox_files/cross.gif"></div><div class="kha_content"><div><b>Informations personnelles :</b></div><div>Localisation : France</div><div><br><b>Informations forums :</b></div><div>Inscription : avril 2010</div><div>Messages : 170</div><div>Points : 48</div></div></div><dt>Points</dt><dd><span role="points" userid="365539" style="cursor: pointer;">48</span></dd>
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+				<h2 class="title icon">
+					<img src="./récupérer et traiter les valeur de plusieur checkbox_files/icon1.png" alt="Par défaut" title="Par défaut"> 
+				</h2>
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_6413309">
+						<blockquote class="postcontent restore ">
+							et pourtant si !!! <img src="./récupérer et traiter les valeur de plusieur checkbox_files/icon_biggrin.gif" border="0" alt="" title=":D" class="inlineimg"><br>
+et pour le nom il n'est pas assez decriptif de la fonction des checkbox<br>
+c'est ca?<br>
+<br>
+et je me suis trompé l'erreur dans traitement-formulaire.php (voir code de mon message précèdent)<br>
+ est au sujet de cette ligne :<br>
+foreach ($tabCheckbox as $checkbox)<br>
+<br>
+c'est comme si pour lui $tabCheckbox n'etait pas un array???<br>
+ce qui expliquerait pourquoi quand je fais un print_r($tabCheckbox) il ne m'affiche qu'une seule valeur alors que j'en ai cochées 3 ou plus<br>
+<br>
+formulaire.php<br>
+<div class="bbcode_container">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+	<td style="border: 0; padding: 0; text-align: left">Code  :</td>
+	<td style="border: 0; padding: 0; text-align: right"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_selectionnerCode(this);">Sélectionner tout</a> -
+	<a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_etendreCode(this);">Visualiser dans une fenêtre à part</a></td></tr></tbody></table>
+	<pre class="bbcode_code" style="height:204px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td valign="top" width="33"><div style="border: 1px dashed gray; padding-left: 5px; padding-right: 5px; margin-right: 5px; text-align: right; font-family: monospace">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br></div></td><td valign="top"><pre style="margin: 0">&nbsp;
+<span style="color: #0080ff;">&lt;?php</span>
+<span style="color: #808080;">//----------------------- CONNEXION A LA BDD ------------------------</span>
+	<span style="color: #0000ff">include</span><span class="br0">(</span><span style="color: #ff0000;">"../includes/sql_connect.php"</span><span class="br0">)</span>;	
+&nbsp;
+	<span style="color: #339933;">$reponse</span> = <span style="color: #339933;">$bdd</span>-<span style="">&gt;</span><span style="">query</span><span class="br0">(</span><span style="color: #ff0000;">"SELECT *
+						FROM clients
+						ORDER BY idClient
+						"</span><span class="br0">)</span> or die<span class="br0">(</span>print_r<span class="br0">(</span><span style="color: #339933;">$bdd</span>-<span style="">&gt;</span><span style="">errorInfo</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span>; <span style="color: #808080;">//requete</span>
+&nbsp;
+		echo<span style="color: #ff0000;">'
+		&lt;form id="adminForm" method="post" action="formulaire-traitement.php"&gt;
+			'</span>;
+&nbsp;
+			<span style="color: #0000ff">while</span> <span class="br0">(</span><span style="color: #339933;">$donnees</span> = <span style="color: #339933;">$reponse</span>-<span style="">&gt;</span><span style="">fetch</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+			<span class="br0">{</span>
+				echo<span style="color: #ff0000;">'&lt;input type="checkbox" name="checkbox[]" value="'</span>.<span style="color: #339933;">$donnees</span><span class="br0">[</span><span style="color: #ff0000;">'idClient'</span><span class="br0">]</span>.<span style="color: #ff0000;">'" /&gt;'</span>.<span style="color: #339933;">$donnees</span><span class="br0">[</span><span style="color: #ff0000;">'idClient'</span><span class="br0">]</span>.<span style="color: #ff0000;">'
+				&lt;br /&gt;'</span>;
+			<span class="br0">}</span>
+&nbsp;
+			echo<span style="color: #ff0000;">'&lt;input type="submit" class="valider" name="nom" value="valider" /&gt;
+		&lt;/form&gt;'</span>;
+<span style="color: #0080ff;">?&gt;</span></pre></td></tr></tbody></table></pre>
+</div>
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_6413309" src="./récupérer et traiter les valeur de plusieur checkbox_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_6413309" class="newreply" href="http://www.developpez.net/forums/newreply.php?do=newreply&amp;p=6413309" rel="nofollow" title="Répondre avec citation"><img id="quoteimg_6413309" src="./récupérer et traiter les valeur de plusieur checkbox_files/clear.gif" alt="Répondre avec citation" title="Répondre avec citation">  Répondre avec citation</a> 
+					
+					
+					
+<span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucehautgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6413309"> 0</a><span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucebasgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6413309"> 0</a>
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_6413624">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead" style="">
+			<span class="postdate old">
+				
+					<span class="date">22/12/2011,&nbsp;<span class="time">14h15</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post6413624" href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#post6413624" class="postcounter">#8</a><a id="postcount6413624" name="8"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails" style="">
+		<div class="userinfo" style="">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen15">
+	<a rel="nofollow" class="username offline " href="http://www.developpez.net/forums/u243304/bovino/" title="Bovino est déconnecté"><strong>Bovino</strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./récupérer et traiter les valeur de plusieur checkbox_files/user-offline.png" alt="Bovino est déconnecté" border="0" title="Bovino est déconnecté">
+
+			
+			</div>
+			<span class="usertitle">
+				<div style="text-align: center; font-weight: bold">Rédacteur</div>
+			</span>
+			
+				<span class="rank"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/nv-equipe-6.png" alt="" border=""></span>
+			
+			<div style="text-align: center; margin-bottom: 4px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-redacteur.png" title="Rédacteur - 9 articles publiés" user="243304" role="publications" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-chroniqueur.png" title="65 actualités publiées" user="243304" role="news" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-faq.png" title="3 Q/R de FAQ rédigées" user="243304" role="faq" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-correcteur.png" title="Correcteur - 5 corrections effectuées" user="243304" role="relectures" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-traducteur.png" title="Traducteur - 9 traductions effectuées" user="243304" role="traductions" style="cursor: pointer;"><br><img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-gabarisateur.png" title="Gabarisateur - 11 articles gabarisés" user="243304" role="gabarisations" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-uploadeur.png" title="Posteur de sources - 14 sources postées" user="243304" role="uploads" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-critiqueur.png" title="Critique de livres - 13 critiques effectuées" user="243304" role="livres" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-blogueur.png" title="31 billets blog publiés sur Developpez"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-trophee3.png" role="trophees" userid="243304" title="27 trophées reçus" style="cursor: pointer;"></div>
+			
+			
+			<a rel="nofollow" class="postuseravatar" href="http://www.developpez.net/forums/u243304/bovino/" title="Bovino est déconnecté">
+				<img src="./récupérer et traiter les valeur de plusieur checkbox_files/243304-bovino.gif" alt="Avatar de Bovino" title="Avatar de Bovino">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<div style="float: left; width: 154px"><div><img src="./récupérer et traiter les valeur de plusieur checkbox_files/france.gif" title="France">  <img src="./récupérer et traiter les valeur de plusieur checkbox_files/male.png" alt="Homme" title="Homme"> <a href="http://www.developpez.com/user/profil/243304/Bovino"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/pro.png" alt="Profil pro" title="Profil pro"></a> </div><div>Développeur Web</div><dt>Inscrit en</dt><dd>juin 2008</dd><dt>Messages</dt><dd>23&nbsp;767</dd></div><div style="float: right; margin-top: 5px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/profil-etendu.gif" title="Plus de détails..." role="profiletendu" userid="243304" style="cursor: pointer;"></div><div style="clear: both"></div><div style="display: none" role="profiletendu" userid="243304"><div class="kha_titleBar">Détails du profil<img style="float: right; cursor: pointer" src="./récupérer et traiter les valeur de plusieur checkbox_files/cross.gif"></div><div class="kha_content"><div><b>Informations personnelles :</b></div><div>Sexe : <img src="./récupérer et traiter les valeur de plusieur checkbox_files/male.png" alt="Homme" title="Homme"></div><div>Âge : 45</div><div>Localisation : France, Gironde (Aquitaine)</div><div><br><b>Informations professionnelles :</b></div><div>Activité : Développeur Web</div><div>Secteur : High Tech - Éditeur de logiciels</div><div><br><b>Informations forums :</b></div><div>Inscription : juin 2008</div><div>Messages : 23&nbsp;767</div><div>Points : 69 246</div></div></div><dt>Points</dt><dd><span role="points" userid="243304" style="cursor: pointer;">69 246</span></dd><dt>Billets dans le blog</dt><dd><a href="http://www.developpez.net/forums/blogs/243304-bovino/">20</a></dd>
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow has_after_content">
+				
+				
+				<h2 class="title icon">
+					<img src="./récupérer et traiter les valeur de plusieur checkbox_files/icon1.png" alt="Par défaut" title="Par défaut"> 
+				</h2>
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_6413624">
+						<blockquote class="postcontent restore ">
+							Ben pourtant...<br>
+<div class="bbcode_container">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+	<td style="border: 0; padding: 0; text-align: left">Code  :</td>
+	<td style="border: 0; padding: 0; text-align: right"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_selectionnerCode(this);">Sélectionner tout</a> -
+	<a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_etendreCode(this);">Visualiser dans une fenêtre à part</a></td></tr></tbody></table>
+	<pre class="bbcode_code" style="height:204px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td valign="top" width="33"><div style="border: 1px dashed gray; padding-left: 5px; padding-right: 5px; margin-right: 5px; text-align: right; font-family: monospace">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br></div></td><td valign="top"><pre style="margin: 0">&lt;!doctype html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+	&lt;meta charset="utf-8" /&gt;
+	&lt;title&gt;Checkbox&lt;/title&gt;
+&lt;/head&gt;
+<span style="color: #0080ff;">&lt;?php</span>
+<span style="color: #0000ff">if</span><span class="br0">(</span>isset<span class="br0">(</span><span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'test'</span><span class="br0">]</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+	var_dump<span class="br0">(</span><span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'test'</span><span class="br0">]</span><span class="br0">)</span>;
+<span class="br0">}</span>
+<span style="color: #0080ff;">?&gt;</span>
+&lt;body&gt;
+	&lt;form method="post"&gt;
+<span style="color: #0080ff;">&lt;?php</span>
+	<span style="color: #0000ff">for</span><span class="br0">(</span><span style="color: #339933;">$i</span>=<span style="color: #cc66cc;">0</span>; <span style="color: #339933;">$i</span> <span style="">&lt;</span> <span style="color: #cc66cc;">10</span>; <span style="color: #339933;">$i</span>++<span class="br0">)</span>:
+<span style="color: #0080ff;">?&gt;</span>
+	&lt;label&gt;&lt;input type="checkbox" value="checkbox<span style="color: #0080ff;">&lt;?php</span> echo <span style="color: #339933;">$i</span>; <span style="color: #0080ff;">?&gt;</span>" name="test[]" value="Valeur <span style="color: #0080ff;">&lt;?php</span> echo <span style="color: #339933;">$i</span>; <span style="color: #0080ff;">?&gt;</span>"<span style="color: #0080ff;">&lt;?php</span> <span style="color: #0000ff">if</span><span class="br0">(</span>isset<span class="br0">(</span><span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'test'</span><span class="br0">]</span><span class="br0">)</span> <span style="">&amp;&amp;</span> in_array<span class="br0">(</span><span style="color: #ff0000;">'checkbox'</span>.<span style="color: #339933;">$i</span>, <span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'test'</span><span class="br0">]</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>echo <span style="color: #ff0000;">' checked="checked"'</span>;<span class="br0">}</span> <span style="color: #0080ff;">?&gt;</span> /&gt; Choix <span style="color: #0080ff;">&lt;?php</span> echo <span style="color: #339933;">$i</span>; <span style="color: #0080ff;">?&gt;</span>&lt;/label&gt;&lt;br /&gt;
+<span style="color: #0080ff;">&lt;?php</span>
+	endfor;
+<span style="color: #0080ff;">?&gt;</span>
+		&lt;input type="submit" value="Valider"&gt;
+	&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></td></tr></tbody></table></pre>
+</div>affiche bien le résultat souhaité. <img src="./récupérer et traiter les valeur de plusieur checkbox_files/icon_confused.gif" border="0" alt="" title=":?" class="inlineimg">
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="after_content">
+				
+				
+				
+				
+					<blockquote class="signature restore"><div class="signaturecontainer"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> Pas de question technique par MP !<br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> Tout le monde peut participer à developpez.com, vous avez une idée, <a rel="nofollow" href="http://www.developpez.net/forums/private.php?do=newpm&amp;u=243304" target="_blank">contactez-moi</a> !<br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> Mes formations <b>video2brain</b> : <a rel="nofollow" href="http://www.video2brain.com/fr/products-261.htm" target="_blank">La formation complète sur JavaScript</a> • <a rel="nofollow" href="http://www.video2brain.com/fr/products-319.htm" target="_blank">JavaScript et le DOM par la pratique</a> • <a rel="nofollow" href="http://www.video2brain.com/fr/products-284.htm" target="_blank">PHP 5 et MySQL : les fondamentaux</a><br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> <a href="http://dmouronval.developpez.com/tutoriels/jquery/livre/" target="_blank">Mon livre sur jQuery</a><br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> <b><a href="http://www.developpez.net/forums/d1428742/club-professionnels-informatique/evolutions-club/add-on-firefox-chrome-module-d-integration-jsfiddle-codepen-forum/" target="_blank">Module Firefox / Chrome d'intégration de JSFiddle et CodePen sur le forum</a></b></div></blockquote>
+				
+				
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_6413624" src="./récupérer et traiter les valeur de plusieur checkbox_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_6413624" class="newreply" href="http://www.developpez.net/forums/newreply.php?do=newreply&amp;p=6413624" rel="nofollow" title="Répondre avec citation"><img id="quoteimg_6413624" src="./récupérer et traiter les valeur de plusieur checkbox_files/clear.gif" alt="Répondre avec citation" title="Répondre avec citation">  Répondre avec citation</a> 
+					
+					
+					
+<span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucehautgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6413624"> 1</a><span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucebasgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6413624"> 0</a>
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_6413626">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead" style="">
+			<span class="postdate old">
+				
+					<span class="date">22/12/2011,&nbsp;<span class="time">14h15</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post6413626" href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#post6413626" class="postcounter">#9</a><a id="postcount6413626" name="9"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails" style="">
+		<div class="userinfo" style="">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen16">
+	<a rel="nofollow" class="username offline " href="http://www.developpez.net/forums/u156897/celira/" title="Celira est déconnecté"><strong><span style="text-decoration: underline; color: #008D00">Celira</span></strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./récupérer et traiter les valeur de plusieur checkbox_files/user-offline.png" alt="Celira est déconnecté" border="0" title="Celira est déconnecté">
+
+			
+			</div>
+			<span class="usertitle">
+				<div style="text-align: center; font-weight: bold">Modératrice</div>
+			</span>
+			
+				<span class="rank"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/nv-equipe-6.png" alt="" border=""></span>
+			
+			<div style="text-align: center; margin-bottom: 4px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-moderateur.png" title="Modératrice"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-chroniqueur.png" title="4 actualités publiées" user="156897" role="news" style="cursor: pointer;"></div>
+			
+			
+			<a rel="nofollow" class="postuseravatar" href="http://www.developpez.net/forums/u156897/celira/" title="Celira est déconnecté">
+				<img src="./récupérer et traiter les valeur de plusieur checkbox_files/156897-celira.gif" alt="Avatar de Celira" title="Avatar de Celira">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<div style="float: left; width: 154px"><div><img src="./récupérer et traiter les valeur de plusieur checkbox_files/france.gif" title="France">  <img src="./récupérer et traiter les valeur de plusieur checkbox_files/female.png" alt="Femme" title="Femme"> <a href="http://www.developpez.com/user/profil/156897/Celira"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/pro.png" alt="Profil pro" title="Profil pro"></a> </div><div>Développeuse PHP/Java</div><dt>Inscrit en</dt><dd>avril 2007</dd><dt>Messages</dt><dd>6&nbsp;340</dd></div><div style="float: right; margin-top: 5px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/profil-etendu.gif" title="Plus de détails..." role="profiletendu" userid="156897" style="cursor: pointer;"></div><div style="clear: both"></div><div style="display: none" role="profiletendu" userid="156897"><div class="kha_titleBar">Détails du profil<img style="float: right; cursor: pointer" src="./récupérer et traiter les valeur de plusieur checkbox_files/cross.gif"></div><div class="kha_content"><div><b>Informations personnelles :</b></div><div>Sexe : <img src="./récupérer et traiter les valeur de plusieur checkbox_files/female.png" alt="Femme" title="Femme"></div><div>Âge : 31</div><div>Localisation : France</div><div><br><b>Informations professionnelles :</b></div><div>Activité : Développeuse PHP/Java</div><div>Secteur : Industrie</div><div><br><b>Informations forums :</b></div><div>Inscription : avril 2007</div><div>Messages : 6&nbsp;340</div><div>Points : 12 415</div></div></div><dt>Points</dt><dd><span role="points" userid="156897" style="cursor: pointer;">12 415</span></dd>
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow has_after_content">
+				
+				
+				<h2 class="title icon">
+					<img src="./récupérer et traiter les valeur de plusieur checkbox_files/icon1.png" alt="Par défaut" title="Par défaut"> 
+				</h2>
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_6413626">
+						<blockquote class="postcontent restore ">
+							ça a l'air bien pourtant... Si tu regardes la source générée, ça a le bon format ?
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="after_content">
+				
+				
+				
+				
+					<blockquote class="signature restore"><div class="signaturecontainer"><font size="1"><font color="#990000"><b>Modératrice PHP</b><br>
+Aucun navigateur ne propose d'extension boule-de-cristal : <b>postez votre code et vos messages d'erreurs</b>. (Rappel : "<i>ça ne marche pas</i>" n'est <u>pas</u> un message d'erreur)<br>
+Cherchez un peu avant poser votre question : <a href="http://php.developpez.com/cours/" target="_blank"><font color="#990000"><u>Cours et Tutoriels PHP</u></font></a> - <a href="http://php.developpez.com/faq/" target="_blank"><font color="#990000"><u>FAQ PHP</u></font></a>.<br>
+<br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/nosms.gif" border="0" alt="" title=":nosms:" class="inlineimg"> Affichez votre code en couleurs : [CODE=php][/CODE] (bouton # de l'éditeur) et [C=php][/C]<br>
+</font></font></div></blockquote>
+				
+				
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_6413626" src="./récupérer et traiter les valeur de plusieur checkbox_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_6413626" class="newreply" href="http://www.developpez.net/forums/newreply.php?do=newreply&amp;p=6413626" rel="nofollow" title="Répondre avec citation"><img id="quoteimg_6413626" src="./récupérer et traiter les valeur de plusieur checkbox_files/clear.gif" alt="Répondre avec citation" title="Répondre avec citation">  Répondre avec citation</a> 
+					
+					
+					
+<span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucehautgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6413626"> 1</a><span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucebasgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6413626"> 0</a>
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_6414228">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead" style="">
+			<span class="postdate old">
+				
+					<span class="date">22/12/2011,&nbsp;<span class="time">17h18</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post6414228" href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#post6414228" class="postcounter">#10</a><a id="postcount6414228" name="10"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails" style="">
+		<div class="userinfo" style="">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen17">
+	<a rel="nofollow" class="username offline " href="http://www.developpez.net/forums/u365539/artichaudd/" title="artichaudd est déconnecté"><strong>artichaudd</strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./récupérer et traiter les valeur de plusieur checkbox_files/user-offline.png" alt="artichaudd est déconnecté" border="0" title="artichaudd est déconnecté">
+
+			
+			</div>
+			<span class="usertitle">
+				Membre du Club
+			</span>
+			
+				<span class="rank"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/nv-carres-2.png" alt="" border=""></span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<div style="float: left; width: 154px"><div><img src="./récupérer et traiter les valeur de plusieur checkbox_files/france.gif" title="France">   <a href="http://www.developpez.com/user/profil/365539/artichaudd"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/pro.png" alt="Profil pro" title="Profil pro"></a> </div><dt>Inscrit en</dt><dd>avril 2010</dd><dt>Messages</dt><dd>170</dd></div><div style="float: right; margin-top: 5px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/profil-etendu.gif" title="Plus de détails..." role="profiletendu" userid="365539" style="cursor: pointer;"></div><div style="clear: both"></div><div style="display: none" role="profiletendu" userid="365539"><div class="kha_titleBar">Détails du profil<img style="float: right; cursor: pointer" src="./récupérer et traiter les valeur de plusieur checkbox_files/cross.gif"></div><div class="kha_content"><div><b>Informations personnelles :</b></div><div>Localisation : France</div><div><br><b>Informations forums :</b></div><div>Inscription : avril 2010</div><div>Messages : 170</div><div>Points : 48</div></div></div><dt>Points</dt><dd><span role="points" userid="365539" style="cursor: pointer;">48</span></dd>
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+				<h2 class="title icon">
+					<img src="./récupérer et traiter les valeur de plusieur checkbox_files/icon1.png" alt="Par défaut" title="Par défaut"> 
+				</h2>
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_6414228">
+						<blockquote class="postcontent restore ">
+							oui vous avez raison, c'est bon tout marche c'est parfait<br>
+merci a vous 2<br>
+<br>
+une derniere question cependant<br>
+vous avez compris que ce formulaire me servait a publier des client<br>
+ceci si d’appuis sur les btn submit publier<br>
+mais j'aimerai aussi que ca puisse me les depublier<br>
+en appyant sur le btn depulier<br>
+<br>
+surement en envoyant un argument quelconque, qui soit m’exécutera le sript pour publier ou celui pour depublier contenu dans traitement-formulaire.php<br>
+<br>
+voici mon formulaire.php avec ces 2 btn<br>
+ainsi que ma page traitement-formulaire.php<br>
+qui execute les script publier ou depublier<br>
+<br>
+formulaire.php :<br>
+<div class="bbcode_container">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+	<td style="border: 0; padding: 0; text-align: left">Code  :</td>
+	<td style="border: 0; padding: 0; text-align: right"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_selectionnerCode(this);">Sélectionner tout</a> -
+	<a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_etendreCode(this);">Visualiser dans une fenêtre à part</a></td></tr></tbody></table>
+	<pre class="bbcode_code" style="height:204px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td valign="top" width="33"><div style="border: 1px dashed gray; padding-left: 5px; padding-right: 5px; margin-right: 5px; text-align: right; font-family: monospace">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br></div></td><td valign="top"><pre style="margin: 0">&nbsp;
+&lt;body&gt;
+&nbsp;
+		&lt;a class="btn-toolbar" title="Publier" href="#" onClick="document.getElementById('adminForm').submit()"&gt;
+			Publier
+		&lt;/a&gt;
+		&lt;a class="btn-toolbar" title="Dépublier" href="#?nom=Dupont" onClick="document.getElementById('adminForm').submit()"&gt;
+			Dépublier
+		&lt;/a&gt;
+&nbsp;
+<span style="color: #0080ff;">&lt;?php</span>
+<span style="color: #808080;">//----------------------- CONNEXION A LA BDD ------------------------</span>
+&nbsp;
+	<span style="color: #0000ff">include</span><span class="br0">(</span><span style="color: #ff0000;">"../includes/sql_connect.php"</span><span class="br0">)</span>;	
+&nbsp;
+	<span style="color: #339933;">$reponse</span> = <span style="color: #339933;">$bdd</span>-<span style="">&gt;</span><span style="">query</span><span class="br0">(</span><span style="color: #ff0000;">"SELECT *
+						FROM clients
+						ORDER BY idClient
+						"</span><span class="br0">)</span> or die<span class="br0">(</span>print_r<span class="br0">(</span><span style="color: #339933;">$bdd</span>-<span style="">&gt;</span><span style="">errorInfo</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span>; <span style="color: #808080;">//requete</span>
+&nbsp;
+		echo<span style="color: #ff0000;">'&lt;form id="adminForm" method="post" action="traitement-formulaire.php"&gt;
+			'</span>;
+&nbsp;
+			<span style="color: #0000ff">while</span> <span class="br0">(</span><span style="color: #339933;">$donnees</span> = <span style="color: #339933;">$reponse</span>-<span style="">&gt;</span><span style="">fetch</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+			<span class="br0">{</span>
+				echo<span style="color: #ff0000;">'&lt;input type="checkbox" name="checkbox[]" value="'</span>.<span style="color: #339933;">$donnees</span><span class="br0">[</span><span style="color: #ff0000;">'idClient'</span><span class="br0">]</span>.<span style="color: #ff0000;">'" /&gt;'</span>.<span style="color: #339933;">$donnees</span><span class="br0">[</span><span style="color: #ff0000;">'idClient'</span><span class="br0">]</span>.<span style="color: #ff0000;">'
+				&lt;br /&gt;'</span>;
+			<span class="br0">}</span>
+<span style="color: #0080ff;">?&gt;</span>
+&nbsp;
+&lt;/body&gt;</pre></td></tr></tbody></table></pre>
+</div>traitement-formulaire.php :<br>
+<div class="bbcode_container">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+	<td style="border: 0; padding: 0; text-align: left">Code  :</td>
+	<td style="border: 0; padding: 0; text-align: right"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_selectionnerCode(this);">Sélectionner tout</a> -
+	<a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_etendreCode(this);">Visualiser dans une fenêtre à part</a></td></tr></tbody></table>
+	<pre class="bbcode_code" style="height:204px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td valign="top" width="33"><div style="border: 1px dashed gray; padding-left: 5px; padding-right: 5px; margin-right: 5px; text-align: right; font-family: monospace">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br></div></td><td valign="top"><pre style="margin: 0">&nbsp;
+	<span style="color: #808080;">//----------------------- CONNEXION A LA BDD ------------------------</span>
+	<span style="color: #0000ff">include</span><span class="br0">(</span><span style="color: #ff0000;">"../includes/sql_connect.php"</span><span class="br0">)</span>;
+&nbsp;
+	<span style="color: #808080;">//----------------------- RECUPERATION ET INITIALISATION DE TOUTES LES VARIABLES qui peuvent etre transmissent dans l'url ------------------------</span>
+	<span style="color: #0000ff">if</span> <span class="br0">(</span>isset<span class="br0">(</span><span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'checkbox'</span><span class="br0">]</span><span class="br0">)</span><span class="br0">)</span> <span style="color: #808080;">//pour publier</span>
+	<span class="br0">{</span>
+		<span style="color: #808080;">//recupérer ces valeurs dans un array</span>
+		<span style="color: #339933;">$tabCheckbox</span> = <span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'checkbox'</span><span class="br0">]</span>;
+		echo <span style="color: #ff0000;">'&lt;pre&gt;'</span>;
+		print_r<span class="br0">(</span><span style="color: #339933;">$tabCheckbox</span><span class="br0">)</span>;
+		echo <span style="color: #ff0000;">'&lt;/pre&gt;'</span>;
+&nbsp;
+		<span style="color: #0000ff">if</span>   <span style="color: #808080;">// ???  pour publier ????</span>
+		<span class="br0">{</span>
+			<span style="color: #339933;">$etat</span> = <span style="color: #cc66cc;">1</span>;
+		<span class="br0">}</span>
+		<span style="color: #0000ff">if</span>   <span style="color: #808080;">// ???  pour depublier ????</span>
+		<span class="br0">{</span>
+			<span style="color: #339933;">$etat</span> = <span style="color: #cc66cc;">0</span>;
+		<span class="br0">}</span>
+&nbsp;
+		<span style="color: #0000ff">foreach</span> <span class="br0">(</span><span style="color: #339933;">$tabCheckbox</span> <span style="color: #0000ff">as</span> <span style="color: #339933;">$checkbox</span><span class="br0">)</span> 
+		<span class="br0">{</span>
+			<span style="color: #339933;">$idClient</span> = addslashes<span class="br0">(</span><span style="color: #339933;">$checkbox</span><span class="br0">)</span>;
+			echo <span style="color: #339933;">$idClient</span>.<span style="color: #ff0000;">'&lt;br /&gt;'</span>;
+			<span style="color: #339933;">$req</span> = <span style="color: #339933;">$bdd</span>-<span style="">&gt;</span><span style="">prepare</span><span class="br0">(</span><span style="color: #ff0000;">'UPDATE clients SET
+						publier = :publier
+						WHERE idClient = :idClient'</span><span class="br0">)</span>;
+&nbsp;
+			<span style="color: #339933;">$req</span>-<span style="">&gt;</span><span style="">execute</span><span class="br0">(</span>array<span class="br0">(</span>
+			<span style="color: #ff0000;">'publier'</span> =<span style="">&gt;</span> <span style="color: #339933;">$etat</span>,
+			<span style="color: #ff0000;">'idClient'</span> =<span style="">&gt;</span> <span style="color: #339933;">$idClient</span>
+			<span class="br0">)</span><span class="br0">)</span>;
+			echo <span style="color: #ff0000;">'modifs'</span>;
+		<span class="br0">}</span>
+	<span class="br0">}</span>
+&nbsp;
+	<span style="color: #0000ff">else</span> 
+	<span class="br0">{</span>	
+		echo <span style="color: #ff0000;">'pas de modifs'</span>;
+	<span class="br0">}</span></pre></td></tr></tbody></table></pre>
+</div>
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_6414228" src="./récupérer et traiter les valeur de plusieur checkbox_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_6414228" class="newreply" href="http://www.developpez.net/forums/newreply.php?do=newreply&amp;p=6414228" rel="nofollow" title="Répondre avec citation"><img id="quoteimg_6414228" src="./récupérer et traiter les valeur de plusieur checkbox_files/clear.gif" alt="Répondre avec citation" title="Répondre avec citation">  Répondre avec citation</a> 
+					
+					
+					
+<span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucehautgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6414228"> 0</a><span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucebasgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6414228"> 0</a>
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_6414283">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead" style="">
+			<span class="postdate old">
+				
+					<span class="date">22/12/2011,&nbsp;<span class="time">17h35</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post6414283" href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#post6414283" class="postcounter">#11</a><a id="postcount6414283" name="11"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails" style="">
+		<div class="userinfo" style="">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen18">
+	<a rel="nofollow" class="username offline " href="http://www.developpez.net/forums/u243304/bovino/" title="Bovino est déconnecté"><strong>Bovino</strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./récupérer et traiter les valeur de plusieur checkbox_files/user-offline.png" alt="Bovino est déconnecté" border="0" title="Bovino est déconnecté">
+
+			
+			</div>
+			<span class="usertitle">
+				<div style="text-align: center; font-weight: bold">Rédacteur</div>
+			</span>
+			
+				<span class="rank"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/nv-equipe-6.png" alt="" border=""></span>
+			
+			<div style="text-align: center; margin-bottom: 4px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-redacteur.png" title="Rédacteur - 9 articles publiés" user="243304" role="publications" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-chroniqueur.png" title="65 actualités publiées" user="243304" role="news" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-faq.png" title="3 Q/R de FAQ rédigées" user="243304" role="faq" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-correcteur.png" title="Correcteur - 5 corrections effectuées" user="243304" role="relectures" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-traducteur.png" title="Traducteur - 9 traductions effectuées" user="243304" role="traductions" style="cursor: pointer;"><br><img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-gabarisateur.png" title="Gabarisateur - 11 articles gabarisés" user="243304" role="gabarisations" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-uploadeur.png" title="Posteur de sources - 14 sources postées" user="243304" role="uploads" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-critiqueur.png" title="Critique de livres - 13 critiques effectuées" user="243304" role="livres" style="cursor: pointer;"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-blogueur.png" title="31 billets blog publiés sur Developpez"> <img src="./récupérer et traiter les valeur de plusieur checkbox_files/embleme-trophee3.png" role="trophees" userid="243304" title="27 trophées reçus" style="cursor: pointer;"></div>
+			
+			
+			<a rel="nofollow" class="postuseravatar" href="http://www.developpez.net/forums/u243304/bovino/" title="Bovino est déconnecté">
+				<img src="./récupérer et traiter les valeur de plusieur checkbox_files/243304-bovino.gif" alt="Avatar de Bovino" title="Avatar de Bovino">
+			</a>
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<div style="float: left; width: 154px"><div><img src="./récupérer et traiter les valeur de plusieur checkbox_files/france.gif" title="France">  <img src="./récupérer et traiter les valeur de plusieur checkbox_files/male.png" alt="Homme" title="Homme"> <a href="http://www.developpez.com/user/profil/243304/Bovino"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/pro.png" alt="Profil pro" title="Profil pro"></a> </div><div>Développeur Web</div><dt>Inscrit en</dt><dd>juin 2008</dd><dt>Messages</dt><dd>23&nbsp;767</dd></div><div style="float: right; margin-top: 5px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/profil-etendu.gif" title="Plus de détails..." role="profiletendu" userid="243304" style="cursor: pointer;"></div><div style="clear: both"></div><div style="display: none" role="profiletendu" userid="243304"><div class="kha_titleBar">Détails du profil<img style="float: right; cursor: pointer" src="./récupérer et traiter les valeur de plusieur checkbox_files/cross.gif"></div><div class="kha_content"><div><b>Informations personnelles :</b></div><div>Sexe : <img src="./récupérer et traiter les valeur de plusieur checkbox_files/male.png" alt="Homme" title="Homme"></div><div>Âge : 45</div><div>Localisation : France, Gironde (Aquitaine)</div><div><br><b>Informations professionnelles :</b></div><div>Activité : Développeur Web</div><div>Secteur : High Tech - Éditeur de logiciels</div><div><br><b>Informations forums :</b></div><div>Inscription : juin 2008</div><div>Messages : 23&nbsp;767</div><div>Points : 69 246</div></div></div><dt>Points</dt><dd><span role="points" userid="243304" style="cursor: pointer;">69 246</span></dd><dt>Billets dans le blog</dt><dd><a href="http://www.developpez.net/forums/blogs/243304-bovino/">20</a></dd>
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow has_after_content">
+				
+				
+				<h2 class="title icon">
+					<img src="./récupérer et traiter les valeur de plusieur checkbox_files/icon1.png" alt="Par défaut" title="Par défaut"> 
+				</h2>
+				
+
+
+						
+						
+				<div class="content">
+					<div id="post_message_6414283">
+						<blockquote class="postcontent restore ">
+							2 solutions possibles.<br>
+<br>
+La plus classique :<br>
+Utiliser des boutons submit au lieu des liens et vérifier le noms du bouton cliqué dans le traitement :<br>
+<div class="bbcode_container">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+	<td style="border: 0; padding: 0; text-align: left">Code html :</td>
+	<td style="border: 0; padding: 0; text-align: right"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_selectionnerCode(this);">Sélectionner tout</a> -
+	<a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_etendreCode(this);">Visualiser dans une fenêtre à part</a></td></tr></tbody></table>
+	<pre class="bbcode_code" style="height:60px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td valign="top" width="26"><div style="border: 1px dashed gray; padding-left: 5px; padding-right: 5px; margin-right: 5px; text-align: right; font-family: monospace">1<br>2<br></div></td><td valign="top"><pre style="margin: 0"><span style="color: #0000ff">&lt;</span><span style="color: #0000ff">input</span> <span style="color: #0080ff;">type</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"submit"</span> <span style="color: #0080ff;">name</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"publier"</span> <span style="color: #0080ff;">value</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"Publier"</span> <span style="color: #0000ff">/&gt;</span>
+<span style="color: #0000ff">&lt;</span><span style="color: #0000ff">input</span> <span style="color: #0080ff;">type</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"submit"</span> <span style="color: #0080ff;">name</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"depublier"</span> <span style="color: #0080ff;">value</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"Dépublier"</span> <span style="color: #0000ff">/&gt;</span></pre></td></tr></tbody></table></pre>
+</div><div class="bbcode_container">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+	<td style="border: 0; padding: 0; text-align: left">Code  :</td>
+	<td style="border: 0; padding: 0; text-align: right"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_selectionnerCode(this);">Sélectionner tout</a> -
+	<a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_etendreCode(this);">Visualiser dans une fenêtre à part</a></td></tr></tbody></table>
+	<pre class="bbcode_code" style="height:108px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td valign="top" width="26"><div style="border: 1px dashed gray; padding-left: 5px; padding-right: 5px; margin-right: 5px; text-align: right; font-family: monospace">1<br>2<br>3<br>4<br>5<br>6<br></div></td><td valign="top"><pre style="margin: 0"><span style="color: #0000ff">if</span><span class="br0">(</span>isset<span class="br0">(</span><span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'publier'</span><span class="br0">]</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+    <span style="color: #808080;">// Publier</span>
+<span class="br0">}</span>
+<span style="color: #0000ff">elseif</span><span class="br0">(</span>isset<span class="br0">(</span><span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'depublier'</span><span class="br0">]</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+    <span style="color: #808080;">// Dépublier</span>
+<span class="br0">}</span></pre></td></tr></tbody></table></pre>
+</div>avec une alternative : laisser le même name pour les deux mais tester la valeur<br>
+<div class="bbcode_container">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+	<td style="border: 0; padding: 0; text-align: left">Code  :</td>
+	<td style="border: 0; padding: 0; text-align: right"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_selectionnerCode(this);">Sélectionner tout</a> -
+	<a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_etendreCode(this);">Visualiser dans une fenêtre à part</a></td></tr></tbody></table>
+	<pre class="bbcode_code" style="height:108px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td valign="top" width="26"><div style="border: 1px dashed gray; padding-left: 5px; padding-right: 5px; margin-right: 5px; text-align: right; font-family: monospace">1<br>2<br>3<br>4<br>5<br>6<br></div></td><td valign="top"><pre style="margin: 0"><span style="color: #0000ff">if</span><span class="br0">(</span><span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'publier'</span><span class="br0">]</span> == <span style="color: #ff0000;">'Publier'</span><span class="br0">)</span><span class="br0">{</span>
+    <span style="color: #808080;">// Publier</span>
+<span class="br0">}</span>
+<span style="color: #0000ff">elseif</span><span class="br0">(</span><span style="color: #339933;">$_POST</span><span class="br0">[</span><span style="color: #ff0000;">'depublier'</span><span class="br0">]</span> == <span style="color: #ff0000;">'Dépublier'</span><span class="br0">)</span><span class="br0">{</span>
+    <span style="color: #808080;">// Dépublier</span>
+<span class="br0">}</span></pre></td></tr></tbody></table></pre>
+</div>En gardant les liens :<br>
+utiliser un input hidden dont tu modifies le value avant l'envoi :<br>
+<div class="bbcode_container">
+	<table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr>
+	<td style="border: 0; padding: 0; text-align: left">Code html :</td>
+	<td style="border: 0; padding: 0; text-align: right"><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_selectionnerCode(this);">Sélectionner tout</a> -
+	<a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#" onclick="return ano_etendreCode(this);">Visualiser dans une fenêtre à part</a></td></tr></tbody></table>
+	<pre class="bbcode_code" style="height:120px;"><table cellspacing="0" cellpadding="0"><tbody><tr><td valign="top" width="26"><div style="border: 1px dashed gray; padding-left: 5px; padding-right: 5px; margin-right: 5px; text-align: right; font-family: monospace">1<br>2<br>3<br>4<br>5<br>6<br>7<br></div></td><td valign="top"><pre style="margin: 0"><span style="color: #0000ff">&lt;</span><span style="color: #0000ff">a</span> <span style="color: #0080ff;">class</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"btn-toolbar"</span> <span style="color: #0080ff;">title</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"Publier"</span> <span style="color: #0080ff;">href</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"#"</span> <span style="color: #0080ff;">onClick</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"document.getElementById('publication').value='publier';document.getElementById('adminForm').submit()"</span><span style="color: #0000ff">&gt;</span>
+	Publier
+<span style="color: #0000ff">&lt;/</span><span style="color: #0000ff">a</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #0000ff">&lt;</span><span style="color: #0000ff">a</span> <span style="color: #0080ff;">class</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"btn-toolbar"</span> <span style="color: #0080ff;">title</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"Dépublier"</span> <span style="color: #0080ff;">href</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"#?nom=Dupont"</span> <span style="color: #0080ff;">onClick</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"document.getElementById('publication').value='depublier';document.getElementById('adminForm').submit()"</span><span style="color: #0000ff">&gt;</span>
+	Dépublier
+<span style="color: #0000ff">&lt;/</span><span style="color: #0000ff">a</span><span style="color: #0000ff">&gt;</span>
+<span style="color: #0000ff">&lt;</span><span style="color: #0000ff">input</span> <span style="color: #0080ff;">type</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"hidden"</span> <span style="color: #0080ff;">name</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"publication"</span> <span style="color: #0080ff;">id</span><span style="color: #0000ff">=</span><span style="color: #ff0000;">"publication"</span> <span style="color: #0000ff">/&gt;</span></pre></td></tr></tbody></table></pre>
+</div>
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="after_content">
+				
+				
+				
+				
+					<blockquote class="signature restore"><div class="signaturecontainer"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> Pas de question technique par MP !<br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> Tout le monde peut participer à developpez.com, vous avez une idée, <a rel="nofollow" href="http://www.developpez.net/forums/private.php?do=newpm&amp;u=243304" target="_blank">contactez-moi</a> !<br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> Mes formations <b>video2brain</b> : <a rel="nofollow" href="http://www.video2brain.com/fr/products-261.htm" target="_blank">La formation complète sur JavaScript</a> • <a rel="nofollow" href="http://www.video2brain.com/fr/products-319.htm" target="_blank">JavaScript et le DOM par la pratique</a> • <a rel="nofollow" href="http://www.video2brain.com/fr/products-284.htm" target="_blank">PHP 5 et MySQL : les fondamentaux</a><br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> <a href="http://dmouronval.developpez.com/tutoriels/jquery/livre/" target="_blank">Mon livre sur jQuery</a><br>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/fleche.gif" border="0" alt="" title=":fleche:" class="inlineimg"> <b><a href="http://www.developpez.net/forums/d1428742/club-professionnels-informatique/evolutions-club/add-on-firefox-chrome-module-d-integration-jsfiddle-codepen-forum/" target="_blank">Module Firefox / Chrome d'intégration de JSFiddle et CodePen sur le forum</a></b></div></blockquote>
+				
+				
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_6414283" src="./récupérer et traiter les valeur de plusieur checkbox_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_6414283" class="newreply" href="http://www.developpez.net/forums/newreply.php?do=newreply&amp;p=6414283" rel="nofollow" title="Répondre avec citation"><img id="quoteimg_6414283" src="./récupérer et traiter les valeur de plusieur checkbox_files/clear.gif" alt="Répondre avec citation" title="Répondre avec citation">  Répondre avec citation</a> 
+					
+					
+					
+<span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucehautgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6414283"> 2</a><span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucebasgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6414283"> 0</a>
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+<li class="postbitlegacy postbitim postcontainer old" id="post_6418437">
+<!-- see bottom of postbit.css for .userinfo .popupmenu styles -->
+
+	<div class="posthead" style="">
+			<span class="postdate old">
+				
+					<span class="date">26/12/2011,&nbsp;<span class="time">18h23</span></span>
+				
+			</span>
+			<span class="nodecontrols">
+				
+					<a name="post6418437" href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#post6418437" class="postcounter">#12</a><a id="postcount6418437" name="12"></a>
+				
+				
+				
+			</span>
+	</div>
+	<div class="postdetails" style="">
+		<div class="userinfo" style="">
+			<div class="username_container">
+			
+				<div class="popupmenu memberaction" id="yui-gen19">
+	<a rel="nofollow" class="username offline " href="http://www.developpez.net/forums/u365539/artichaudd/" title="artichaudd est déconnecté"><strong>artichaudd</strong></a>
+	
+</div>
+				<img class="inlineimg onlinestatus" src="./récupérer et traiter les valeur de plusieur checkbox_files/user-offline.png" alt="artichaudd est déconnecté" border="0" title="artichaudd est déconnecté">
+
+			
+			</div>
+			<span class="usertitle">
+				Membre du Club
+			</span>
+			
+				<span class="rank"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/nv-carres-2.png" alt="" border=""></span>
+			
+			
+			
+			 
+			
+				<hr>
+				<dl class="userinfo_extra">
+					<div style="float: left; width: 154px"><div><img src="./récupérer et traiter les valeur de plusieur checkbox_files/france.gif" title="France">   <a href="http://www.developpez.com/user/profil/365539/artichaudd"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/pro.png" alt="Profil pro" title="Profil pro"></a> </div><dt>Inscrit en</dt><dd>avril 2010</dd><dt>Messages</dt><dd>170</dd></div><div style="float: right; margin-top: 5px"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/profil-etendu.gif" title="Plus de détails..." role="profiletendu" userid="365539" style="cursor: pointer;"></div><div style="clear: both"></div><div style="display: none" role="profiletendu" userid="365539"><div class="kha_titleBar">Détails du profil<img style="float: right; cursor: pointer" src="./récupérer et traiter les valeur de plusieur checkbox_files/cross.gif"></div><div class="kha_content"><div><b>Informations personnelles :</b></div><div>Localisation : France</div><div><br><b>Informations forums :</b></div><div>Inscription : avril 2010</div><div>Messages : 170</div><div>Points : 48</div></div></div><dt>Points</dt><dd><span role="points" userid="365539" style="cursor: pointer;">48</span></dd>
+				</dl>
+				
+				
+				<div class="imlinks">
+					    
+				</div>
+			
+		</div>
+		<div class="postbody">
+			<div class="postrow">
+				
+				
+				<h2 class="title icon">
+					<img src="./récupérer et traiter les valeur de plusieur checkbox_files/icon1.png" alt="Par défaut" title="Par défaut"> 
+				</h2>
+				
+
+
+						
+						
+							
+						
+				<div class="content">
+					<div id="post_message_6418437">
+						<blockquote class="postcontent restore ">
+							c'est parfait c'est génial c'a marche !!!<br>
+j'ai opté pour la première solution<br>
+sans java script, car plus stable finalement?<br>
+<br>
+merci et bonne fete <img src="./récupérer et traiter les valeur de plusieur checkbox_files/icon_razz.gif" border="0" alt="" title=":P" class="inlineimg">
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div>
+			
+			<div class="cleardiv"></div>
+		</div>
+	</div>
+		<div class="postfoot">
+			<!-- <div class="postfoot_container"> -->
+			<div class="textcontrols floatcontainer">
+				<span class="postcontrols">
+					<img style="display:none" id="progress_6418437" src="./récupérer et traiter les valeur de plusieur checkbox_files/progress.gif" alt="">
+					
+					
+					
+						<a id="qrwq_6418437" class="newreply" href="http://www.developpez.net/forums/newreply.php?do=newreply&amp;p=6418437" rel="nofollow" title="Répondre avec citation"><img id="quoteimg_6418437" src="./récupérer et traiter les valeur de plusieur checkbox_files/clear.gif" alt="Répondre avec citation" title="Répondre avec citation">  Répondre avec citation</a> 
+					
+					
+					
+<span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucehautgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6418437"> 0</a><span class="seperator">&nbsp;</span><a title="Connectez-vous pour voter" style="background: url(images/buttons/poucebasgris.gif) no-repeat scroll left center transparent; cursor: pointer" p="6418437"> 0</a>
+				</span>
+				<span class="postlinking">
+					
+						
+					
+
+					
+					
+					
+					
+
+					
+					
+
+					
+					
+					
+					
+					
+				</span>
+			<!-- </div> -->
+			</div>
+		</div>
+	<hr>
+</li>
+
+		</ol>
+		<div class="separator"></div>
+		<div class="postlistfoot">
+			
+		</div>
+
+	
+
+</div>
+
+<div id="below_postlist" class="noinlinemod below_postlist">
+	
+		<a rel="nofollow" href="http://www.developpez.net/forums/newreply.php?p=6418437&amp;noquote=1" class="newcontent_textcontrol" id="newreplylink_bottom"><span>+</span> Répondre à la discussion</a>
+<div style="position: absolute; left: 230px; padding-top: 5px; color: green; font-weight: bold; font-size: 12pt">Cette discussion est résolue.</div>
+	
+	<div id="pagination_bottom" class="pagination_bottom">
+	
+		
+	</div>
+</div>
+
+
+<div class="breadcrumb" style="margin-bottom: 1em">
+	<ul class="floatcontainer">
+		<li class="navbithome"><a href="http://www.developpez.net/forums/"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/navbit-home.png" alt="Accueil" title="Accueil"></a></li>
+		
+	<li class="navbit"><a href="http://www.developpez.net/forums/">Index du forum</a></li>
+
+	<li class="navbit"><a href="http://www.developpez.net/forums/f443/php/">PHP</a></li>
+
+	<li class="navbit"><a href="http://www.developpez.net/forums/f25/php/langage/">Langage</a></li>
+
+	<li class="navbit"><a href="http://www.developpez.net/forums/f617/php/langage/formulaires/">Formulaires</a></li>
+
+		
+	<li class="navbit lastnavbit"><span> récupérer et traiter les valeur de plusieur checkbox</span></li>
+
+	</ul>
+	<hr>
+</div><div id="offresdvp" style="width: 600px; margin: 5px auto 10px auto"><div style="display: block;
+margin: 0;
+padding: 1px;
+text-align: center;
+font-family: Tahoma;
+font-weight: bold;
+text-transform: uppercase;
+font-size: 7pt;
+letter-spacing: 2px;
+color: white;
+background: rgb(140,166,183);
+background: -moz-linear-gradient(top, rgba(140,166,183,1) 0%, rgba(115,147,168,1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(140,166,183,1)), color-stop(100%,rgba(115,147,168,1)));
+background: -webkit-linear-gradient(top, rgba(140,166,183,1) 0%,rgba(115,147,168,1) 100%);
+background: -o-linear-gradient(top, rgba(140,166,183,1) 0%,rgba(115,147,168,1) 100%);
+background: -ms-linear-gradient(top, rgba(140,166,183,1) 0%,rgba(115,147,168,1) 100%);
+background: linear-gradient(to bottom, rgba(140,166,183,1) 0%,rgba(115,147,168,1) 100%);
+border-top-left-radius: 15px;
+border-top-right-radius: 15px;">Offres d'emploi IT</div>
+<div style="border: 1px solid rgb(140,166,183); padding:3px; padding-bottom:9px;">
+
+<div style="font-family:Arial; font-size:9pt; text-align:left">
+			<a style="font-weight:bold; color:black;" href="http://emploi.developpez.com/offres/detail/a/28476/Ingenieur-d-etudes-php-node-js-h-f/a/affichage/0">Ingénieur d'études php / node.js h/f</a>
+	
+	<div style="color:#555555">	
+		<div class="contrats" style="float:right">
+						<span style="background:#9BB1FF;color:black; padding:2px; font-size:8pt;">CDI</span>
+					</div>
+	
+		Solutec Paris - Ile de France - Paris (75000)	</div>
+</div>
+<div style="font-family:Arial; font-size:9pt; text-align:left">
+			<a style="font-weight:bold; color:black;" href="http://emploi.developpez.com/offres/detail/a/28610/Developpeur-php-symfony-agence-certifiee/a/affichage/0">Développeur php symfony agence certifiée</a>
+	
+	<div style="color:#555555">	
+		<div class="contrats" style="float:right">
+						<span style="background:#9BB1FF;color:black; padding:2px; font-size:8pt;">CDI</span>
+					</div>
+	
+		Adequat Tertiaire - Rhône Alpes - Lyon (69000)	</div>
+</div>
+<div style="font-family:Arial; font-size:9pt; text-align:left">
+			<a style="font-weight:bold; color:black;" href="http://emploi.developpez.com/offres/detail/a/28754/Developpeur-php-symfony-2-moins-H-F/a/affichage/0">Développeur php symfony 2 - (H/F)</a>
+	
+	<div style="color:#555555">	
+		<div class="contrats" style="float:right">
+						<span style="background:#9BB1FF;color:black; padding:2px; font-size:8pt;">CDI</span>
+					</div>
+	
+		Urban Linker - Bretagne - Rennes (35000)	</div>
+</div>
+<br>
+<a href="http://emploi.developpez.com/" style="color: black;
+text-decoration: none;
+font-family: Arial;
+font-size: 8pt;
+border: solid 1px #ccc;
+padding: 3px;
+margin: 2px;
+border-radius: 6px;
+background: rgb(252,255,244); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(252,255,244,1) 0%, rgba(223,229,215,1) 40%, rgba(179,190,173,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,255,244,1)), color-stop(40%,rgba(223,229,215,1)), color-stop(100%,rgba(179,190,173,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&#39;#fcfff4&#39;, endColorstr=&#39;#b3bead&#39;,GradientType=0 ); /* IE6-9 */">Voir plus d'offres</a>
+<a href="http://emploi.developpez.com/offres/carte" style="color: black;
+text-decoration: none;
+font-family: Arial;
+font-size: 8pt;
+border: solid 1px #ccc;
+padding: 3px;
+margin: 2px;
+border-radius: 6px;
+background: rgb(252,255,244); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(252,255,244,1) 0%, rgba(223,229,215,1) 40%, rgba(179,190,173,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,255,244,1)), color-stop(40%,rgba(223,229,215,1)), color-stop(100%,rgba(179,190,173,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&#39;#fcfff4&#39;, endColorstr=&#39;#b3bead&#39;,GradientType=0 ); /* IE6-9 */">Voir la carte des offres IT</a>
+<br>
+</div>
+</div>
+<script type="text/javascript"> $(function() { $("#offresdvp").load("/forums/anooffresdvp.php?rub=9&col=php"); }); </script>
+
+
+
+
+
+
+
+
+
+	<!-- next / previous links -->
+	<div class="navlinks">
+		
+			<strong>«</strong>
+			<a href="http://www.developpez.net/forums/d1166653-precedent/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/" rel="nofollow">Discussion précédente</a>
+			|
+			<a href="http://www.developpez.net/forums/d1166653-suivant/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/" rel="nofollow">Discussion suivante</a>
+			<strong>»</strong>
+		
+	</div>
+	<!-- / next / previous links -->
+
+<div id="thread_info" class="thread_info block">
+	
+	
+	<div id="similar_threads">
+		<h4 class="threadinfohead blockhead">Discussions similaires</h4>
+		<div id="similar_threads_list" class="thread_info_block blockbody formcontrols">
+			<ol class="similar_threads">
+			<li class="floatcontainer">
+  <div class="titleblock">
+    <h6><a href="http://www.developpez.net/forums/d1438929/webmasters-developpement-web/javascript-ajax-typescript-dart/javascript/bibliotheques-frameworks/jquery/recuperer-valeurs-plusieurs-checkboxes/" title="Bonjour 
+ 
+Je viens encore...">Récupérer les valeurs de plusieurs checkboxes</a></h6>
+    <div class="starter_forum">
+      Par Dyvaa dans le forum jQuery
+    </div>
+  </div>
+  <div class="dateblock">
+    <span class="shade">Réponses:</span> 3
+      <div class="starter_forum">
+        <span class="shade">Dernier message:</span> 15/05/2014, <span class="time">10h03</span>
+      </div>
+  </div>
+</li><li class="floatcontainer">
+  <div class="titleblock">
+    <h6><a href="http://www.developpez.net/forums/d552545/java/developpement-web-java/servlets-jsp/recuperer-afficher-d-checkbox/" title="slt.mon problème est que je...">récupérer et afficher les valeur d'un checkbox</a></h6>
+    <div class="starter_forum">
+      Par ramanov dans le forum Servlets/JSP
+    </div>
+  </div>
+  <div class="dateblock">
+    <span class="shade">Réponses:</span> 2
+      <div class="starter_forum">
+        <span class="shade">Dernier message:</span> 21/05/2008, <span class="time">10h06</span>
+      </div>
+  </div>
+</li><li class="floatcontainer">
+  <div class="titleblock">
+    <h6><a href="http://www.developpez.net/forums/d510817/php/langage/fonctions/tableaux-recuperer-valeurs-plusieurs-checkbox/" title="Bonjour, 
+ 
+J&#39;ai un...">[Tableaux] Recuperer les valeurs de plusieurs checkbox</a></h6>
+    <div class="starter_forum">
+      Par tomenbois dans le forum Fonctions
+    </div>
+  </div>
+  <div class="dateblock">
+    <span class="shade">Réponses:</span> 9
+      <div class="starter_forum">
+        <span class="shade">Dernier message:</span> 18/03/2008, <span class="time">12h23</span>
+      </div>
+  </div>
+</li><li class="floatcontainer">
+  <div class="titleblock">
+    <h6><a href="http://www.developpez.net/forums/d493386/php/langage/formulaires/recuperer-valeurs-plusieurs-checkbox-mysql/" title="Bonjour voici mon probleme ....">récupérer les valeurs de plusieurs checkbox dans Mysql</a></h6>
+    <div class="starter_forum">
+      Par Akramweb dans le forum Formulaires
+    </div>
+  </div>
+  <div class="dateblock">
+    <span class="shade">Réponses:</span> 5
+      <div class="starter_forum">
+        <span class="shade">Dernier message:</span> 18/02/2008, <span class="time">16h11</span>
+      </div>
+  </div>
+</li><li class="floatcontainer">
+  <div class="titleblock">
+    <h6><a href="http://www.developpez.net/forums/d400074/dotnet/acces-aux-donnees/r-cup-rer-valeurs-plusieurs-checkbox-s-lectionn-s-dynamiquement/" title="bonjour 
+Comment récupérer...">Comment récupérer les valeurs de plusieurs checkbox sélectionnés dynamiquement ?</a></h6>
+    <div class="starter_forum">
+      Par yazen dans le forum Accès aux données
+    </div>
+  </div>
+  <div class="dateblock">
+    <span class="shade">Réponses:</span> 2
+      <div class="starter_forum">
+        <span class="shade">Dernier message:</span> 24/08/2007, <span class="time">14h25</span>
+      </div>
+  </div>
+</li>
+			</ol>
+		</div>
+	</div>
+
+
+	
+	
+	
+	
+	<div class="options_block_container">
+		
+		<div class="options_block2">
+			<h4 class="blockhead options_correct">Partager</h4>
+			<div id="social_bookmarks_list" class="thread_info_block blockbody formcontrols floatcontainer options_correct">
+				<h5 class="blocksubhead">Partager</h5>
+				<ul class="icon_list"><li class="smallfont">
+	
+		<a rel="nofollow" href="http://www.viadeo.com/shareit/share/?url=http%3A%2F%2Fwww.developpez.net%2Fforums%2Fd1166653%2Fphp%2Flangage%2Fformulaires%2Frecuperer-traiter-plusieur-checkbox%2F&amp;title=r%E9cup%E9rer+et+traiter+les+valeur+de+plusieur+checkbox" target="socialbookmark"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/bookmarksite_viadeo.gif" alt="Envoyer la discussion sur Viadeo" title="Envoyer la discussion sur Viadeo"></a>
+	
+</li><li class="smallfont">
+	
+		<a rel="nofollow" href="http://twitter.com/timeline/home?status=r%C3%A9cup%C3%A9rer+et+traiter+les+valeur+de+plusieur+checkbox+http%3A%2F%2Fwww.developpez.net%2Fforums%2Fshowthread.php%3Ft%3D1166653" target="socialbookmark"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/bookmarksite_twitter.png" alt="Envoyer la discussion sur Twitter" title="Envoyer la discussion sur Twitter"></a>
+	
+</li><li class="smallfont">
+	
+		<a rel="nofollow" href="http://www.google.com/bookmarks/mark?op=edit&amp;output=popup&amp;bkmk=http%3A%2F%2Fwww.developpez.net%2Fforums%2Fd1166653%2Fphp%2Flangage%2Fformulaires%2Frecuperer-traiter-plusieur-checkbox%2F&amp;title=r%C3%A9cup%C3%A9rer+et+traiter+les+valeur+de+plusieur+checkbox" target="socialbookmark"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/bookmarksite_google.gif" alt="Envoyer la discussion sur Google" title="Envoyer la discussion sur Google"></a>
+	
+</li><li class="smallfont">
+	
+		<a rel="nofollow" href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.developpez.net%2Fforums%2Fd1166653%2Fphp%2Flangage%2Fformulaires%2Frecuperer-traiter-plusieur-checkbox%2F" target="socialbookmark"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/bookmarksite_facebook.gif" alt="Envoyer la discussion sur Facebook" title="Envoyer la discussion sur Facebook"></a>
+	
+</li><li class="smallfont">
+	
+		<a rel="nofollow" href="http://digg.com/submit?phrase=2&amp;url=http%3A%2F%2Fwww.developpez.net%2Fforums%2Fd1166653%2Fphp%2Flangage%2Fformulaires%2Frecuperer-traiter-plusieur-checkbox%2F&amp;title=r%E9cup%E9rer+et+traiter+les+valeur+de+plusieur+checkbox" target="socialbookmark"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/bookmarksite_digg.gif" alt="Envoyer la discussion sur Digg" title="Envoyer la discussion sur Digg"></a>
+	
+</li><li class="smallfont">
+	
+		<a rel="nofollow" href="http://del.icio.us/post?url=http%3A%2F%2Fwww.developpez.net%2Fforums%2Fd1166653%2Fphp%2Flangage%2Fformulaires%2Frecuperer-traiter-plusieur-checkbox%2F&amp;title=r%C3%A9cup%C3%A9rer+et+traiter+les+valeur+de+plusieur+checkbox" target="socialbookmark"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/bookmarksite_delicious.gif" alt="Envoyer la discussion sur Delicious" title="Envoyer la discussion sur Delicious"></a>
+	
+</li><li class="smallfont">
+	
+		<a rel="nofollow" href="http://www.myspace.com/Modules/PostTo/Pages/?u=http%3A%2F%2Fwww.developpez.net%2Fforums%2Fd1166653%2Fphp%2Flangage%2Fformulaires%2Frecuperer-traiter-plusieur-checkbox%2F&amp;t=r%C3%A9cup%C3%A9rer+et+traiter+les+valeur+de+plusieur+checkbox" target="socialbookmark"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/bookmarksite_myspace.gif" alt="Envoyer la discussion sur MySpace" title="Envoyer la discussion sur MySpace"></a>
+	
+</li><li class="smallfont">
+	
+		<a rel="nofollow" href="http://bookmarks.yahoo.com/toolbar/savebm?opener=&amp;u=http%3A%2F%2Fwww.developpez.net%2Fforums%2Fd1166653%2Fphp%2Flangage%2Fformulaires%2Frecuperer-traiter-plusieur-checkbox%2F&amp;t=r%C3%A9cup%C3%A9rer+et+traiter+les+valeur+de+plusieur+checkbox" target="socialbookmark"><img src="./récupérer et traiter les valeur de plusieur checkbox_files/bookmarksite_yahoo.gif" alt="Envoyer la discussion sur Yahoo" title="Envoyer la discussion sur Yahoo"></a>
+	
+</li></ul>
+			</div>
+		</div>
+		
+		
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<div id="footer" class="floatcontainer footer">
+
+	<form action="http://www.developpez.net/forums/" method="get" id="footer_select" class="footer_select">
+
+		
+		
+		
+	</form>
+
+	<ul id="footer_links" class="footer_links">
+		<li><a href="http://www.developpez.net/forums/sendmessage.php" rel="nofollow" accesskey="9">Nous contacter</a></li>
+		<li><a href="http://www.developpez.com/">Developpez.com</a></li>
+		
+		
+		
+		
+		
+		
+		<li><a href="http://www.developpez.net/forums/d1166653/php/langage/formulaires/recuperer-traiter-plusieur-checkbox/#top" onclick="document.location.hash=&#39;top&#39;; return false;">Haut de page</a></li>
+	</ul>
+	
+	
+	
+	
+	<script type="text/javascript">
+	<!--
+		// Main vBulletin Javascript Initialization
+		vBulletin_init();
+	//-->
+	</script>
+        
+</div>
+</div> <!-- closing div for body_wrapper -->
+
+<div class="below_body">
+
+
+<div id="footer_morecopyright" class="shade footer_morecopyright">
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+	<!-- Do not remove cronimage or your scheduled tasks will cease to function -->
+	
+</div>
+ 
+
+</div>
+<!-- Google Analytics -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28115938-2']);
+  _gaq.push(['_setCustomVar', 1, 'rubrique', 'php', 3]);
+  _gaq.push(['_setCustomVar', 2, 'type', 'Autre', 3]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<img src="./récupérer et traiter les valeur de plusieur checkbox_files/compter-9" alt=""><script type="text/javascript">$(function(){$("#oj9uv0i").load("/template/oj9uv0i.jpg");$("#hc9nr1c").load("/template/hc9nr1c.jpg");});</script>
+</div>
+</section>
+
+<footer>
+<div id="gabarit_responsable">
+		<a href="http://club.developpez.com/contacts/contribuer">Contacter</a> le responsable de la rubrique PHP
+	</div>
+
+<ul id="gabarit_pied">
+	<li><a href="http://club.developpez.com/contacts/">Nous contacter</a>
+	</li><li><a href="http://www.developpez.com/participez/">Participez</a>
+	</li><li><a href="http://www.developpez.com/hebergement/">Hébergement</a>
+	</li><li><a href="http://www.developpez.com/legal/">Informations légales</a>
+</li></ul>
+
+<p id="gabarit_copyright">Copyright © 2000-2016 - www.developpez.com</p>
+
+</footer>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+window.orig_onload = window.onload;
+window.onload = function() {
+var cpost=document.location.hash.substring(1);var cpost2='';if(cpost && (typeof fetch_object != 'undefined')){ var ispost=cpost.substring(0,4)=='post';if(ispost)cpost2='post_'+cpost.substring(4);if((cobj = fetch_object(cpost))||(cobj = fetch_object(cpost2))){cobj.scrollIntoView(true);}else if(ispost){cpostno = cpost.substring(4,cpost.length);if(parseInt(cpostno)>0){location.replace('http://www.developpez.net/forums/showthread.php?p='+cpostno);};} }
+
+if(typeof window.orig_onload == "function") window.orig_onload();
+}
+
+//]]>
+</script>
+
+</body></html>

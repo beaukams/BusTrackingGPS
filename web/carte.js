@@ -1,137 +1,75 @@
-window.onload = mapping;
+function init() 
+{
+var map = new OpenLayers.Map('map');
 
-function mapping(){
+// Position de départ sur la carte
+var lat=14.6937000;
+var lon=-17.4440600;
+var zoom=10;
 
-	// Position de départ sur la carte
-	var lat = 14.6937000;
-	var lng = -17.4440600;
-	var zoom = 10;
+var osmLayer = new OpenLayers.Layer.OSM();
+map.addLayer(osmLayer);
+//map.zoomToMaxExtent();
 
-	var map = new ol.Map({
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM()
-          })
-        ],
-        target: 'map',
-        view: new ol.View({
-          projection: 'EPSG:4326',
-          center: [lng, lat],
-          zoom: zoom
-        })
-      });
+if( ! map.getCenter() ){
+coord1 = new OpenLayers.LonLat(lon, lat)
+coord2= new OpenLayers.LonLat(-17.271058,14.432651 )
+var lonLat = coord1.transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject());
+map.setCenter (lonLat, zoom);}
 
-	refreshBusLigne(6, map, zoom); //raffraichissement toutes les 6 secondes
+calqueMarkers = new OpenLayers.Layer.Markers("Repères");
+map.addLayer(calqueMarkers);
 
+var dakar=new OpenLayers.Marker(coord1);
+calqueMarkers.addMarker(dakar);
+var arret15=new OpenLayers.Marker(coord2);
+calqueMarkers.addMarker(arret15);
+
+calqueMarkers.events.register("touchstart",calqueMarkers,cliquemarker);
+//
+
+AutoSizeAnchored = OpenLayers.Class(OpenLayers.Popup.Anchored, {            'autoSize': true});
+
+markers = new OpenLayers.Layer.Markers("zibo");
+map.addLayer(markers);
+
+function addMarker(ll, popupClass, popupContentHTML, closeBox, overflow) {
+            var feature = new OpenLayers.Feature(markers, ll); 
+            feature.closeBox = closeBox;
+            feature.popupClass = popupClass;
+            feature.data.popupContentHTML = popupContentHTML;
+            feature.data.overflow = (overflow) ? "auto" : "hidden";
+                    
+            var marker = feature.createMarker();
+
+            var markerClick = function (evt) {
+                if (this.popup == null) {
+                    this.popup = this.createPopup(this.closeBox);
+                    map.addPopup(this.popup);
+                    this.popup.show();
+                } else {
+                    this.popup.toggle();
+                }
+                currentPopup = this.popup;
+                OpenLayers.Event.stop(evt);
+            };
+            marker.events.register("mousedown", feature, markerClick);
+
+            markers.addMarker(marker);
 }
-
-function addCenter(lat, lng, mat, map, zoom, calqueMarkers){
-	coord = new OpenLayers.LonLat(lng, lat);
-	if(!map.getCenter()){
-		
-		var lonLat = coord.transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject());
-		map.setCenter (lonLat, zoom);
-	}
-
-//	calqueMarkers = new OpenLayers.Layer.Markers("Repères");
-//	map.addLayer(calqueMarkers);
-
-	var dakar = new OpenLayers.Marker(coord);
-	calqueMarkers.addMarker(dakar);
-}
-
-function addBus(lat, lng, mat, map, zoom){
+/*var longlat, popupClass, popupContentHTML;
+<?php while ($donnees = mysql_fetch_array($retour))
+        {       
+            $lon = $donnees['lon'];
+            $lat = $donnees['lat'];
+?>
+longlat = new OpenLayers.LonLat(<?php echo $lon.",".$lat ; ?>).transform(new OpenLayers.Projection("EPSG:4326"), map.getProjectionObject());
+popupClass = AutoSizeAnchored;
+popupContentHTML = '<img src="small.jpg"></img>';
+addMarker(longlat, popupClass, popupContentHTML);
+<?php
+        }
+?>*/
 	
-	map.innerText = "";
-
-	map = new ol.Map({
-    	layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM()
-          })
-    	],
-    	target: 'map',
-        view: new ol.View({
-          projection: 'EPSG:4326',
-          center: [lng, lat],
-          zoom: zoom
-        })
-    });
 
 }
-
-function refreshBusLigne(delai, map, zoom){ 
-
-    setInterval(function(){
-		   	var xhr; 
-		   	var ligne = document.getElementById("bussearch");
-		   	map = document.getElementById("map");
-		    try {  
-		    	xhr = new ActiveXObject('Msxml2.XMLHTTP');   
-		  
-		    }catch (e) {
-		        try {   
-		        	xhr = new ActiveXObject('Microsoft.XMLHTTP'); 
-		        }
-		        catch (e2) {
-		           try {  
-		           	xhr = new XMLHttpRequest();  
-		           }
-		           catch(e3) {  
-		           	xhr = false;
-		           }
-		        }
-		    }
-		  
-		    xhr.onreadystatechange  = function() { 
-		       if(xhr.readyState  == 4){
-			      // 	var label = document.getElementById("label");
-			       	var bus, id_bus, lat, lng, alt, mat, nom_ligne, ladate, heure, vitesse;
-			       	
-			       	
-			        if(xhr.status  == 200) {
-			        	var valeur = xhr.responseText;
-			           
-			           //label.innerText = valeur;
-			           console.log(valeur)
-			           //recuperer l'ensemble des données et l'afficher sur la carte
-			           res = valeur.split("*");
-			          
-			           for(var i=0; i<res.length; i++){
-			           		bus = res[i];
-			           		bus = bus.split("_");
-			           		if(i==0){
-
-			           			addBus(bus[3],bus[4], bus[1], map, zoom)
-			           		}
-			           		else{
-			           			//addBus(bus[3],bus[4], bus[1], map, zoom);
-			           		}
-			           }
-			           map.getLayers()['a'][0].getSource().refresh();
-			       	}
-			        else{
-			           // label.innerText ="Error code " + xhr.status;
-			        }
-		        }
-		    }; 
-		 
-		 	xhr.open("POST", "position_bus.php",  true); 
-		   xhr.setRequestHeader("Access-Control-Allow-Methods", "REQUEST,GET,HEAD,OPTIONS,POST,PUT");
-		   xhr.setRequestHeader("Access-Control-Allow-Headers","Content-Type, Access-Control-Allow-Headers,Access-Control-Allow-Origin, Authorization, X-Requested-With, Access-Control-Allow-Methods");
-        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-		   if(ligne.value == "")  {
-			   	
-			   	xhr.send("ligne=10");
-			   	console.log("jnj");
-		   	} 
-		   else{
-			    xhr.send("ligne="+ligne.value); 
-			    console.log(ligne.value);
-			}
-
-    	},
-    	delai*1000
-    );
-
-} 

@@ -1,75 +1,144 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" >
-   <head>
-       <title>Localisation en ligne</title>
-       <meta charset=utf-8>
-	   <link rel="stylesheet" media="screen" type="text/css" href="styles/design.css" />
-	   <link rel="stylesheet" media="screen" type="text/css" href="styles/menu.css" />
-	   <!--script type="text/javascript" src="OpenLayers/lib/OpenLayers.js"></script-->
-	   
-	   <link rel="shortcut icon" type="image/x-icon" href="images/local.jpg" />
-	</head>
-	<body>
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Big Business 2.0
+Description: A two-column, fixed-width design with a bright color scheme.
+Version    : 1.0
+Released   : 20120624
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<title>PolytechLocalisation</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.dropotron-1.0.js"></script>
+<script type="text/javascript" src="jquery.slidertron-1.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#menu > ul').dropotron({
+			mode: 'fade',
+			globalOffsetY: 11,
+			offsetY: -15
+		});
+		$('#slider').slidertron({
+			viewerSelector: '.viewer',
+			indicatorSelector: '.indicator span',
+			reelSelector: '.reel',
+			slidesSelector: '.slide',
+			speed: 'slow',
+			advanceDelay: 4000
+		});
+	});
+</script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#"><img src="images/logo_ucad.jpg"></a></h1>
+		</div>
+		<div id="name">
+			<h2>PolytechLocalisation</h2>
+		</div>
+		<div id="slogan">
+			<h2><a href="#"><img src="images/esp.jpg" height="133" width="200"></a></h2>
+		</div>
+	</div>
 	<?php
-		echo'<div id="conteneur">
-		 <nav id="navigation">
-				<a href="#" class="nav-btn">HOME<span></span></a>
-				<ul>
-					<li class="active"><a href="Accueil.php">Accueil</a></li>
-					<li><a href="Apropos.php">A propos</a></li>
-					<li><a href="Localisation.php">Localiser mon bus</a></li>
-					<li><a href="">Lignes et itinéraires</a></li>
-				</ul>
-				<div class="cl">&nbsp;</div>
-			</nav>
-		   
-		   <div id="header"><img src ="images/senebuslocal.png" alt ="" width="500" style="position:absolute:0px;" vspace="10"> </div>
-		   <div id="après-header">
-		   <table align="center" width="80%" bgcolor=""></br></br>	
-					<tr>
-						<td width="30%" align="left"> <img src ="images/senegal.jpg" alt ="" width="100" style="position:absolute:0px;"> </td>
-						<td align="right" width="40%" valign="top">
-							<table>
-							</br><tr><td><b><marquee direction="left" scrolldelay="100" bgcolor = "" width="300">Pour la localisation en ligne de vos bus</marquee></b></td></tr>
-							</table>
-		
-						</td>
-					</tr>
-			</table></br></br></div>
-			
-			
-		 
-				<div class="featured">
-					<h4>Bienvenue à <strong>Senebuslocalisation</strong>. Le premier site web <strong>au Senegal</strong> pour la localisation en ligne de vos bus.</h4>
-					<a href="localisation.html" class="blue-btn">localiser mon bus</a>
+		include_once("./menu.php");
+	?>
+	
+	<div id="slider">
+		<div class="viewer">
+			<div class="reel">
+				<div class="slide">
+					<img src="images/im.jpg" alt=""  width="870" height="245"/>
 				</div>
-			
-			<div id="sous-featured">
-				<div id="left">
-						<p><img src ="images/im2.jpg" alt =""  id="im2"></p><p>Prenez rendez-vous avec votre bus</p>
+				<div class="slide">
+					<img src="images/bus3.jpg" alt="" width="870" height="245"/>
 				</div>
-				<div id="center">
-						<p><img src ="images/im9.jpg" alt ="" width="300px" height="170px"></p><p>Localisez votre bus partout où vous êtes</p>
+				<div class="slide">
+					<img src="images/im13.jpg" alt="" width="870" height="245" />
 				</div>
-				<div id="right">
-						<p><img src ="images/im4.jpg" alt =""></p><p>Optimisez votre temps</p>
+				<div class="slide">
+					<img src="images/im20.jpg" width="870" height="245"/>
+				</div>
+				<div class="slide">
+					<img src="images/im17.jpg" alt="" width="870" height="245"  />
 				</div>
 			</div>
+		</div>
+		<div class="indicator">
+			<span>1</span>
+			<span>2</span>
+			<span>3</span>
+			<span>4</span>
+			<span>5</span>
+		</div>
+	</div>
+	<div id="page">
+		<div id="content">
+			<div class="box">
+				<h2>Bienvenue à PolytechLocalisation</h2>
+				<p>
+					 <strong>PolytechLocalisation.com</strong> a été mis en place pour permettre aux étudiants de l'Ecole Supérieure Polytechnique de Dakar(<strong> ESP</strong> ) de
+				localiser la position de la <strong>ligne 10</strong> qui y passe. Le fonctionnement est simple. Cliquez qur le bouton "localiser mon bus" et obtenez la position de la ligne 10 qui vous ait le plus proche.<a href="localisation.php" class="blue-btn">localiser mon bus</a>
+				</p>
+			</div>
+			<div class="box" id="content-box1">
+				<h3></h3>
+				<ul class="section-list">
+					<li class="first">
+						<img class="pic alignleft" src="images/im2.jpg" width="100" height="70" alt="" />
+						<span>Prenez rendez-vous avec votre bus</span>
+					</li>
+					<li>
+						<img class="pic alignleft" src="images/Bussn.jpg" width="100" height="70" alt="" />
+						<span>Localisez votre bus là où vous êtes</span>
+					</li>
+					<li class="last">
+						<img class="pic alignleft" src="images/im4.jpg" width="100" height="70" alt="" />
+						<span>Optimisez votre temps</span>
+					</li>
+				</ul>
+			</div>
 			
-				<div id="footer">
-					<div class="footer-nav">
-					<ul>
-						<li><a href="#">Accueil</a></li>
-						<li><a href="#">A propos</a></li>
-						<li><a href="#">Localiser mon bus</a></li>
-						<li><a href="#">Lignes et itininéraires</a></li>
+			<br class="clearfix" />
+		</div>
+		<div id="sidebar">
+			<div class="box">
+				<h3>Actualités</h3>
+				<ul class="list">
+					<li class="first"><a href="#">Adipiscing tincidunt</a></li>
+					<li><a href="#">Euismod elit sollicitudin</a></li>
+					<li><a href="#">Dolor magnis et lacinia</a></li>
+					<li><a href="#">Mauris ornare aenean</a></li>
+					<li class="last"><a href="#">Ante semper fringilla</a></li>
+				</ul>
+			</div>
+			<div class="box">
+				<h3>Evenements</h3>
+				<div class="date-list">
+					<ul class="list date-list">
+						<li class="first"><span class="date">2/08</span> <a href="#">Quam sed tempus</a></li>
+						<li><span class="date">2/05</span> <a href="#">Lorem et vestibulum</a></li>
+						<li><span class="date">2/01</span> <a href="#">Risus aenean tellus</a></li>
+						<li class="last"><span class="date">1/31</span> <a href="#">Tristique et primis</a></li>
 					</ul>
-					<div class="cl">&nbsp;</div>
-					</div>
-                     <p class="copy">&copy; Copyright 2016<span>|</span>Senebuslocalisation. Design by DIC2TRStudents ESP</p>
-					<div class="cl">&nbsp;</div>
 				</div>
-		</div>';
-		?>
-	</body>
+			</div>
+		</div>
+		<br class="clearfix" />
+	</div>
+ </div>
+<div id="footer">
+	&copy; Copyright. All rights reserved. Design by DIC2TRStudentsESP.
+</div>
+</body>
 </html>
