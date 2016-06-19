@@ -51,7 +51,7 @@ Released   : 20120624
 	
 	<div id="avant-map">
 	
-		<table>
+		<table hidden>
 				<tr>
 						<td align="right" bgcolor=""><h5>Saisissez une ligne de bus</h5></td>
 						<td align="center" width="5"><input type="number" id="bussearch" value="10"  name="search" width="500"/></td>
@@ -84,16 +84,26 @@ Released   : 20120624
 							<tr>
 								<th width="25%">Sens</th>
 								<th width="25%">Localisation</th>
-								<th width="25%">Distance restante</th>
-								<th width="25%">Temps restant</th>
+								<th width="15%">Distance restante (km)</th>
+								<th width="25%">le plus proche</th>
+								<th width="5%">arrets restants</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
 								<td>Vers Palais</td>
+								<td id="loc_bus_palais"></td>
+								<td id="dist_bus_palais"></td>
+								<td id="arret_bus_palais"></td>
+								<td id="rest_bus_palais"></td>
 							</tr>
+
 							<tr>
 								<td>Vers Liberté5</td>
+								<td id="loc_bus_liberte"></td>
+								<td id="dist_bus_liberte"></td>
+								<td id="arret_bus_liberte"></td>
+								<td id="rest_bus_liberte"></td>
 							</tr>
 						</tbody>
 		</table>

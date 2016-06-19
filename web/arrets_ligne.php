@@ -11,6 +11,7 @@
 		
 		if(file_exists("base_conf.php")){
 			include_once("base_conf.php");
+			include_once("mod_traitement.php");
 
 			$base = "-1";
 			$req1 = "mysql:host=" . HOSTNAME . ";dbname=" . BASENAME . "";
@@ -32,7 +33,7 @@
 				$req->execute(array(
 					":ligne" => $_POST['ligne']
 					));
-				$bus = $req->fetchall();
+				$bus = $req->fetchall(PDO::FETCH_NUM);
 				//echo $_POST['ligne'];
 				/*id_ligne
 				nom_ligne
@@ -49,15 +50,17 @@
 				longitude_arret
 				*/
 				
+				//print_r($bus);
+
 				$resultats = "";
 				for($i=0; $i<count($bus); $i++){
 					if($i!=0)
 						$resultats .= "*";
 
-					for($ii=0; $ii<12; $ii++){
+					for($ii=0; $ii<13; $ii++){
 						$resultats .= $bus[$i][$ii] . "_";
 					}
-					$resultats .= $bus[$i][12];
+					$resultats .= $bus[$i][13];
 					
 				}
 				echo $resultats;

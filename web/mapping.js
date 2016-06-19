@@ -1,4 +1,4 @@
-var val_zoom = 10;
+var val_zoom = 15;
 var map;
 var LeafIcon = L.Icon.extend({
 	    options: {
@@ -76,7 +76,14 @@ window.onload=function(){
 		trailCoords.push([data.position.lng, data.position.lat]);
 		trailCoords.splice(0, Math.max(0, trailCoords.length - 5));
 
-        ajout_marker_bus(data.position.lat, data.position.lng, "Bus");
+        ajout_marker_bus(data.position.lat, data.position.lng, "Bus<br/>Matricule:"+data.bus.matricule);
+        //mettre à jour le tableau
+        document.getElementById("loc_bus_liberte").innerHTML = "latitude:"+data.position.lat+",longitude:"+data.position.lng;
+        document.getElementById("dist_bus_liberte").innerHTML = (parseInt(data.position.reste)/1000.0)+"";
+        document.getElementById("arret_bus_liberte").innerHTML = data.arrets.nom+",latitude:"+parseFloat(data.arrets.lat).toFixed(6)+", longitude:"+parseFloat(data.arrets.lng).toFixed(6);
+        document.getElementById("rest_bus_liberte").innerHTML = data.arrets.reste;
+
+
         val_zoom = map.getZoom();
 		success({
 			                type: 'FeatureCollection',
@@ -169,12 +176,20 @@ function ajout_arrets(ligne){
 						latitude_arret
 						longitude_arret
 						*/
+
+
 			          
 			           	for(var i=0; i<arrets.length; i++){
 			           		var arret = arrets[i];
 			           		arret = arret.split("_");
-			           		var desc = "Arret:"+arret[9]+"<br/>Latitude:"+arret[11]+"<br/>Longitude:"+arret[12];
-			           		ajout_marker_arret(arret[11], arret[12], desc);
+			           		latitude = arret[arret.length-2];
+			           		longitude = arret[arret.length-1];
+			           		
+
+			           		var desc = "Arret<br/>N°:"+arret[10]+",arret:"+arret[11]+"<br/>Latitude:"+longitude+"<br/>Longitude:"+longitude;
+			           		
+			           		ajout_marker_arret(latitude, longitude, desc);
+
 			           }
 			       	}
 			        else{
@@ -228,7 +243,8 @@ function geolocalise(){
 function init_carte(ligne){
 	geolocalise();
 	//esp 14.681293, -17.467403
-    var centre = ajout_marker(14.681293, -17.467403, "Ecole Supérieure Polytechnique");
+	//14.681335 -17.466754
+    var centre = ajout_marker(14.681335,-17.466754, "Ecole Supérieure Polytechnique");
 	ajout_arrets(ligne);
 }
 

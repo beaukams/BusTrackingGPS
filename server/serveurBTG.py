@@ -357,7 +357,8 @@ class Serveur(Thread):
 	
 
 if __name__ == "__main__":
-	a = Serveur()
+	#a = Serveur()
+	print GPSCoords.distance(15.162717,-17.516171,15.262717,-17.716171)
 	
 
 	
