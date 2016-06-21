@@ -75,11 +75,40 @@
 			fonctions associées à la base de données
 		*/
 
+		/* selectionner un arret */
+		function selectArret($id_arret){
+			$req = "SELECT * FROM arret WHERE id_arret=:id_arret";
+			$array_params = array(
+				"id_arret" => $id_arret
+			);
+			return $this->select($req, $array_params);
+		}
+
+		function selectTerminus($id_ligne, $sens){
+			$req = "SELECT arret.id_arret,arret.latitude_arret,arret.longitude_arret FROM arretLigne,arret WHERE arretLigne.sens=:sens AND arretLigne.id_ligne=:id_ligne AND arret.id_arret=arretLigne.id_arret";
+			$array_params = array(
+				":id_ligne" => $id_ligne,
+				":sens" => $sens
+			);
+			return $this->select($req, $array_params);
+		}
+
 		/* selectionner un bus */
 		function selectBus($id_bus){
 			$req = "SELECT * FROM bus WHERE id_bus=:id_bus";
 			$array_params = array(
 				"id_bus" => $id_bus
+			);
+			return $this->select($req, $array_params);
+		}
+
+		
+		function selectAllBusLigneSens($nom_ligne, $sens){
+			$req = "SELECT bus.id_bus,matricule_bus,nom_ligne,latitude,longitude,altitude,vitesse,ladate,heure,sens_bus FROM bus,positionBus WHERE nom_ligne=:nom_ligne AND positionBus.id_positionBus=bus.position_courant AND bus.sens_bus=:sens";
+				
+			$array_params = array(
+				":nom_ligne" => $nom_ligne,
+				":sens" => $sens
 			);
 			return $this->select($req, $array_params);
 		}
@@ -131,13 +160,13 @@
 
 		function selectArretsLigneRestant($id_ligne, $sens, $num_ref){
 			if($sens == "A"){
-				$req = "SELECT arret.id_arret,arret.nom_arret,arret.latitude_arret,arret.longitude_arret,arretLigne.num_arretDansLigne,arretLigne.distance_tonext FROM arret, arretLigne WHERE arret.id_arret=arretLigne.id_arret AND id_ligne=:id_ligne AND sens='A' AND num_arretDansLigne<=:num_ref AND num_arretDansLigne>=0";
+				$req = "SELECT arret.id_arret,arret.nom_arret,arret.latitude_arret,arret.longitude_arret,arretLigne.num_arretDansLigne,arretLigne.distance_tonext FROM arret, arretLigne WHERE arret.id_arret=arretLigne.id_arret AND id_ligne=:id_ligne AND sens='A' AND num_arretDansLigne>=:num_ref";
 				$array_params = array(
 					"id_ligne" => $id_ligne,
 					":num_ref" => $num_ref
 				);
 			}else{
-				$req = "SELECT * FROM arretLigne WHERE id_ligne=:id_ligne  AND sens='R' AND num_arretDansLigne>=:num_ref AND num_arretDansLigne>=0";
+				$req = "SELECT arret.id_arret,arret.nom_arret,arret.latitude_arret,arret.longitude_arret,arretLigne.num_arretDansLigne,arretLigne.distance_tonext FROM arret, arretLigne WHERE arret.id_arret=arretLigne.id_arret AND id_ligne=:id_ligne AND sens='R' AND num_arretDansLigne>=:num_ref";
 				$array_params = array(
 					":id_ligne" => $id_ligne,
 					":num_ref" => $num_ref
@@ -155,9 +184,27 @@
 			return $this->select($req, $array_params);
 		}
 
+		
+
 		function selectAllArretBusAnc(){
 			$req = "SELECT * FROM arretBus";
 			$array_params = array(		
+			);
+			
+			return $this->select($req, $array_params);
+		}
+
+		/* selectionner tous les bus dans la zone */
+		function selectAllBusZones($delta_lat, $delta_lng, $ligne, $lat_ref, $lng_ref, $sens){
+
+			$req = "SELECT bus.id_bus,positionBus.latitude,positionBus.longitude FROM bus,positionBus WHERE bus.position_courant=positionBus.id_positionBus AND bus.sens_bus=:sens AND bus.nom_ligne=:ligne AND positionBus.latitude<=:max_lat AND positionBus.latitude >=:min_lat AND positionBus.longitude<=:max_lng AND positionBus.longitude>=:min_lng";
+			$array_params = array(	
+				":ligne" => $ligne,
+				":max_lat" => $lat_ref+$delta_lat,
+				":min_lat" => $lat_ref-$delta_lat,
+				":max_lng" => $lng_ref+$delta_lng,
+				":min_lng" => $lng_ref-$delta_lng,
+				":sens" => $sens
 			);
 			
 			return $this->select($req, $array_params);

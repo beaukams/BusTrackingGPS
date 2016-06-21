@@ -19,7 +19,7 @@ var visitor_icon;
 
 
 window.onload=function(){
-	var delai = 10 //, delaimax;
+	var delai = 10; //, delaimax;
 	var ligne = document.getElementById("bussearch");
 	bus_icon = create_icone("images/marker_bus.png", "images/marker_bus_shadow.png");
 	arret_icon = create_icone("images/marker_arret_bus.png", "images/marker-shadow.png");
@@ -73,15 +73,32 @@ window.onload=function(){
 	}).then(function(data) {
 			        	
 		var trailCoords = trail.geometry.coordinates;
-		trailCoords.push([data.position.lng, data.position.lat]);
-		trailCoords.splice(0, Math.max(0, trailCoords.length - 5));
+		console.log(data);
 
-        ajout_marker_bus(data.position.lat, data.position.lng, "Bus<br/>Matricule:"+data.bus.matricule);
-        //mettre à jour le tableau
-        document.getElementById("loc_bus_liberte").innerHTML = "latitude:"+data.position.lat+",longitude:"+data.position.lng;
-        document.getElementById("dist_bus_liberte").innerHTML = (parseInt(data.position.reste)/1000.0)+"";
-        document.getElementById("arret_bus_liberte").innerHTML = data.arrets.nom+",latitude:"+parseFloat(data.arrets.lat).toFixed(6)+", longitude:"+parseFloat(data.arrets.lng).toFixed(6);
-        document.getElementById("rest_bus_liberte").innerHTML = data.arrets.reste;
+		if(data.allee!=null){
+			trailCoords.push([data.allee.position.lng, data.allee.position.lat]);
+			trailCoords.splice(0, Math.max(0, trailCoords.length - 5));
+
+	        ajout_marker_bus(data.allee.position.lat, data.allee.position.lng, "Bus<br/>Matricule:"+data.allee.bus.matricule);
+	        //mettre à jour le tableau
+	        document.getElementById("loc_bus_palais").innerHTML = "latitude:"+data.allee.position.lat+",longitude:"+data.allee.position.lng;
+	        document.getElementById("dist_bus_palais").innerHTML = (parseInt(data.allee.position.reste)/1000.0)+"";
+	        document.getElementById("arret_bus_palais").innerHTML = data.allee.arrets.nom+",latitude:"+parseFloat(data.allee.arrets.lat).toFixed(6)+", longitude:"+parseFloat(data.allee.arrets.lng).toFixed(6);
+	        document.getElementById("rest_bus_palais").innerHTML = data.allee.arrets.reste;
+		}
+
+		if(data.retour!=null){
+			trailCoords.push([data.retour.position.lng, data.retour.position.lat]);
+			trailCoords.splice(0, Math.max(0, trailCoords.length - 5));
+
+	        ajout_marker_bus(data.retour.position.lat, data.retour.position.lng, "Bus<br/>Matricule:"+data.retour.bus.matricule);
+	        //mettre à jour le tableau
+	        document.getElementById("loc_bus_liberte").innerHTML = "latitude:"+data.retour.position.lat+",longitude:"+data.retour.position.lng;
+	        document.getElementById("dist_bus_liberte").innerHTML = (parseInt(data.retour.position.reste)/1000.0)+"";
+	        document.getElementById("arret_bus_liberte").innerHTML = data.retour.arrets.nom+",latitude:"+parseFloat(data.retour.arrets.lat).toFixed(6)+", longitude:"+parseFloat(data.retour.arrets.lng).toFixed(6);
+	        document.getElementById("rest_bus_liberte").innerHTML = data.retour.arrets.reste;		
+		}
+		
 
 
         val_zoom = map.getZoom();
@@ -98,7 +115,7 @@ window.onload=function(){
 }
 
 function ajout_marker(lat, lng, libelle) {
-	var marker = L.marker([lat, lng]).addTo(map);
+	var marker = L.marker([parseFloat(lat).toFixed(6), parseFloat(lng).toFixed(6)]).addTo(map);
     marker.bindPopup(libelle+"<br/>latitude:"+lat+", longitude:"+lng)
         .on('mouseover', function(e){ marker.openPopup(); })
         .on('mouseout', function(e){ marker.closePopup(); });
@@ -107,7 +124,7 @@ function ajout_marker(lat, lng, libelle) {
 }
 
 function ajout_marker_client(lat, lng) {
-	var marker = L.marker([lat, lng], {icon: visitor_icon}).addTo(map);
+	var marker = L.marker([parseFloat(lat).toFixed(6), parseFloat(lng).toFixed(6)], {icon: visitor_icon}).addTo(map);
     marker.bindPopup("Vous:<br/>latitude:"+lat+", longitude:"+lng)
         .on('mouseover', function(e){ marker.openPopup(); })
         .on('mouseout', function(e){ marker.closePopup(); });
@@ -116,7 +133,7 @@ function ajout_marker_client(lat, lng) {
 }
 
 function ajout_marker_arret(lat, lng, libelle) {
-	var marker = L.marker([lat, lng]).addTo(map);
+	var marker = L.marker([parseFloat(lat).toFixed(6), parseFloat(lng).toFixed(6)]).addTo(map);
     marker.bindPopup(libelle)
         .on('mouseover', function(e){ marker.openPopup(); })
         .on('mouseout', function(e){ marker.closePopup(); });
@@ -125,7 +142,7 @@ function ajout_marker_arret(lat, lng, libelle) {
 }
 
 function ajout_marker_bus(lat, lng, libelle) {
-	var marker = L.marker([lat, lng], {icon: bus_icon}).addTo(map);
+	var marker = L.marker([parseFloat(lat).toFixed(6), parseFloat(lng).toFixed(6)], {icon: bus_icon}).addTo(map);
     marker.bindPopup(libelle+"<br/>latitude:"+lat+", longitude:"+lng)
         .on('mouseover', function(e){ marker.openPopup(); })
         .on('mouseout', function(e){ marker.closePopup(); });
@@ -186,9 +203,9 @@ function ajout_arrets(ligne){
 			           		longitude = arret[arret.length-1];
 			           		
 
-			           		var desc = "Arret<br/>N°:"+arret[10]+",arret:"+arret[11]+"<br/>Latitude:"+longitude+"<br/>Longitude:"+longitude;
+			           		var desc = "Arret<br/>N°:"+arret[10]+",arret:"+arret[11]+"<br/>Latitude:"+parseFloat(latitude).toFixed(6)+"<br/>Longitude:"+parseFloat(longitude).toFixed(6);
 			           		
-			           		ajout_marker_arret(latitude, longitude, desc);
+			           		ajout_marker_arret(parseFloat(latitude).toFixed(6), parseFloat(longitude).toFixed(6), desc);
 
 			           }
 			       	}
@@ -211,8 +228,8 @@ function geolocalise(){
 	if(navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(function(position){
 			
-			document.getElementById("lab_lat").innerHTML = position.coords.latitude;
-			document.getElementById("lab_lng").innerHTML = position.coords.longitude;
+			document.getElementById("lab_lat").innerHTML = parseFloat(position.coords.latitude).toFixed(6);
+			document.getElementById("lab_lng").innerHTML = parseFloat(position.coords.longitude).toFixed(6);
 			//document.getElementById("lab_alt").innerHTML = position.coords.altitude;
 			ajout_marker_client(document.getElementById("lab_lat").innerHTML, document.getElementById("lab_lng").innerHTML);
 		},

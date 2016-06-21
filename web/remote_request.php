@@ -1,7 +1,7 @@
 <?php
 	/* controller de bus tracking*/
 
-	$_POST['donnees'] = "10111dk ligne 10 14.681330 -17.466775 16.4000 2.037200 2 11502200 260416";
+	//$_POST['donnees'] = "10111dk ligne 10 14.681330 -17.466775 16.4000 2.037200 2 11502200 260416";
 
 	if(isset($_POST['donnees']) && $_POST['donnees'] != "" && file_exists("base_conf.php") && file_exists("requetes.php")){
 		

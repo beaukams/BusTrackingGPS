@@ -14,7 +14,7 @@ char aux_string[30];
 char phone_number[]="+221773921334"; // le numero vers lequel on envoie les coordonnees GPS *****
 unsigned short timer=millis();
 unsigned short ms = 60000; //période d'envoie des coordonnnées au serveur *****
-unsigned short dt = 500; // = 0.5s: periode recuperation des coordonnées GPS
+unsigned short dt = 3*60; // = 3 minutes: periode recuperation des coordonnées GPS
 
 byte gps_state=0;
 
@@ -29,7 +29,7 @@ double cur_lng=0;
 double cur_alt=0;
 
 double  distance=0;
-double distance_seuille = 30; //distance minimale entre deux 2 arrets ***
+double distance_seuille = 210; //distance minimale entre deux 2 arrets ***
 char matricule_bus [] = "10111dk"; //***
 char ligne [] = "10"; //***
 char sens [] = "arret16";
